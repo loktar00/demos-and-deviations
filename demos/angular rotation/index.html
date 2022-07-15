@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <canvas id="canvas" width="400" height="400" style="background:#000;"></canvas>
+    <script>
+    (function(){
+    var ctx = document.getElementById("canvas").getContext("2d"),
+        x = 150,
+        y = 180,
+        angle = 0,
+        velX = 0,
+        velY = 0,
+        thrust = 3;
+
+
+    function draw(){
+        velY = -Math.cos(angle * Math.PI / 180) * thrust;
+        velX = Math.sin(angle * Math.PI / 180) * thrust;
+
+        x += velX;
+        y += velY;
+        angle+=2;
+
+        ctx.fillStyle = "#fff";
+        ctx.clearRect(0,0,400,400);
+        ctx.beginPath();
+        ctx.rect(x, y, 10, 10);
+        ctx.closePath();
+        ctx.fill();
+
+        setTimeout(function(){draw()}, 30);
+    }
+
+    draw();
+})();
+    </script>
+    </body>
+</html>

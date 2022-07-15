@@ -1,0 +1,22 @@
+<!doctype html> 
+<html> 
+	<head> 
+		<title>JS1k, 1k demo submission [ID]</title> 
+		<meta charset="utf-8" /> 
+	</head> 
+	<body> 
+		<canvas id="c"></canvas> 
+		<script> 
+			var b = document.body;
+			var c = document.getElementsByTagName('canvas')[0];
+			var a = c.getContext('2d');
+			document.body.clientWidth; // fix bug in webkit: http://qfox.nl/weblog/218
+		</script> 
+		<script> 
+var d=Math,e=d.sin,n=d.random,o,w=0,h=0,ps=[],u=0,q=!1;S=function(b,g,h){t=this;t.d=b;t.c=g;t.a=h;t.x=t.y=t.e=0;t.b=col;return t};A=function(b){~~(n()*100)>90&&(q?q=!1:q=!0);for(xx=0;xx<26;xx++){var g=-900+xx*80,h=-110+b*80,k=100;q==!0&&(k-=n()*40);q?col=[0,190,50]:col=[0,149,200];ps[b*26+xx]=new S(g,k,h)}};with(c){with(style)width=(w=innerWidth-9)+"px",height=(h=innerHeight-25)+"px";o=c.height}for(yy=0;yy<26;yy++)A(yy);for(p in a)a[p[0]+(p[6]||"")]=a[p];
+setInterval(function(){with(a){fillStyle="rgba(190,250,250,.3)";fc(0,0,w,h);for(j=25;j>-1;j--)for(i=25;i>-1;i--){var b=ps[j*26+i],g=b.d,z=b.c,k=b.a,v=b.b;ps[j*26+i].b[1]!=190&&(u+=9.0E-6,ps[j*26+i].c+=e(u+i+j));b.a-=8;scl=o/(o+k);b.y=64+z*scl;b.x=128+g*scl;j<25&&i<25&&k>-110&&(l(~~ps[(j+1)*26+i].x,~~ps[(j+1)*26+i].y),l(~~ps[(j+1)*26+(i+1)].x,~~ps[(j+1)*26+(i+1)].y),l(~~ps[j*26+(i+1)].x,~~ps[j*26+(i+1)].y));l(~~b.x,~~b.y);fillStyle="rgb("+~~(100-b.a/25)+","+~~(v[1]-b.a/25)+","+~~(v[2]-b.a/25)+")";
+f();ba()}ps[0].a<-110&&(ps.splice(0,26),A(25))}},10);
+
+		</script> 
+	</body> 
+</html>

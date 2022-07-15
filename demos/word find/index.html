@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			#tte td{border:1px solid black; padding:5px; width:15px;height:15px; text-align:center;}
+		</style>
+	</head>
+	<body>
+		<table id="tte">
+		</table>
+	<script>
+		var wsContainer = document.getElementById("tte"),
+			chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZ",
+			mapData = [],
+			wordData = [],
+			selectedData = [],
+			words = ['testing', 'another', 'dancing', 'javascript', 'fiddle', 'returning', 'chat', 'selection', 'comedy','stratcom','alternate','developer','department','defense','document'],
+			boardDim = 15;
+
+		// Wordplacement
+		for(var x = 0; x < boardDim; x++){
+			wordData [x] = [];
+			for(var y = 0; y < boardDim; y++){
+				wordData[x][y] = null;
+			}
+		}
+
+		for(var i = 0; i < words.length; i++){
+			  placeWord(words[i]);
+		}
+
+		// Initial setup
+		for(var x = 0; x < boardDim; x++){
+			mapData[x] = [];
+			var curCol = document.createElement('tr');
+			for(var y = 0; y < boardDim; y++){
+				var curRow = document.createElement('td'),
+					rowVal = {},
+					rowText = chars[Math.floor(Math.random()*chars.length)];
+
+				if(wordData[x][y] !== null){
+				rowText = wordData[x][y];
+			}
+
+				rowVal = document.createTextNode(rowText);
+
+				curRow.appendChild(rowVal);
+				curRow.onmousedown = (function(_x,_y){
+					return function(){
+						startSelection(_x, _y);
+						};
+					})(x,y);
+
+				curRow.onmouseover = (function(_x,_y){
+					return function(){
+						continueSelection(_x, _y);
+						};
+					})(x,y);
+
+				curCol.appendChild(curRow);
+				mapData[x][y] = curRow;
+			}
+
+			wsContainer.appendChild(curCol);
+		}
+
+		// user interaction
+		var selectStarted = false,
+			sX = 0,
+			sY = 0,
+			tX = 0,
+			tY = 0;
+
+		function startSelection(_x, _y){
+			if(selectStarted){
+				selectStarted = false;
+				checkSelection(selectedData);
+			} else{
+				selectStarted = true;
+				sX = _x;
+				sY = _y;
+				mapData[_x][_y].style.background = 'red';
+			}
+		}
+
+		function continueSelection(_x, _y){
+			if(selectStarted){
+			   tX = _x;
+			   tY = _y;
+			   var rad = Math.atan2(tY - sY, tX - sX),
+				   deg = rad*(180/Math.PI);
+
+				if(!(deg%45) || !(deg%90)){
+					for(var x = 0; x < 15; x++){
+						for(var y = 0; y < 15; y++){
+							 mapData[x][y].style.background = 'white';
+						}
+				   }
+				   highLiteSection();
+				}
+			}
+		}
+
+		function highLiteSection(){
+				selectedData = [];
+				var x1 = sX,
+					x2 = tX,
+					y1 = sY,
+					y2 = tY;
+
+				var steep = (Math.abs(y2 - y1) > Math.abs(x2 - x1));
+				if (steep){
+					var x = x1;
+					x1 = y1;
+					y1 = x;
+
+					var y = y2;
+					y2 = x2;
+					x2 = y;
+				}
+				if (x1 > x2) {
+					var x = x1;
+					x1 = x2;
+					x2 = x;
+
+					var y = y1;
+					y1 = y2;
+					y2 = y;
+				}
+
+				var dx = x2 - x1,
+					dy = Math.abs(y2 - y1),
+					error = 0,
+					de = dy / dx,
+					yStep = -1,
+					y = y1;
+
+				if (y1 < y2) {
+					yStep = 1;
+				}
+
+				for (var x = x1; x < x2+1; x++) {
+					var col = x,
+						row = y;
+
+					if (steep) {
+						col = y;
+						row = x;
+					}
+
+					error += de;
+					if (error >= 0.5) {
+						y += yStep;
+						error -= 1.0;
+					}
+					selectedData.push(mapData[col][row].innerHTML);
+					mapData[col][row].style.background = 'red';
+				}
+		}
+
+		function checkSelection(selection){
+			var word = selection.join('');
+
+			for(var i = 0; i < words.length; i++){
+				if(word.toUpperCase() === words[i].toUpperCase()){
+					alert(word);
+					return true;
+				}
+			}
+
+			// Check if its the word in reverse
+			word = selection.reverse().join('');
+			for(var i = 0; i < words.length; i++){
+				if(word.toUpperCase() === words[i].toUpperCase()){
+					alert(word);
+					return true;
+				}
+			}
+
+		}
+
+		function placeWord(word){
+			var attempts = 0,
+					maxAttempts = 20;
+
+				while(attempts < maxAttempts){
+				var dir = Math.floor(Math.random()*8),
+					place = true;
+
+				switch(dir){
+				case 0:
+					var ranCol = Math.floor(Math.random()*(boardDim-word.length)),
+					ranRow = Math.floor(Math.random()*boardDim);
+
+					// up and down
+					for(var i = 0; i < word.length;i++){
+							if(wordData[ranCol+i][ranRow]  !== null && wordData[ranCol+i][ranRow] !== word[i]){
+							place = false;
+						break;
+							}
+					}
+					if(place){
+							for(var i = 0; i < word.length;i++){
+							wordData[ranCol+i][ranRow] = word[i].toUpperCase();
+						}
+						return true;
+					}
+					   break;
+				case 1:
+						   // try left to right
+					ranCol = Math.floor(Math.random()*(boardDim));
+					ranRow = Math.floor(Math.random()*(boardDim-word.length));
+
+					for(var i = 0; i < word.length;i++){
+							if(wordData[ranCol][ranRow+i]  !== null && wordData[ranCol][ranRow+i] !== word[i]){
+							place = false;
+							break;
+						   }
+					}
+
+					if(place){
+						   for(var i = 0; i < word.length;i++){
+							wordData[ranCol][ranRow+i] = word[i].toUpperCase();
+							}
+								  return true;
+					}
+					break;
+				case 2:
+					// try diagnol down right
+					ranCol = Math.floor(Math.random()*(boardDim-word.length));
+					ranRow = Math.floor(Math.random()*(boardDim-word.length));
+
+					for(var i = 0; i < word.length;i++){
+							if(wordData[ranCol+i][ranRow+i]  !== null && wordData[ranCol+i][ranRow+i] !== word[i]){
+							place = false;
+							break;
+						   }
+					}
+
+					if(place){
+						   for(var i = 0; i < word.length;i++){
+							wordData[ranCol+i][ranRow+i] = word[i].toUpperCase();
+							}
+								  return true;
+					}
+					break;
+				case 3:
+					// try diagnol down left
+					ranCol = Math.floor(Math.random()*(boardDim-word.length));
+					ranRow = Math.floor(Math.random()*(boardDim-word.length));
+
+					for(var i = 0; i < word.length;i++){
+							if(wordData[ranCol+i][ranRow-i]  !== null && wordData[ranCol+i][ranRow+i] !== word[i]){
+							place = false;
+							break;
+						   }
+					}
+
+					if(place){
+						   for(var i = 0; i < word.length;i++){
+							wordData[ranCol+i][ranRow-i] = word[i].toUpperCase();
+							}
+								  return true;
+					}
+					break;
+				case 4:
+					 // Verticle reverse order of letters
+					var ranCol = Math.floor(Math.random()*(boardDim-word.length)),
+					ranRow = Math.floor(Math.random()*boardDim);
+
+					// up and down
+					for(var i = word.length-1; i > -1; i--){
+							if(wordData[ranCol+i][ranRow]  !== null && wordData[ranCol+i][ranRow] !== word[(word.length-1)-i]){
+							place = false;
+						break;
+							}
+					}
+					if(place){
+						for(var i = word.length-1; i > -1;i--){
+							wordData[ranCol+i][ranRow] = word[(word.length-1)-i].toUpperCase();
+						}
+						return true;
+					}
+					break;
+				case 5:
+					// Horizontal reverse order of letters
+					ranCol = Math.floor(Math.random()*(boardDim));
+					ranRow = Math.floor(Math.random()*(boardDim-word.length));
+
+					for(var i = word.length-1; i > -1;i--){
+						if(wordData[ranCol][ranRow+i]  !== null && wordData[ranCol][ranRow+i] !== word[(word.length-1)-i]){
+						place = false;
+						break;
+					   }
+					}
+
+					if(place){
+						for(var i = word.length-1; i > -1;i--){
+						wordData[ranCol][ranRow+i] = word[(word.length-1)-i].toUpperCase();
+						}
+							  return true;
+					}
+					break;
+				 case 6:
+					// try diagnol down right
+					ranCol = Math.floor(Math.random()*(boardDim-word.length));
+					ranRow = Math.floor(Math.random()*(boardDim-word.length));
+
+					for(var i = word.length-1; i > -1;i--){
+							if(wordData[ranCol+i][ranRow+i]  !== null && wordData[ranCol+i][ranRow+i] !== word[(word.length-1)-i]){
+							place = false;
+							break;
+						   }
+					}
+
+					if(place){
+						for(var i = word.length-1; i > -1;i--){
+							wordData[ranCol+i][ranRow+i] = word[(word.length-1)-i].toUpperCase();
+							}
+								  return true;
+					}
+					break;
+				case 7:
+					// try diagnol down left
+					ranCol = Math.floor(Math.random()*(boardDim-word.length));
+					ranRow = Math.floor(Math.random()*(boardDim-word.length));
+
+					for(var i = word.length-1; i > -1;i--){
+							if(wordData[ranCol+i][ranRow-i]  !== null && wordData[ranCol+i][ranRow+i] !== word[(word.length-1)-i]){
+							place = false;
+							break;
+						   }
+					}
+
+					if(place){
+						for(var i = word.length-1; i > -1;i--){
+							wordData[ranCol+i][ranRow-i] = word[(word.length-1)-i].toUpperCase();
+						}
+					}
+				}
+				attempts++;
+			}
+		}
+	</script>
+	</body>
+</html>

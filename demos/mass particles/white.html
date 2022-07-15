@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+	<head>
+			<title>Mass Particles</title>
+	</head>
+	<body style="background:#fff; margin:0">
+			<canvas id="canvas" style="position:absolute;"></canvas>
+			<script>
+				(function() {
+				var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+				window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+				window.requestAnimationFrame = requestAnimationFrame;
+				})();
+
+
+				var canvas = document.getElementById("canvas"),
+					ctx = canvas.getContext("2d"),
+					width = window.innerWidth,
+					height = window.innerHeight,
+					vanishPointY = height / 2,
+					vanishPointX = width / 2,
+					focalLength = 300,
+					angle = 0,
+					angleY = 180,
+					angleX = 180;
+
+				canvas.width = width;
+				canvas.height = height;
+
+				/*
+				*	Controls the emitter
+				*/
+				function Emitter(){
+					var PART_NUM = 20000;
+
+					this.particles = [];
+
+					for(var i = 0; i < PART_NUM; i++){
+						this.particles.push(new Particle());
+					}
+				}
+
+				Emitter.prototype.update = function(){
+					var partLen = this.particles.length;
+
+					angleY = (angle - vanishPointX) * 0.0001;
+					angleX = (angle - vanishPointX) * 0.0001;
+
+					this.particles.sort(function(a,b){
+						return b.z - a.z;
+					});
+
+					for (var i = 0; i < partLen; i++ ){
+						var particle = this.particles[i];
+						particle.update();
+					}
+
+				}
+
+				Emitter.prototype.render = function(){
+					var imgData = ctx.createImageData(width, height),
+						data = imgData.data,
+						partLen = this.particles.length;
+
+					for (var i = 0; i < partLen; i++ ){
+						var particle = this.particles[i];
+						if(particle.render && particle.xPos < width && particle.xPos > 0 &&
+								particle.yPos > 0 && particle.yPos < height){
+							for(var w = 0; w < particle.size; w++){
+								for(var h = 0; h < particle.size; h++){
+									if(particle.xPos+w < width && particle.xPos+w > 0 &&
+											particle.yPos+h > 0 && particle.yPos+h < height){
+										pData = (~~(particle.xPos+w) + (~~(particle.yPos+h) * width))*4;
+										data[pData] = particle.color[0];
+										data[pData+1] = particle.color[1];
+										data[pData+2] = particle.color[2];
+										data[pData+3] = 255;
+									}
+								}
+							}
+						}
+					}
+
+					ctx.putImageData( imgData, 0, 0 );
+				}
+
+
+				/*
+				*	Controls the individual particles
+				*/
+				function Particle(){
+					this.x = (Math.random()*2)-1;
+					this.y = (Math.random()*2)-1;
+					this.z = (Math.random()*2)-1;
+
+					this.xPos = 0;
+					this.yPos = 0;
+
+					this.angle = 0;
+
+					this.vx = (Math.random()*4)-2;
+					this.vy = (Math.random()*4)-2;
+					this.vz = (Math.random()*4)-2;
+
+					var gray = ~~(Math.random()*255);
+					this.color = [ gray,gray,gray]
+					this.render = true;
+
+					this.size = Math.random()*1;
+				}
+
+				Particle.prototype.update = function(){
+				    var cosY = Math.cos(angleX),
+				        sinY = Math.sin(angleX),
+				        x1 = this.x* cosY - this.z* sinY,
+				        z1 = this.z* cosY + this.x* sinY;
+
+				   		this.x+=this.vx;
+				   		this.y+=this.vy;
+				   		this.z-=this.vz;
+
+				    this.render = false;
+
+			        if (this.z > -focalLength) {
+		        		var scale = focalLength / (focalLength + this.z);
+
+			        	this.size = scale*2;
+			        	this.xPos = vanishPointX + this.x * scale;
+			        	this.yPos = vanishPointY + this.y * scale;
+			        	this.render = true;
+			        }
+				}
+
+				function render(){
+					emitter.update();
+					emitter.render();
+					requestAnimationFrame(render);
+				}
+
+				var emitter = new Emitter();
+				render();
+			</script>
+	</body>
+</html>

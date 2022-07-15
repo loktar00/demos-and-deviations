@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById('canvas'),
+			ctx = canvas.getContext("2d"),
+			cx = cy = 128,
+			sectors = 10;
+
+		canvas.width = canvas.height = 256;
+
+		function toRadians(deg) {
+			return deg * Math.PI / 180
+		}
+
+
+		ctx.fillRect(0,0,256,256);
+
+		var slice = 360/sectors;
+		console.log(slice);
+		for(var i = 0; i < sectors; i++){
+			ctx.fillStyle = "rgb(" + i*15 + ",0,0)";
+			ctx.beginPath();
+			ctx.moveTo(cx,cy);
+			ctx.arc(cx,cy,100,toRadians(slice*i),toRadians((slice*i)+slice));
+			ctx.fill();
+			ctx.lineTo(cx,cy);
+			ctx.stroke();
+			ctx.closePath();
+
+		}
+	</script>
+	</body>
+</html>

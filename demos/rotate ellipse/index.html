@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d");
+
+		canvas.width = canvas.height = 256;
+
+		var points = [];
+
+		// center
+		points.push({x:128, y:128});
+		var width = (Math.random()*200)+10,
+			height = (Math.random()*200)+10,
+			angle = 0;
+
+		points.push({x : 128+width/2, y : 128});
+		points.push({x : 128-width/2, y : 128});
+		points.push({x : 128, y : 128-height/2});
+		points.push({x : 128, y : 128+height/2});
+
+		for(var i = 0; i < points.length; i++){
+			ctx.fillRect(points[i].x, points[i].y, 2, 2);
+		}
+
+		function drawEllipse(ctx, x, y, h, w, angle){
+			ctx.beginPath();
+			for (var i = 0; i < 2 * Math.PI; i += 0.01 ) {
+				xPos = x - (w* Math.sin(i)) * Math.sin(angle* Math.PI) + (h* Math.cos(i)) * Math.cos(angle* Math.PI);
+				yPos = y + (h* Math.cos(i)) * Math.sin(angle* Math.PI) + (w * Math.sin(i)) * Math.cos(angle* Math.PI);
+
+				if (i == 0) {
+					ctx.moveTo(xPos, yPos);
+				} else {
+					ctx.lineTo(xPos, yPos);
+				}
+			}
+
+			ctx.fill();
+			ctx.closePath();
+		};
+
+		function rotate(){
+			ctx.clearRect(0,0,256,256);
+			angle+=0.01;
+			drawEllipse(ctx, 128, 128, width/2, height/2, angle);
+			setTimeout(rotate,20);
+		}
+
+		rotate();
+	</script>
+	</body>
+</html>

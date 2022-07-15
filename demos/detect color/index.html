@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d");
+
+		canvas.width = canvas.height = 256;
+		ctx.strokeStyle = "rgb(0,0,255)";
+		// make some lines.
+		ctx.beginPath();
+		ctx.moveTo(0,Math.floor(Math.random()*200));
+		for(var i = 0; i < 15; i++){
+		  ctx.lineTo((256/14)*i,Math.floor(Math.random()*200));
+		}
+		ctx.stroke();
+		ctx.closePath();
+
+		// get the line
+		var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height),
+			points = [];
+
+		for(var y=0; y<canvas.height; y++){
+			for(var x=0; x<canvas.width; x++){
+
+				if(imageData.data[(y * (canvas.height*4) + (x*4))+2] == 255){
+					points[x] = y;
+				}
+			}
+		}
+
+		// redraw the line with a y offset
+		ctx.strokeStyle = "rgb(255,0,0)";
+		ctx.beginPath();
+		for(var i = 0; i < points.length; i++){
+			ctx.lineTo(i, points[i]+20);
+		}
+		ctx.stroke();
+		ctx.closePath();
+	</script>
+	</body>
+</html>

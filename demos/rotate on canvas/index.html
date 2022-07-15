@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d"),
+			boxes = [],
+			box = function(x,y){
+				this.x = x;
+				this.y = y;
+				this.angle = Math.random()*180;
+			}
+
+		canvas.width = canvas.height = 256;
+
+		for(var i = 0; i < 10; i++){
+			boxes.push(new box(Math.random()*256, Math.random()*256));
+		}
+
+		function draw(){
+			ctx.fillStyle = "#000";
+			ctx.fillRect(0,0,256,256);
+			ctx.fillStyle = "rgb(255,0,0)";
+			for(var i = 0; i < boxes.length; i++){
+				var box = boxes[i];
+				box.angle+=0.2;
+				box.x++;
+				if(box.x > 256){
+					box.x = 0;
+				}
+				// save the context
+				ctx.save();
+				// translate it to the boxes x and boxes y, basically your taking the canvas and moving it to each box.
+				ctx.translate(box.x, box.y);
+				// now rotate it
+				ctx.rotate(box.angle);
+				// -5 is half of the box width and height 0,0 is the boxes location, im drawing it at half the width and height to set the rotation origin to the center of the box.
+				ctx.fillRect(-5,-5, 10,10);
+				// now restore
+				ctx.restore();
+			}
+			setTimeout(draw, 30);
+		}
+
+		draw();
+	</script>
+	</body>
+</html>

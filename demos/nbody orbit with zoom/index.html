@@ -1,0 +1,537 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			body{
+				background: #000000;
+				overflow: hidden;
+				margin:0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="playCanvas" style="cursor:pointer;"></canvas>
+	<script>
+		(function () {
+
+			var x = null, y = null, z = null,
+				sx = null, sy = null, sz = null,
+				userData = null,
+				dx = null, dy = null, dz = null,
+				tx = null, ty = null, tz = null;
+
+			function Vector(x, y, z)
+			{
+				this.x = x;
+				this.y = y;
+				this.z = z;
+
+				copy = function(v){
+					this.x = v.x;
+					this.y = v.y;
+					this.z = v.z;
+				},
+				add = function(v){
+					this.x += v.x;
+					this.y += v.y;
+					this.z += v.z;
+				},
+				sub = function(v){
+					this.x -= v.x;
+					this.y -= v.y;
+					this.z -= v.z;
+				},
+				cross = function(v){
+					this.tx = this.x;
+					this.ty = this.y;
+					this.tz = this.z;
+
+					this.x = this.ty * v.z - this.tz * v.y;
+					this.y = this.tz * v.x - this.tx * v.z;
+					this.z = this.tx * v.y - this.ty * v.x;
+				},
+				multiply = function(s){
+					this.x *= s;
+					this.y *= s;
+					this.z *= s;
+				},
+				distanceTo = function(v){
+					this.dx = this.x - v.x;
+					this.dy = this.y - v.y;
+					this.dz = this.z - v.z;
+
+					return Math.sqrt(this.dx * this.dx + this.dy * this.dy + this.dz * this.dz);
+				},
+
+				distanceToSquared = function(v){
+					this.dx = this.x - v.x;
+					this.dy = this.y - v.y;
+					this.dz = this.z - v.z;
+
+					return this.dx * this.dx + this.dy * this.dy + this.dz * this.dz;
+				},
+
+				length = function(){
+					return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+				},
+
+				lengthSq = function(){
+					return this.x * this.x + this.y * this.y + this.z * this.z;
+				},
+
+				negate = function(){
+					this.x = -this.x;
+					this.y = -this.y;
+					this.z = -this.z;
+				},
+
+				normalize = function(){
+					if (this.length() > 0)
+						this.ool = 1.0 / this.length();
+					else
+						this.ool = 0;
+
+					this.x *= this.ool;
+					this.y *= this.ool;
+					this.z *= this.ool;
+					return this;
+				},
+
+				dot = function(v){
+					return this.x * v.x + this.y * v.y + this.z * v.z;
+				},
+
+				clone = function(){
+					return new Vector(this.x, this.y, this.z);
+				},
+
+				toString = function(){
+					return '(' + this.x + ', ' + this.y + ', ' + this.z + ')';
+				}
+
+			}
+
+			this.Vector = Vector;
+
+			Vector.prototype.add = function(a, b)
+			{
+				return new Vector( a.x + b.x, a.y + b.y, a.z + b.z );
+			}
+
+			Vector.prototype.sub = function(a, b)
+			{
+				return new Vector( a.x - b.x, a.y - b.y, a.z - b.z );
+			}
+
+			Vector.prototype.multiply = function(a, s)
+			{
+				return new Vector( a.x * s, a.y * s, a.z * s );
+			}
+
+			Vector.prototype.cross = function(a, b)
+			{
+				return new Vector( a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x );
+			}
+
+			Vector.prototype.dot = function(a, b)
+			{
+				return a.x * b.x + a.y * b.y + a.z * b.z;
+			}
+
+		})();
+
+		(function () {
+
+			function Utilities(){
+				// Constructor
+			}
+
+			this.Utilities = Utilities;
+
+			Utilities.prototype.getRandomRange = function(_min, _max){
+				return Math.floor(Math.random()*_max+_min)
+			}
+
+			Utilities.prototype.getDistance = function(a, b){
+				return Math.sqrt((b.x - a.x) *(b.x - a.x) + (b.y - a.y) * (b.y - a.y));
+			}
+
+			Utilities.prototype.dot = function(a, b)
+			{
+				return a.x * b.x + a.y * b.y + a.z * b.z;
+			}
+
+		})();
+
+		(function () {
+			var utilities = new Utilities();
+
+			function CelestialBody(options)
+			{
+				if(options !== undefined){
+					// Set size
+					if(options.width === undefined){
+						this.width = this.height = utilities.getRandomRange(2,10);
+					}else{
+						this.width = this.height = options.width;
+					}
+
+					// Set Mass
+					if(options.mass === undefined){
+						this.mass = this.width;
+					}else{
+						this.mass = options.mass;
+					}
+
+					// Set position
+					if(options.x === undefined || options.y === undefined){
+						this.pos = new Vector(utilities.getRandomRange(0, 100), utilities.getRandomRange(0, 100), 0);
+					}else{
+						this.pos = new Vector(options.x,options.y,options.z);
+					}
+
+					// Set velocity
+					if(options.vx === undefined || options.vy === undefined){
+						this.vel = new Vector(0,0,0);
+					}else{
+						this.vel = new Vector(options.vx,options.vy,0);
+					}
+
+					//Set Color
+					if(options.color === undefined){
+						this.color = "#ffffff";
+					}else{
+						this.color = options.color;
+					}
+				}else{
+					this.width = this.height = utilities.getRandomRange(2,10);
+					this.mass = this.width;
+					this.pos = new Vector(utilities.getRandomRange(0, 100), utilities.getRandomRange(0, 100), 0);
+					this.vel = new Vector(-1,1,0);
+				}
+
+				// this body is alive.
+				this.live = true;
+			}
+
+			this.CelestialBody = CelestialBody;
+
+		// public
+			// Handles updating the body
+			CelestialBody.prototype.update = function(deltaTime)
+			{
+				var gravBodies = Grav.bodies,
+					G = Grav.settings.gravity;
+
+				for(var i = 0; i < gravBodies.length; i++){
+					if(gravBodies[i] !== this){
+						var x1 = this.pos.x,
+							x2 = gravBodies[i].pos.x,
+							y1 = this.pos.y,
+							y2 = gravBodies[i].pos.y,
+							distance = utilities.getDistance(this.pos, gravBodies[i].pos);
+
+						if(distance > this.width + gravBodies[i].width){
+							var force = G * this.mass * gravBodies[i].mass / (distance * distance),
+								xcomp=(x1-x2)/distance,
+								ycomp=(y1-y2)/distance,
+								deltaV1= force / this.mass,          // Divide force by mass
+								deltaV2= force / gravBodies[i].mass;
+
+							gravBodies[i].vel.x += deltaV2 * xcomp;
+							gravBodies[i].vel.y += deltaV2 * ycomp;
+
+							this.vel.x -= deltaV1 * xcomp;
+							this.vel.y -= deltaV1 * ycomp;
+
+							if(this.mass < 10000){
+								this.pos.x += this.vel.x * deltaTime;
+								this.pos.y += this.vel.y * deltaTime;
+							}
+
+							if(gravBodies[i].mass < 10000){
+								gravBodies[i].pos.x += gravBodies[i].vel.x * deltaTime;
+								gravBodies[i].pos.y += gravBodies[i].vel.y * deltaTime;
+							}
+						}else{
+							if(this.mass > gravBodies[i].mass){
+								this.mass += gravBodies[i].mass/2;
+								this.width += gravBodies[i].width/4;
+								gravBodies[i].live = false;
+								gravBodies[i].mass = 0;
+								gravBodies[i].width = 0;
+							}else{
+								gravBodies[i].mass += this.mass/2;
+								gravBodies[i].width += this.width/4;
+								this.live = false;
+								break;
+							}
+						}
+					}
+				}
+			};
+
+			CelestialBody.prototype.checkCollision = function(x, y){
+			}
+
+			// Draws the body
+			CelestialBody.prototype.draw = function(_context)
+			{
+					var zoom = Grav.settings.zoom,
+						width = Grav.canvas.width,
+						height = Grav.canvas.height;
+
+
+					_context.fillStyle = this.color;
+					_context.beginPath();
+					_context.arc(this.pos.x/zoom + width/2-(width/2)/zoom, this.pos.y/zoom + height/2-(height/2)/zoom, this.width/zoom, 0, Math.PI*2, true);
+					_context.closePath();
+					_context.fill();
+			};
+		})();
+
+		(function () {
+
+			function Renderer(canvas){
+				this._renderItems  = [];
+				this.init(canvas);
+			}
+
+			this.Renderer = Renderer;
+
+			Renderer.prototype.init = function (canvas)
+			{
+				this._canvas    = canvas;
+				this._context   = this._canvas.getContext("2d");
+				this._width     = this._canvas.width;
+				this._height    = this._canvas.height;
+			};
+
+			Renderer.prototype.redraw = function ()
+			{
+				draw.apply(this);
+			};
+
+			Renderer.prototype.addToRenderer = function (object)
+			{
+				this._renderItems.push(object);
+			};
+
+			Renderer.prototype.removeFromRenderer = function (object)
+			{
+				for (var id in this._renderItems) {
+					if(this._renderItems[id] === object){
+						this._renderItems.splice(id,1);
+					}
+				}
+			};
+
+		// private
+			function draw ()
+			{
+				var id = 0;
+				this._context.clearRect(0,0,this._width,this._height);
+
+				for (id =0; id < this._renderItems.length; id++) {
+					var curObject = this._renderItems[id];
+					curObject.draw(this._context);
+				}
+			}
+
+		})();
+
+		Grav = function(){
+			var playCanvas = {},
+				width = window.innerWidth,
+				height = window.innerHeight,
+				renderer = new Object,
+				entities = [],
+				utilities = new Utilities(),
+				tics = Math.ceil(1000 / 120),
+				lastTime = (new Date()).getTime(),
+				gameState = 1,
+				accTime = 0,
+				timeStep = 1,
+				updateGame = function(){
+					var curTime = (new Date()).getTime(),
+						deltaTime = curTime - lastTime;
+
+					lastTime = curTime;
+					accTime += deltaTime;
+
+					while (accTime > timeStep)
+					{
+						accTime -= timeStep;
+
+						for (var id  = 0; id <= entities.length - 1; id += 1){
+							var object = entities[id];
+
+							if(object.live){
+								object.update(timeStep /100);
+							}else{
+								Grav.removeEntity(object);
+							}
+						}
+					}
+
+					renderer.redraw();
+					intervalId = window.setTimeout(updateGame, tics);
+				},
+				zoomMap = function(event){
+					if ('wheelDelta' in event) {
+						if(Math.abs(event.wheelDelta) - event.wheelDelta === 0){
+							Grav.settings.zoom -= 0.3;
+						}else{
+							Grav.settings.zoom += 0.3;
+						}
+					} else if (event.detail) {
+						if(Math.abs(event.detail) - event.detail === 0){
+							Grav.settings.zoom += 0.3;
+						}else{
+							Grav.settings.zoom -= 0.3;
+						}
+					}
+				};
+				return{
+					bodies : [],
+					canvas : {},
+					settings : {
+						gravity : .006672,
+						zoom : 1,
+					},
+					addEntity : function(object){
+							entities.push(object);
+							renderer.addToRenderer(object);
+						},
+					removeEntity : function(object){
+								for (var id = 0; id <= entities.length - 1; id += 1) {
+									if(entities[id] === object){
+										entities.splice(id,1);
+										renderer.removeFromRenderer(object);
+										delete object;
+									}
+								}
+							},
+					startGame : function(){
+						// Setup the canvas and renderer
+						playCanvas = document.getElementById("playCanvas");
+						playCanvas.width = width;
+						playCanvas.height = height;
+
+						this.canvas = playCanvas;
+
+						renderer = new Renderer(playCanvas);
+						var crit_velocity = 0,
+							distance = 0;
+
+						var body = new CelestialBody({"width" : 15, "mass" : 10000, "x" :playCanvas.width / 2, "y" : playCanvas.height / 2, "vx" : 0, "vy" : 0, "color" : "#ff4500"});
+						this.bodies.push(body);
+						this.addEntity(body);
+
+						var sunPos = new Vector(playCanvas.width / 2, playCanvas.height / 2, 0);
+
+						// Create some random bodies
+						for(var j=0; j<25; j++){
+							var bodyMass = utilities.getRandomRange(10,60),
+								bX = utilities.getRandomRange(playCanvas.width-playCanvas.width/4,playCanvas.width-5),
+								bY = utilities.getRandomRange(playCanvas.height/2,playCanvas.height-playCanvas.height/2),
+								bZ = utilities.getRandomRange(-100,100);
+								localPos = new Vector(bX, bY, bZ),
+								localDist = utilities.getDistance(localPos, sunPos),
+								vX = -localDist/(playCanvas.width),
+								vY = localDist / (playCanvas.height);
+
+								body = new CelestialBody({"width" :  bodyMass/10, "mass" : bodyMass, "x" : bX, "y" : bY, "vx" : vX, "vy" : vY});
+
+							this.bodies.push(body);
+							this.addEntity(body);
+						}
+
+						playCanvas.addEventListener ("mousewheel", zoomMap, false);
+						playCanvas.addEventListener ("DOMMouseScroll", zoomMap, false);
+
+						intervalId  = window.setTimeout(updateGame, tics);
+					},
+					// Sets the game state, clears the timeout and pauses to other things can happen
+					setState : function(state){
+
+						gameState = state;
+
+						switch(state){
+							case 1: //continue
+								lastTime = (new Date()).getTime();
+								intervalId  = window.setTimeout(updateGame, tics);
+							break;
+							case 2: //pause
+								clearTimeout(intervalId);
+							break;
+						}
+					},
+					events : {
+						up : false,
+						down : false,
+						left : false,
+						right : false,
+						space : false
+					},
+					// Game Event handelers
+					onKeyDown : function(evt) {
+
+					  if (evt.keyCode == 32) gameStates.changeState(Math.abs(gameState--));
+					},
+					onKeyUp : function (evt) {
+					//
+					}
+
+				};
+		}();
+
+		gameMenu = function(){
+			// GAH CODE DUPLICATION!!
+			var playCanvas = {},
+				width = window.innerWidth,
+				height = 600,
+				renderer = {},
+				entities = [],
+				tics = Math.ceil(1000 / 120),
+				lastTime = (new Date()).getTime(),
+				menuState = 1,
+				updateMenu = function(){
+					// Add logic here
+				};
+			return{
+				setState : function(state){
+					// Add logic here
+				},
+				initMenu : function(){
+
+				}
+			}
+		}
+
+		// This could definitly be handled better. implemented a bit fast just to have a menu system in place.
+		gameStates = function(){
+			return{
+				changeState : function(state){
+					switch(state){
+						case 1:    //menu state
+							Grav.setState(2);
+							break;
+						case 2: // game state
+							Grav.setState(1);
+							break;
+					}
+				}
+			};
+		}();
+
+
+			Grav.startGame();
+
+			// Bind key events
+			document.onkeydown = Grav.onKeyDown;
+			document.onkeyup = Grav.onKeyUp;
+	</script>
+	</body>
+</html>

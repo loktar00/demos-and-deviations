@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+	<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d"),
+			width = height = 200;
+			radius = 30,
+			displace = -10,
+			damp = 0.98,
+			points = [],
+			buffer = [];
+
+		canvas.width = canvas.height = width;
+
+		for(var x = 0; x < canvas.width; x++){
+			points[x] = [];
+			buffer[x] = [];
+			for(var y = 0; y < canvas.height; y++){
+				points[x][y] = 0;
+				buffer[x][y] = ~~(Math.random()*180);
+				ctx.fillStyle = "rgb(" +buffer[x][y] + "," + buffer[x][y] +"," + buffer[x][y] + ")";
+				ctx.fillRect(x,y,1,1);
+			}
+		}
+
+		buffer[100][100] = 255;
+
+		function pinch(){
+			var pX = 100,
+				pY = 100;
+
+			for(var x = pX-50;x<pX+50;x++){
+				 for(var y = pY-50;y<pY+50;y++){
+					buffer[x][y] = 150;
+				}
+			}
+		}
+
+		function update(){
+			for(var x = 0; x < canvas.width-1; x++){
+				for(var y = 0; y < canvas.height-1; y++){
+
+					if(buffer[x][y] !== 0){
+					   // buffer[x][y]*= damp;
+					}
+
+					var Xoffset = 0,
+						Yoffset = 0,
+						shading = 0;
+
+					if(x>1 && x<width && y>1 && y<height){
+						Xoffset = buffer[x-1][y] - buffer[x+1][y];
+						Yoffset = buffer[x][y - 1] - buffer[x][y + 1];
+						shading = Yoffset;
+					}
+					color = points[x][y] + shading;
+
+					ctx.fillStyle = 'rgb(' + color + ',' + color + ',' + color +')';
+					ctx.fillRect(x,y,1,1);
+				}
+			}
+
+
+		}
+
+		pinch();
+		update();
+	</script>
+	</body>
+</html>

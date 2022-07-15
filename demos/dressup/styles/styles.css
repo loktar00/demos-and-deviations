@@ -1,0 +1,79 @@
+body{background:#000;margin:0;padding:0; font-family:tahoma;}
+
+/* Menu/UI styles */
+.ui-button{cursor:pointer;position:absolute;left:30px;}
+button{border:1px solid #7b7b7b; background:#fff; padding:10px; font-size:1.2em; cursor:pointer;}
+button:hover{border:1px solid #000; background:#7b7b7b; color:#fff;}
+button.score{margin:0 10px;}
+
+#splash{width:800px;height:600px;background:url(../images/bgs/title.png);}
+
+#newgame{width:322px;height:59px; background:url(../images/ui/playgame.png);top:400px; }
+#newgame:hover{background-position:left 59px;}
+#info{width:322px;height:59px; background:url(../images/ui/info.png);top:480px; }
+#info:hover{background-position:left 59px;}
+
+#easy{width:220px;height:24px; background:url(../images/ui/easy.png);top:160px; }
+#easy:hover{background-position:left 24px;}
+#hard{width:219px;height:24px; background:url(../images/ui/hard.png);top:220px; }
+#hard:hover{background-position:left 24px;}
+#back{width:322px;height:59px; background:url(../images/ui/back.png); top:480px;}
+#back:hover{background-position:left -59px;}
+
+/* scenario selection */
+.scenario{font-weight:bold;font-size:2em;color:#fff;width:322px;height:59px; border:2px solid #000; background: #20a900; line-height:59px; text-align:center;}
+.scenario:hover{background:#ff8400;}
+
+/* modal */
+.overlay{width:800px;height:600px;position:absolute;background:#000;top:0;left:0;opacity: 0.9;filter: alpha(opacity = 90);z-index:99999;}
+.modal{position:absolute;z-index:999999;background:#fff;border:10px solid #333;height:auto;left:200px;top:150px; max-width:600px;min-width:300px;}
+.close{width:30px;height:30px; position:absolute; right:10px; top:10px; background:url(../images/ui/close.png) no-repeat; cursor:pointer;}
+.modal button{display:block;margin:20px auto; width:200px;}
+.modal .content{padding:10px; font-size:1.2em; font-family:arial;margin-bottom:20px;}
+
+/* Count down */
+#countdown{width:400px;height:300px; z-index:999999; position:absolute; left: 200px; top:150px; text-align: center; font-size:15em; font-weight: bold; color:#fff;}
+
+/* Game, Game play styles */
+#game-container{width:800px;height:600px;}
+#game{width:800px;height:600px;border:1px solid #fff; position:absolute;}
+#play-area{width:320px;height:100%;float:left;outline:1px solid #fff;}
+#sort-area{width:480px;height:100%;float:left;outline:1px solid #fff; position:relative; background:#dbdbdb; text-align:center;}
+#sort-nav{width:100%; height:50px; background:#fff; text-align:center;}
+#timer-container{z-index:10000;}
+#timer-bar{width:100%;height:18px;background:red;}
+#man-template{width:185px;height:500px;position:absolute;top:40px;left:60px;background:url(../images/def-dude.png);}
+
+/* items that are sorted/moved ect. */
+.sort-item{width:80px;height:80px;position:absolute;background:red;cursor:move;z-index:100;}
+.dragging{opacity: 0.5;filter:alpha(opacity = 50);}
+
+.mask{width:66px; height:82px;}
+.body{width:164px;height:244px;}
+.gloves{width:160px;height:81px;}
+.pants{width:96px;height:404px;}
+.boots{width:96px;height:98px;}
+.suit{width:166px;height:526px;}
+
+.hidden{display:none;}
+.show{display:block;}
+
+/* model styles */
+#model-head{position:absolute;left:116px;top:32px;width:80px;height:75px;}
+#model-body{position:absolute;left:70px;top:40px;width:160px;height:120px;}
+#model-suit{position:absolute;left:70px;top:15px;width:160px;height:120px;}
+#model-hands{position:absolute;left:72px;top:219px;width:180px;height:70px;}
+#model-legs{position:absolute;left:107px;top:100px;width:120px;height:200px;}
+#model-feet{position:absolute;left:106px;top:444px;width:120px;height:70px;}
+#check-button{position:relative;margin-left:50%;left:-60px;top:530px;width:120px;height:40px;}
+.model-over{border:1px dotted #fff;}
+
+/* Scoring */
+table{width:430px; margin:10px auto; background:#fff;}
+td{text-align:center;}
+.rank{font-size:3em;font-weight:bold;}
+.rank-A{color:#138500;}
+.rank-B{color:#618500;}
+.rank-C{color:#ffe400;}
+.rank-D{color:#ff7200;}
+.rank-F{color:#f00;}

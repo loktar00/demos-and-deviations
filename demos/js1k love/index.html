@@ -1,0 +1,188 @@
+<html>
+	<head>
+	</head>
+	<body style="background:#000">
+		<canvas id="canvas" style="border:1px solid #fff"></canvas>
+		<script>
+
+		    window.requestAnimFrame = (function(){
+			  return  window.requestAnimationFrame       ||
+					  window.webkitRequestAnimationFrame ||
+					  window.mozRequestAnimationFrame    ||
+					  window.oRequestAnimationFrame      ||
+					  window.msRequestAnimationFrame     ||
+					  function(/* function */ callback, /* DOMElement */ element){
+						window.setTimeout(callback, 1000 / 60);
+					  };
+			})();
+
+				function Point3d (x, y, z) {
+				  this.x = (x === undefined) ? 0 : x;
+				  this.y = (y === undefined) ? 0 : y;
+				  this.z = (z === undefined) ? 0 : z;
+				  this.fl = 250;
+				  this.vpX = 0;
+				  this.vpY = 0;
+				  this.cX = 0;
+				  this.cY = 0;
+				  this.cZ = 0;
+				  this.angleX = 0;
+				  this.angleY = 0;
+				  this.angle = 0;
+				}
+
+				Point3d.prototype.setVanishingPoint = function (vpX, vpY) {
+				  this.vpX = vpX;
+				  this.vpY = vpY;
+
+				  this.angleX = ( - vpX) * .00001;
+				  this.angleY = ( - vpY) * .00001;
+				};
+
+				Point3d.prototype.setCenter = function (cX, cY, cZ) {
+				  this.cX = cX;
+				  this.cY = cY;
+				  this.cZ = cZ;
+				};
+
+				Point3d.prototype.moveForward = function(){
+					//this.cZ-=0.2;
+
+					//this.cY-= x1*.0001;
+					//this.cX-= 1;
+					//this.cY-= Math.cos(this.angle+=.0001);
+					//this.cZ-= Math.sin(this.angle);
+					//this.cY+=1;
+					//if(this.cY>500){
+					//	this.cY=-500;
+					//}
+					//this.cX-= Math.cos(this.angle);
+				}
+
+				Point3d.prototype.rotateX = function (angleX) {
+				//this.angleX=Math.sin(this.angle+=.001)*.01;
+				//this.angleY=Math.sin(this.angle)*.01;
+				  var cosX = Math.cos(this.angleX),
+					  sinX = Math.sin(this.angleX),
+					  y1 = this.y * cosX - this.z * sinX,
+					  z1 = this.z * cosX + this.y * sinX;
+				  this.y = y1;
+				  this.z = z1;
+				};
+
+				Point3d.prototype.rotateY = function (angleY) {
+				  var cosY = Math.cos(this.angleY),
+					  sinY = Math.sin(this.angleY),
+					  x1 = this.x * cosY - this.z * sinY,
+					  z1 = this.z * cosY + this.x * sinY;
+				  this.x = x1;
+				  this.z = z1;
+				};
+
+				Point3d.prototype.rotateZ = function (angleZ) {
+				  var cosZ = Math.cos(this.angleZ),
+					  sinZ = Math.sin(this.angleZ),
+					  x1 = this.x * cosZ - this.y * sinZ,
+					  y1 = this.y * cosZ + this.x * sinZ;
+				  this.x = x1;
+				  this.y = y1;
+				};
+
+				Point3d.prototype.getScreenX = function () {
+				  var scale = this.fl / (this.fl + this.z + this.cZ);
+				  return this.vpX + (this.cX + this.x) * scale;
+				};
+
+				Point3d.prototype.getScreenY = function () {
+				  var scale = this.fl / (this.fl + this.z + this.cZ);
+				  return this.vpY + (this.cY + this.y) * scale;
+				};
+
+			 window.onload = function () {
+				var canvas = document.getElementById('canvas'),
+					context = canvas.getContext('2d'),
+					points = [],
+					particles = [],
+					fl = 250,
+					partNum = 300;
+
+				canvas.width = canvas.height = 512;
+
+				var vpX = canvas.width / 2,
+					vpY = canvas.height / 2,
+					angleX, angleY;
+
+				for(var i = 0; i < partNum; i++){
+					var size =Math.random()*5+5,
+						offset = Math.random()*500-Math.random()*500;
+
+					particles[i] = {};
+					particles[i].points = [];
+					/*particles[i].points[0]  = new Point3d(-size, -size, offset);
+					particles[i].points[1]  = new Point3d( size, -size, offset);
+					particles[i].points[2]  = new Point3d( size, size, offset);
+					particles[i].points[3]  = new Point3d( -size, size, offset);*/
+
+					particles[i].points[0]  = new Point3d(0, 50/size, offset);
+					particles[i].points[1]  = new Point3d(-20/size, 20/size, offset);
+					particles[i].points[2]  = new Point3d(-60/size, 15/size, offset);
+					particles[i].points[3]  = new Point3d(-80/size, 60/size, offset);
+					particles[i].points[4]  = new Point3d(-70/size, 100/size, offset);
+					particles[i].points[5]  = new Point3d(0, 200/size, offset);
+
+					particles[i].points[6]  = new Point3d(70/size, 100/size, offset);
+					particles[i].points[7]  = new Point3d(80/size, 60/size, offset);
+					particles[i].points[8]  = new Point3d(60/size, 15/size, offset);
+					particles[i].points[9]  = new Point3d(20/size, 20/size, offset);
+
+					var cx = Math.random()*500-Math.random()*500,
+						cy = Math.random()*500-Math.random()*500,
+						cz =0;
+
+					particles[i].points.forEach(function (point) {
+						point.setVanishingPoint(vpX, vpY);
+						point.setCenter(cx,cy,cz);
+					});
+				}
+
+
+
+				  function move (point) {
+					point.rotateX();
+					point.rotateY();
+					//point.rotateY();
+					point.moveForward();
+				  }
+
+				  function draw (point, i) {
+					if (i !== 0) {
+					  context.lineTo(point.getScreenX(), point.getScreenY());
+					}
+				  }
+
+				  (function drawFrame () {
+					setTimeout(drawFrame, 10);
+					context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+
+					for(var i = 0; i < partNum; i++){
+						angleX = (1 - vpY) * 0.0001;
+						angleY = (1 - vpX) * 0.0005;
+
+						particles[i].points.forEach(move);
+						var points = particles[i].points;
+						if(points[0].z >-180){
+							context.fillStyle = "rgb(" + 200 + "," + 0  + "," + 0 + ")";
+							context.beginPath();
+							context.moveTo(points[0].getScreenX(), points[0].getScreenY());
+							points.forEach(draw);
+							context.closePath();
+							context.fill();
+						}
+					}
+				  }());
+				};
+		</script>
+	</body>
+</html>

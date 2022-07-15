@@ -1,0 +1,119 @@
+<!doctype html> 
+<html> 
+	<head> 
+		<title></title> 
+		<meta charset="utf-8" /> 
+	</head> 
+	<body> 
+		<canvas></canvas> 
+		<script> 
+			var c = document.getElementsByTagName('canvas')[0];
+			var b = document.body;
+			var a = c.getContext('2d');
+		</script> 
+		<script>
+			// Declare stuffs
+			var ma = Math,
+				si = ma.sin,
+				co = ma.cos,
+				ra = ma.random,
+				perspective,
+				points = [],
+				setPoint = function(x,y,z,snow){
+					if(!z){return y.zp[2] - x.zp[2]}
+					t = this;
+					t.xp = x;
+					t.yp = y;
+					t.zp = z;
+					t.x = [];
+					t.y = [];
+					t.z = [];
+					t.s = snow;
+					return t;
+				}
+			
+			// Set width/height
+			perspective = c.width = c.height = 512;
+			
+			// Sets up points for the cone
+			for (i=0; i < 16; i+=2) {
+				an = .3925* i;
+				an2 = .3925 * (i+1);
+				angl = 1.256;
+				/*var vx = [],
+					vy = [],
+					vz = [];	
+				vx[0] = (co(angle) * 100)/1.5;
+				vy[0] = 150;
+				vz[0] = (si(angle) * 100)/1.5;
+				vx[1] = 0;
+				vy[1] = -200;
+				vz[1] = 0;		
+				vx[2] = (co(angle2) * 100)/1.5;
+				vy[2] = 150
+				vz[2] = (si(angle2) * 100)/1.5;
+				*/
+				points[i] = new setPoint([(co(an) * 100)/1.5,0,(co(an2) * 100)/1.5],[150,-200,150],[(si(an) * 100)/1.5,0,(si(an2) * 100)/1.5]);
+				points[i+1] = new setPoint([co(angl*i)*16,co(angl*i+1)*16,co(angl*i+2)*16],[-210 + si(angl*i)*16,-210 + si(angl*i+1)*16,-210 + si(angl*i+2)*16],[0,0,0]);
+			}
+			
+			for(p in a){
+				a[p[0]+(p[6]||'')]=a[p];
+				points[i++] = new setPoint([,,ra() * perspective-300],[,,ra()*-350],[,,ra() * perspective-300],1)
+			}
+			//for(j=0;j<150;j++)points[15+j] = new setPoint([,,ra() * perspective-300],[,,ra()*-350],[,,ra() * perspective-300],1);
+
+			// render loop
+			setInterval(function () {
+				 with(a) {
+					fillStyle = "#000"
+					fc(0, 0, perspective, 256)
+					fillStyle = "#dde"
+					fc(0, 256, perspective, perspective)
+					points.sort(setPoint)
+					
+					//m(66,150); // moveTo ~~points[0].x[0],~~points[0].y[0]
+					
+					for (i = 0; i < 76; i++) {
+						var point = points[i],
+							px = point.xp,
+							py = point.yp,
+							pz = point.zp,
+							cosY = co(.003),
+							sinY = si(.003);
+						
+						if(point.s){
+							py[2]++
+							(py[2]>150)?py[2]=-300:0
+							//px[2]+=co(i)/2
+							//pz[2]+=si(i)/2;
+						}
+						
+						m(~~point.x[2],~~point.y[2]);
+						for(ve = 0; ve < 3; ve++){
+							//if snow
+							(point.s)?ve = 2:0;
+							point.xp[ve] = px[ve] * cosY - pz[ve] * sinY;
+							point.zp[ve] = pz[ve]  * cosY + px[ve] * sinY;	
+							
+							scl = perspective / (perspective + pz[ve]);
+							point.x[ve] = 256 + px[ve] * scl;
+							point.y[ve] = 256 + py[ve] * scl;
+							
+							if(point.s){
+								a(~~point.x[ve], ~~point.y[ve], 2, 0, ma.PI*2,true); 
+								fillStyle = "#fff"; 
+							}else{
+								l(~~point.x[ve],~~point.y[ve]); //lineTo
+								fillStyle = 'rgb(0, ' + ~~(140-pz[ve]) + ', 111)'; 
+							}	
+							f();
+							//s();
+						}
+						ba();
+					}
+				 }	
+			}, 10);
+		</script> 
+	</body> 
+</html>

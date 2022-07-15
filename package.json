@@ -1,0 +1,24 @@
+{
+  "name": "demos-and-deviations",
+  "version": "1.0.0",
+  "description": "Jason Brown aka Loktars code demos and ideas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loktar00/demos-and-deviations.git"
+  },
+  "keywords": [
+    "demo",
+    "generative",
+    "code"
+  ],
+  "author": "loktar00, Jason Brown",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/loktar00/demos-and-deviations/issues"
+  },
+  "homepage": "https://github.com/loktar00/demos-and-deviations#readme"
+}

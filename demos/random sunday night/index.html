@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			canvas{
+			background: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+	var canvas = document.getElementById("canvas"),
+		ctx = canvas.getContext("2d"),
+		balls = [];
+
+		canvas.width = window.innerWidth;
+		canvas.height = 100;
+
+		var canWidth = canvas.width,
+			canHeight = canvas.height;
+
+		for(var i = 0; i < 200; i++){
+			balls.push({
+				x : Math.random()*canWidth,
+				y : Math.random()*canHeight+10,
+				size : (Math.random()*5)+1
+			});
+		}
+
+		function draw(){
+			ctx.fillStyle = 'rgba(0,0,0,0.1)';
+			ctx.fillRect(0,0,canWidth, canHeight);
+
+			for(var i = 0; i < balls.length; i++){
+				var ball = balls[i];
+				ball.x++;
+				ball.y--;
+				if(ball.x > canWidth || ball.y <0){
+					ball.x = Math.random()*canWidth;
+					ball.y = Math.random()*canHeight+10;
+				}
+				var r = Math.floor(Math.random()*255);
+				   // g = Math.floor(Math.random()*255),
+					//b = Math.floor(Math.random()*255);
+
+				ctx.beginPath();
+				ctx.fillStyle = 'rgb(' + r + ',' + r + ',' + r + ')';
+				ctx.arc(ball.x,ball.y,ball.size,0, Math.PI*2);
+				ctx.fill();
+			}
+
+			setTimeout(draw,20);
+		}
+
+		draw();
+	</script>
+	</body>
+</html>

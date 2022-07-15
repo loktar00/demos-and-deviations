@@ -1,0 +1,152 @@
+<!doctype html> 
+<html> 
+	<head> 
+		<title></title> 
+		<meta charset="utf-8" /> 
+	</head> 
+	<body> 
+		<canvas></canvas> 
+		<script> 
+			var c = document.getElementsByTagName('canvas')[0];
+			var b = document.body;
+			var a = c.getContext('2d');
+		</script> 
+		<script>
+			// Declare stuffs
+			var ma = Math,
+				perspective = 512,
+				points = [],
+				sx = [],
+				sy = [],
+				sz = [],
+				sxp = [],
+				syp = [],
+				szp = [],
+				sections = 16;
+			
+			// Set width/height
+			c.width = c.height = 512;
+			
+			for(p in a){
+				//console.log(p + " : " + p[0]+(p[6]||''));
+				a[p[0]+(p[6]||'')]=a[p];
+			}
+			
+			var setPoint = function(x,y,z){
+				this.xp = x;
+				this.yp = y;
+				this.zp = z;
+				return this;
+			}
+			
+			// Sets up points for the cone
+			var index=0;
+			for (i=0; i < sections; i++) {
+			    angle = ma.PI * 2 / sections * i,
+				xpos = ma.cos(angle) * 100,
+				zpos = ma.sin(angle) * 100;
+				points.push(new setPoint(0,-200,0));
+				points.push(new setPoint(xpos/1.5,150,zpos/1.5));
+				//snow
+				
+				sxp[index] =  (Math.random()*300)-100;
+				syp[index]=  (Math.random()*300)-100;
+				szp[index] = (Math.random()*300)-100;
+				index++;
+				sxp[index] =  (Math.random()*300)-100;
+				syp[index]=  (Math.random()*300)-100;
+				szp[index] = (Math.random()*300)-100;
+			}
+			
+			// Sets up poly points
+			for(i=0;i<6;i++){	
+				angle=-1.5+ma.PI*2/5*i;
+				x = ma.cos(angle)*16,
+				y = -210 + ma.sin(angle)*16;
+				points.push(new setPoint(x,y,0));
+				
+				angle=-1+ma.PI*2/5*i;
+				x = ma.cos(angle)*8,
+				y = -210 + ma.sin(angle)*8;
+				points.push(new setPoint(x,y,0));			
+			}
+			// render loop
+			setInterval(function () {
+				 with(a) {
+					lingrad = cL(0,0,0,350);
+					lingrad.addColorStop(0, '#00ABEB');
+					lingrad.addColorStop(0.5, '#fff');
+					fillStyle = lingrad;  // fillStyle
+					fc(0, 0, 512, 512); // fillRect
+					ba();
+					m(~~points[0].x,~~points[0].y); // moveTo
+					for (i = 0; i < points.length; i++) {
+						
+						var px = points[i].xp,
+							py = points[i].yp,
+							pz = points[i].zp,
+							cosY = ma.cos(3*.001),
+							sinY = ma.sin(3*.001);
+						
+						points[i].xp = px * cosY - pz * sinY;
+						points[i].zp = pz * cosY + px * sinY;
+												
+						if(pz > -perspective){
+							scale = perspective / (perspective + pz);
+							points[i].x = 256 + px * scale;
+							points[i].y = 256 + py * scale;
+						}
+						
+						//snow
+						px = sxp[i];
+						py = syp[i];
+						pz = szp[i];
+						
+						sxp[i] = px * cosY - pz * sinY;
+						szp[i] = pz * cosY + px * sinY;
+						
+						if(pz > -perspective){
+							scale = perspective / (perspective + pz);
+							sx[i] = 256 + px * scale;
+							sy[i] = (256 + py * scale);
+						}
+						//snow
+						
+										
+						if(i==sections*2|| i>sections*2){	//draw the star
+							(i == sections*2)?ba():false;
+							l(~~points[i].x,~~points[i].y); //lineTo
+						}else{ //draw the tree
+							l(~~points[i].x,~~points[i].y); //lineTo
+							
+							if(i-1>-1){
+								l(~~points[i-1].x,~~points[i-1].y);
+							}else{
+								l(~~points[sections*2-1].x,~~points[sections*2-1].y);	
+							}
+							
+							if(points[i].zp<0){
+								fillStyle = "rgb(0, " + ~~(120-points[i].zp*2) + ", 0)"; 
+								f();
+							}
+							
+							ba(); //beginPath
+							fillStyle = "#000"; 
+							arc(~~sx[i], ~~sy[i], 10, 0, Math.PI*2, true); 
+							f();
+							
+							if(i-1>-1){
+								m(~~points[i-1].x,~~points[i-1].y);
+							}else{
+								m(~~points[sections*2-1].x,~~points[sections*2-1].y);	
+							}
+						}
+					}
+					
+					fillStyle = '#FFFF00';  // fillStyle
+					f();
+				 }
+			}, 10);
+		</script> 
+	</body> 
+</html>

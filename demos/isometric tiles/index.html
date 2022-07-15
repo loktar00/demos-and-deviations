@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+	var canvas = document.getElementById("canvas"),
+    	ctx = canvas.getContext("2d"),
+	    tileWidth = 32,
+	    tileHeight = tileWidth / 2;
+
+	canvas.width = 300;
+	canvas.height = 300;
+
+	// make some sample tiles
+	for (i = 0; i < 10; i++) {
+	    for (j = 0; j < 20; j++) {
+	        var color = getColor();
+	        ctx.fillStyle = "rgb(" + color + "," + color + "," + color + ")";
+	        var x = i * tileWidth,
+	            y = j * (tileHeight / 2);
+
+	        if (j % 2) {
+	            x = i * tileWidth - (tileWidth / 2);
+	        }
+
+	        ctx.beginPath();
+	        ctx.moveTo(x, y);
+	        ctx.lineTo(x + (tileWidth / 2), y + (tileHeight / 2));
+	        ctx.lineTo(x, y + (tileHeight));
+	        ctx.lineTo(x - (tileWidth / 2), y + (tileHeight / 2));
+	        ctx.lineTo(x, y);
+	        ctx.fill();
+	        ctx.closePath();
+	    }
+	}
+
+	// helper for colors
+
+
+	function getColor() {
+	    return Math.round((Math.random() * 180)) + 70;
+	}
+
+	</script>
+	</body>
+</html>

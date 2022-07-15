@@ -1,0 +1,50 @@
+body{
+	background: #000;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	font-size: 62.5%;
+	font-family: arial;
+}
+
+h1{
+	font-size: 3em;
+}
+
+#bgCanvas{
+	border: 2px solid #777777;
+	border-radius: 15px;
+}
+
+#gameContainer{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	text-align: center;
+	width: 800px;
+}
+
+#usage{
+	text-align: left;
+	font-size: 1.4em;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+#controls{
+	width: 30%;
+	float: left;
+}
+
+#descrip{
+	width: 70%;
+	float: right;
+}
+
+a{
+	color: #fff;
+}
+
+#toggle{
+	cursor: pointer;
+}

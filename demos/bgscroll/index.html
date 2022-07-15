@@ -1,0 +1,49 @@
+<html>
+	<body>
+		<canvas id="canvas" width="600" height="240"></canvas>
+		<script type="text/javascript">
+			 var ctx = document.getElementById("canvas").getContext("2d"),
+						  canvasTemp = document.createElement("canvas"),
+						  scrollImg = new Image(),
+						  tempContext = canvasTemp.getContext("2d"),
+						  imgWidth = 0,
+						  imgHeight =0,
+						  imageData = {},
+						  canvasWidth = 600,
+						  canvasHeight = 240,
+						  scrollVal = 0,
+						  speed =2;
+
+				scrollImg.src = "citybg.png";
+				scrollImg.onload = loadImage;
+
+				function loadImage(){
+					imgWidth = scrollImg.width,
+					imgHeight = scrollImg.height;
+					canvasTemp.width = imgWidth;
+					canvasTemp.height =  imgHeight;
+					tempContext.drawImage(scrollImg, 0,0, imgWidth, imgHeight);
+					imageData = tempContext.getImageData(0,0,imgWidth,imgHeight);
+					render();
+				}
+
+				function render(){
+					ctx.clearRect(0,0,canvasWidth,canvasHeight);
+
+					if(scrollVal >= canvasWidth-speed){
+						scrollVal = 0;
+					}
+
+					scrollVal+=speed;
+
+					// This is the bread and butter, you have to make sure the imagedata isnt larger than the canvas your putting image data to.
+					imageData = tempContext.getImageData(canvasWidth-scrollVal,0,scrollVal,canvasHeight);
+					ctx.putImageData(imageData, 0,0,0,0,scrollVal, imgHeight);
+					imageData = tempContext.getImageData(0,0,canvasWidth-scrollVal,canvasHeight);
+					ctx.putImageData(imageData, scrollVal,0,0,0,canvasWidth-scrollVal, imgHeight);
+
+					setTimeout(function(){render();},10);
+				}
+		</script>
+	</body>
+</html>

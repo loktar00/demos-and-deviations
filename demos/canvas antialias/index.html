@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h2>BadCanvas</h2>
+		<canvas id="badCanvas"></canvas>
+		<h2>Good Canvas</h2>
+		<canvas id="goodCanvas"></canvas>
+	<script>
+		var badCanvas = document.getElementById("badCanvas"),
+			goodCanvas = document.getElementById("goodCanvas"),
+			bCtx = badCanvas.getContext("2d"),
+			gCtx = goodCanvas.getContext("2d");
+
+		badCanvas.width = goodCanvas.width = badCanvas.height = goodCanvas.height = 300;
+
+		// Line example where the lines are blurry weird ect.
+		// Horizontal
+		bCtx.beginPath();
+		bCtx.moveTo(10,10);
+		bCtx.lineTo(200,10);
+		bCtx.stroke();
+		//Verticle
+		bCtx.beginPath();
+		bCtx.moveTo(30,30);
+		bCtx.lineTo(30,200);
+		bCtx.stroke();
+
+		// Proper way to draw them so they are "clear"
+		bCtx.lineWidth = 1;
+		gCtx.lineWidth = 1;
+
+		//Horizontal
+		gCtx.beginPath();
+		gCtx.moveTo(10,10.5);
+		gCtx.lineTo(200,10.5);
+		gCtx.stroke();
+		//Verticle
+		gCtx.beginPath();
+		gCtx.moveTo(30.5,30);
+		gCtx.lineTo(30.5,200);
+		gCtx.stroke();
+
+
+		// Change the line width
+		bCtx.lineWidth = 4;
+		gCtx.lineWidth = 4;
+
+
+		// Line example where the lines are blurry weird ect.
+		// Horizontal
+		bCtx.beginPath();
+		bCtx.moveTo(10,20.5);
+		bCtx.lineTo(200,20.5);
+		bCtx.stroke();
+		//Verticle
+		bCtx.beginPath()
+		bCtx.moveTo(50.5,30);
+		bCtx.lineTo(50.5,200);
+		bCtx.stroke();
+
+		// Proper way to draw them so they are "clear"
+		//Horizontal
+		gCtx.beginPath();
+		gCtx.moveTo(10,20);
+		gCtx.lineTo(200,20);
+		gCtx.stroke();
+		//Verticle
+		gCtx.beginPath();
+		gCtx.moveTo(50,30);
+		gCtx.lineTo(50,200);
+		gCtx.stroke();
+	</script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d");
+
+			canvas.width = canvas.height = 512;
+
+			function ball(x,y,z,size){
+			   this.x = x;
+			   this.y = y;
+			   this.z = z;
+
+			   this.xpos = 0;
+			   this.ypos = 0;
+
+			   this.size = size;
+			}
+
+		  var balls = [],
+			  numBalls = 20,
+			  fl = 250,
+			  vpX,
+			  vpY,
+			  angle = 180;
+
+			vpX = canvas.width / 2;
+			vpY = canvas.height / 2;
+
+			for (var i=0; i < numBalls; i++) {
+				balls.push(new ball(Math.random() * 200 , Math.random() *50,Math.random() * 50,5));
+			}
+
+			function draw(){
+				ctx.clearRect(0,0,canvas.width, canvas.height);
+				var angleX = 0,//(angle - vpY) * 0.001,
+					angleY = (angle - vpX) * 0.001;
+
+				for (var i=0; i < balls.length; i++) {
+					var ball = balls[i];
+
+					rotateX(ball, angleX);
+					rotateY(ball, angleY);
+					doPerspective(ball);
+					ctx.fillStyle = "#000";
+					ctx.beginPath();
+					ctx.arc(ball.xpos, ball.ypos, ball.size, 0, Math.PI*2, true);
+					ctx.closePath();
+					ctx.fill();
+				}
+				setTimeout(draw,30);
+			}
+
+		  function rotateX (ball, angleX) {
+			var cosX = Math.cos(angleX),
+				sinX = Math.sin(angleX),
+				y1 = ball.y * cosX - ball.z * sinX,
+				z1 = ball.z * cosX + ball.y * sinX;
+			ball.y = y1;
+			ball.z = z1;
+		  }
+
+		  function rotateY (ball, angleY) {
+			var cosY = Math.cos(angleY),
+				sinY = Math.sin(angleY),
+				x1 = ball.x* cosY - ball.z* sinY,
+				z1 = ball.z* cosY + ball.x* sinY;
+			ball.x= x1;
+			ball.z= z1;
+		  }
+
+			function doPerspective (ball) {
+				if (ball.z> -fl) {
+				var scale = fl / (fl + ball.z);
+				ball.size = scale*5;
+				ball.xpos = vpX + ball.x * scale;
+				ball.ypos = vpY + ball.y * scale;
+				}
+			}
+		draw();
+	</script>
+	</body>
+</html>

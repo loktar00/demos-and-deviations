@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400" style="background:#000;"></canvas>
+	<script>
+	(function(){
+			var ctx = document.getElementById("canvas").getContext("2d"),
+				x = 300,
+				y = 0,
+				targetX = Math.random()*300,
+				targetY = Math.random()*300,
+				velX = 0,
+				velY = 0,
+				thrust = 5;
+
+			var tx = targetX - x,
+					ty = targetY - y,
+					dist = Math.sqrt(tx*tx+ty*ty),
+					rad = Math.atan2(ty,tx),
+					angle = rad/Math.PI * 180;;
+
+				velX = (tx/dist)*thrust;
+				velY = (ty/dist)*thrust;
+
+			function draw(){
+
+
+				x += velX;
+				y += velY;
+
+				ctx.fillStyle = "#fff";
+				ctx.clearRect(0,0,400,400);
+				ctx.beginPath();
+				ctx.rect(x, y, 10, 10);
+				ctx.closePath();
+				ctx.fill();
+
+				ctx.fillStyle = "#ff0";
+				ctx.beginPath();
+				ctx.rect(targetX, targetY, 10, 10);
+				ctx.closePath();
+				ctx.fill();
+
+				setTimeout(function(){draw()}, 30);
+			}
+
+			draw();
+		})();
+	</script>
+	</body>
+</html>

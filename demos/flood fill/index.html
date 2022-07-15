@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d"),
+			dimensions = 512,
+			mapSize = 20
+			unitSize = dimensions/mapSize;
+
+		canvas.width = canvas.height = dimensions;
+
+		// preset data, change mapSize to 8 and call the floodfill method map to use this
+		var map = [[0,0,0,0,0,0,0,0,0],
+				   [0,0,1,1,1,1,1,0,0],
+				   [0,0,1,0,0,0,1,0,0],
+				   [0,0,1,0,0,0,1,0,0],
+				   [0,0,1,0,0,0,1,0,0],
+				   [0,0,0,1,0,0,1,0,0],
+				   [0,0,0,1,1,1,1,0,0],
+				   [0,0,0,0,0,0,0,0,0]];
+
+
+		// make a random map
+		var giantMap = [];
+		for(x = 0; x < mapSize; x++){
+			giantMap[x] = [];
+		  for(y = 0; y < mapSize; y++){
+			  var ranVal = Math.floor(Math.random()*100);
+
+			  giantMap[x][y] = 0;
+			  if(ranVal > 60){
+				  giantMap[x][y] = 1;
+			  }
+		  }
+		}
+
+		function drawMap(mapData){
+			for(var x = 0; x < mapSize; x++){
+			   for(var y = 0; y < mapSize; y++){
+				   ctx.fillStyle = "rgb(0,200,0)";
+				   if(mapData[x][y] == 1){
+					   ctx.fillStyle = "rgb(200,0,0)";
+				   }else if(mapData[x][y] >1){
+					   ctx.fillStyle = "rgb(0,0,200)";
+				   }
+				   ctx.fillRect(x*unitSize, y*unitSize, unitSize, unitSize );
+				}
+			}
+		}
+
+		function floodFill(mapData, x, y, oldVal, newVal){
+			var mapWidth = mapData.length,
+				mapHeight = mapData[0].length;
+
+				if(oldVal == null){
+					oldVal=mapData[x][y];
+				}
+
+				if(mapData[x][y] !== oldVal){
+					return true;
+				}
+
+			mapData[x][y] = newVal;
+
+			if (x > 0){ // left
+				floodFill(mapData, x-1, y, oldVal, newVal);
+			}
+			if(y > 0){ // up
+				floodFill(mapData, x, y-1, oldVal, newVal);
+			}
+			if(x < mapWidth-1){ // right
+				floodFill(mapData, x+1, y, oldVal, newVal);
+			}
+			if(y < mapHeight-1){ // down
+				floodFill(mapData, x, y+1, oldVal, newVal);
+			}
+		}
+
+		/*var ranX = Math.floor(Math.random()*mapSize),
+			ranY = Math.floor(Math.random()*mapSize);
+		*/
+		// make sure we try to fill an area thats not a "wall"
+		/*while(giantMap[ranX][ranY]==1){
+			ranX = Math.floor(Math.random()*mapSize);
+			ranY = Math.floor(Math.random()*mapSize);
+		}*/
+
+		floodFill(map, 3,3,null,2);
+
+		drawMap(map);
+
+	</script>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html> 
+<html> 
+	<head> 
+		<title></title> 
+		<meta charset="utf-8" /> 
+	</head> 
+	<body> 
+		<canvas></canvas> 
+		<script> 
+			var c = document.getElementsByTagName('canvas')[0];
+			var b = document.body;
+			var a = c.getContext('2d');
+		</script> 
+		<script>
+var d=Math,g=d.sin,h=d.cos,n=d.random,o,q=[];function rf(b,j,e,k){if(!e)return j.a[2]-b.a[2];t=this;t.c=b;t.d=j;t.a=e;t.x=[];t.y=[];t.e=[];t.b=k;return t}o=c.width=c.height=512;for(i=0;i<16;i+=2){x=0.3925*i;y=0.3925*(i+1);z=1.256;q[i]=new rf([h(x)*100/1.5,0,h(y)*100/1.5],[150,-200,150],[g(x)*100/1.5,0,g(y)*100/1.5]);q[i+1]=new rf([h(z*i)*8,h(z*i+1)*16,h(z*i+2)*8],[-210+g(z*i)*8,-210+g(z*i+1)*16,-210+g(z*i+2)*8],[0,0,0])}
+for(p in a){a[p[0]+(p[6]||"")]=a[p];q[i++]=new rf([,,n()*o-300],[,,n()*-350],[,,n()*o-300],1)}
+setInterval(function(){with(a){fillStyle="#000";fc(0,0,o,256);fillStyle="#dde";fc(0,256,o,o);q.sort(rf);for(i=0;i<76;i++){var b=q[i],j=b.c,e=b.d,k=b.a,s=h(0.0030),u=g(0.0030);if(b.b){e[2]++;e[2]>150&&(e[2]=-300)}m(~~b.x[2],~~b.y[2]);for(z=0;z<3;z++){b.b&&(z=2);b.c[z]=j[z]*s-k[z]*u;b.a[z]=k[z]*s+j[z]*u;scl=o/(o+k[z]);b.x[z]=256+j[z]*scl;b.y[z]=256+e[z]*scl;if(b.b){a(~~b.x[z],~~b.y[z],2,0,d.PI*2,true);fillStyle="#fff"}else{l(~~b.x[z],~~b.y[z]);fillStyle="rgb(0, "+~~(140-k[z])+", 111)"}f()}ba()}}},10);
+		</script> 
+	</body> 
+</html>

@@ -1,0 +1,373 @@
+<html> 
+	<head> 
+		<style type="text/css"> 
+			body{background:#161616; color:#fff; font-size:62.5%; text-shadow: 1px 1px 1px #000}
+			#wrapper{width: 960px; margin: 0 auto; font-size: 1.4em;}
+			#cell{float:right; min-width: 640px; text-align: center;}
+			#cellTex{border: 2px solid #444444;}
+			#settings{float: left; padding: 10px; border-radius: 5px; background: #343434; text-align:center; border: 2px solid #444444;}
+			h1{font-size: 1.6em;}
+			fieldset{border:none; width: 260px;}
+			input{float:right; width: 50px; border: 1px solid #868686;}
+			select{float:right;}
+			label{float:left; font-weight:bold;}
+			button{float:right;}
+			ol{list-style:none; margin: 0; padding: 0;}
+			ol li{clear:both; margin-bottom: 15px;}
+			a{display:block;margin:0 auto;color:#fff;)
+		 </style> 
+	</head> 
+	<body> 
+	<div id="wrapper"> 
+		<div id="settings"> 
+			<h1>Worley Texture Generator</h1> 
+			<fieldset> 
+				<ol> 
+					<li> 
+						<label>Method</label> 
+						<select id="renderMethod"> 
+							<option value="1">Standard</option> 
+							<option value="2">Inverse</option> 
+							<option value="3">D1 * D2</option> 
+							<option value="4">D2 - D1</option> 
+							<option value="5">SQRT(D1 * D2)</option> 
+							<option value="6">SQRT(D2 - D1)</option> 
+						</select> 
+					</li> 
+					<li> 
+						<label for="width">Width</label> <input type="text" id="width" value="640"/> 
+					</li> 
+					<li> 
+						<label  for="height">Height</label> <input type="text" id="height" value="480"/> 
+					</li> 
+					<li> 
+						<label  for="pSize">Pixel Size</label> <input type="text" id="pSize" value="4"/> 
+					</li> 
+					<li> 
+						<label for="points">Random Points</label> <input type="text" id="points" value="20"/> 
+					</li> 
+					<li> 
+						<label for="redC">Red</label> <input type="text" id="redC" value="255"/> 
+					</li> 
+					<li> 
+						<label  for="greenC">Green</label> <input type="text" id="greenC" value="255"/> 
+					</li> 
+					<li> 
+						<label  for="blueC">Blue</label> <input type="text" id="blueC" value="255"/> 
+					</li> 
+					<li> 
+						<label  for="animated">Animated</label> <input type="checkbox" id="animate"/> 
+					</li> 
+					<li> 
+						<button id="generate">Generate Texture</button> 
+					</li>
+					<li>
+						<button id="save">Save Texture</button> 
+					</li>
+				</ol> 
+			</fieldset> 
+				<a href="http://www.somethinghitme.com" title="Somethinghitme.com">More Random Demos</a>
+		</div> 
+		<div id="cell"> 
+			<canvas id="cellTex"></canvas> 
+		</div> 
+	</div> 
+	<script type="text/javascript"> 
+	var cellular = function(){
+			var points = [],
+				ranPoints = [],
+				canvas = [],
+				ctx = [],
+				settings ={
+					width : 256,
+					height : 256,
+					numPoints : 20,
+					pSize : 4,
+					renderType : 1,
+					animated : false,
+					rSet : 255,
+					gSet : 255,
+					bSet : 255
+				},
+				draw = function(){		
+					var	imageData = ctx.createImageData(settings.width, settings.height),
+						maxDist = 0,
+						width = settings.width,
+						height = settings.height,
+						pSize = settings.pSize,
+						renderType = settings.renderType,
+						animated = settings.animated,
+						rSet = settings.rSet,
+						gSet = settings.gSet,
+						bSet = settings.bSet;
+					
+					// Check distance with all other points
+					for(var x = 0; x < width; x+=pSize){
+						for(var y = 0; y < height; y+=pSize){
+							var pLen = ranPoints.length,
+								p = 0,
+								dist = 0,
+								dist2 = 0,
+								firstPoint = 0,
+								curMinDist = width * height;
+							
+							for(p=0; p < pLen; p++){
+								dist = Math.sqrt((ranPoints[p].x - x) *(ranPoints[p].x - x) + (ranPoints[p].y - y) * (ranPoints[p].y - y));
+								
+								if(dist < curMinDist){
+									firstPoint = p;
+									
+									switch(renderType){
+										case 1:
+											points[y * width + x] = dist * dist;
+											break;
+										case 2:
+											points[y * width + x] = 100 - dist;
+											break;
+									}
+ 
+									curMinDist = dist;
+								}
+							}
+							
+							
+							if(renderType > 2) {
+								var curMinDist2 = canvas.width * canvas.height;
+								
+								for(p=0; p < pLen; p++){
+									if(p !== firstPoint){
+										dist2 = Math.sqrt((ranPoints[p].x - x) *(ranPoints[p].x - x) + (ranPoints[p].y - y) * (ranPoints[p].y - y));
+										
+										if(dist2 < curMinDist2){
+											curMinDist2 = dist2;
+										}
+									}
+								}
+								
+								
+								switch(renderType){
+									case 3:
+										points[y * width + x] = curMinDist * curMinDist2;
+										break;
+									case 4:
+										points[y * width + x] = curMinDist2 - curMinDist;
+										break;
+									case 5:
+										points[y * width + x] = Math.sqrt(curMinDist * curMinDist2);
+										break;
+									case 6:
+										points[y * width + x] = Math.sqrt((curMinDist2 - curMinDist));
+										break;
+										
+								}
+							} 
+						}
+					}
+					
+					// Get max val to scale colors.
+					for(var x = 0; x < width; x+=pSize){
+						for(var y = 0; y < height; y+=pSize){
+							if(parseInt(points[y * width + x]) > maxDist){
+								maxDist = parseInt(points[y * width + x]);
+							}
+						}
+					}	
+					
+					// Draw points
+					for(var x = 0; x < width; x += pSize){
+						for(var y = 0; y < height; y += pSize){
+							for(var pix = 0; pix < pSize; pix++){
+								for(var piy = 0; piy < pSize; piy++){
+									i = ((x + pix) + (y + piy) * imageData.width) * 4;									
+									imageData.data[i+0] = parseInt(points[y * width + x] * (rSet/maxDist));
+									imageData.data[i+1] = parseInt(points[y * width + x] * (gSet/maxDist));
+									imageData.data[i+2] = parseInt(points[y * width + x] * (bSet/maxDist));
+									imageData.data[i+3] = 255;
+									
+								}
+							}
+						}
+					}
+					ctx.putImageData(imageData, 0, 0);
+ 
+					if(animated){
+						var t = setTimeout(function(){animate()}, 20);
+					}
+				},
+				animate = function(){
+					var pLen = ranPoints.length,
+						p = 0,
+						offset = 40,
+						width = settings.width,
+						height = settings.height;
+							
+					for(p=0; p < pLen; p++){
+						//ranPoints[p].angle+= .2;
+						ranPoints[p].x+=Math.sin(ranPoints[p].angle)*2;
+						ranPoints[p].y+=Math.sin(ranPoints[p].angle)*2;
+						
+						if(ranPoints[p].x > width+offset){
+							ranPoints[p].x = -offset;
+						}else if(ranPoints[p].x < -offset){
+							ranPoints[p].x = width + offset;
+						}
+						
+						if(ranPoints[p].y > height+offset){
+							ranPoints[p].y = -offset;
+						}else if(ranPoints[p].y < -offset){
+							ranPoints[p].y = height + offset;
+						}
+					}
+					
+					draw();
+				};
+			return {
+				init : function(options){
+					ranPoints = [];
+					ranPoints = [];
+					
+					// Init the options
+					if(options){
+						if(options.canvasId){
+							canvas = document.getElementById(options.canvasId);
+						}else{
+							canvas = document.getElementById("canvas");
+						}
+ 
+						settings.width = parseInt(canvas.width);
+						settings.height = parseInt(canvas.height);
+ 
+						if(options.width && options.height){
+							settings.width = options.width;
+							settings.height = options.height;
+							
+							canvas.width = options.width;
+							canvas.height = options.height;
+						}	
+						
+						if(options.points){
+							settings.numPoints = options.points;
+						}
+						
+						if(options.unitSize){
+							settings.pSize = options.unitSize;
+						}
+						
+						if(options.r){
+							settings.rSet = options.r;
+						}
+						
+						if(options.g){
+							settings.gSet = options.g;
+						}
+						
+						if(options.b){
+							settings.bSet = options.b;
+						}
+						
+						if(options.renderType){
+							settings.renderType = options.renderType;
+						}
+						
+						if(options.numPoints){
+							settings.numPoints = options.numPoints;
+						}
+						
+						settings.animated = options.animated;
+						ctx = canvas.getContext("2d");
+					}
+					
+					var canvasData = ctx.getImageData(0, 0, canvas.width, canvas.height),
+						x = 0, 
+						y = 0,
+						maxDist = 0,
+						gridX = settings.width / Math.sqrt(settings.numPoints),
+						gridY = settings.height / Math.sqrt(settings.numPoints),
+						cnt = 0;
+ 
+					/*for(x = 0; x < settings.width; x+= gridX){
+						for(y = 0; y < settings.height; y+= gridY){
+							var tempPoints = [];
+							tempPoints.x = Math.round(Math.random()* (x - (x-gridX)) + x-gridX),
+							tempPoints.y = Math.round(Math.random()* (y - (y-gridY)) + y-gridY);
+							
+							tempPoints.angle = Math.random()*360;
+							ranPoints.push(tempPoints);
+						}
+					}*/
+					
+					for(var i = 0; i < settings.numPoints; i++){
+						var tempPoints = [];
+							tempPoints.x = Math.round(Math.random()* settings.width),
+							tempPoints.y = Math.round(Math.random()* settings.height);
+							
+							tempPoints.angle = Math.random()*360;
+							ranPoints.push(tempPoints);
+					}
+					
+					draw();
+				},
+				setType : function(type){
+					settings.renderType = parseInt(type);
+					draw();
+				},
+				setColor : function(r,g,b){
+					settings.rSet = r;
+					settings.bSet = b;
+					settings.gSet = g;
+				},
+				setAnimated : function(isAnimated){
+					settings.animated = isAnimated;
+					draw();
+				}
+			};
+		}();
+ 
+	var genTex = function(){	
+		var renderEl = document.getElementById("renderMethod"),
+			renderMethod = parseInt(renderEl.options[renderEl.selectedIndex].value),
+			isAnimated = document.getElementById("animate").checked,
+			rInput = parseInt(document.getElementById("redC").value),
+			gInput = parseInt(document.getElementById("greenC").value),
+			bInput = parseInt(document.getElementById("blueC").value),
+			setWidth = parseInt(document.getElementById("width").value),
+			setHeight = parseInt(document.getElementById("height").value),
+			pixelSize = parseInt(document.getElementById("pSize").value),
+			points = parseInt(document.getElementById("points").value),
+			generate = document.getElementById("generate"),
+			save = document.getElementById("save");
+ 
+		cellular.init({
+						canvasId : "cellTex", 
+						width: setWidth, 
+						height: setHeight, 
+						unitSize : pixelSize, 
+						r : rInput, 
+						g : gInput, 
+						b : bInput, 
+						animated : isAnimated, 
+						renderType : renderMethod, 
+						numPoints : points
+					});	
+		
+	}
+	
+	window.onload = function(){				
+		//initial load
+		this.genTex();
+		
+		generate.onclick = function(){
+			genTex();
+		}
+		
+		save.onclick = function(){
+			var canvas = document.getElementById("cellTex"),
+				strDataURI = canvas.toDataURL();
+				
+			window.open(strDataURI);
+		}
+	
+	}
+	</script> 
+	</body> 
+</html>

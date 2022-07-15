@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			div{background: yellow; width:100px; height:100px; position:absolute; border:1px solid black;}
+		</style>
+	</head>
+	<body>
+		<div>Test 1</div>
+		<div>Test 2</div>
+		<div>Test 3</div>
+		<div>Test 4</div>
+		<div>Test 5</div>
+	<script>
+		var divs = document.getElementsByTagName('div');
+
+		for(var i = 0; i < divs.length; i++){
+			 divs[i].style.top = Math.random()*500 + 'px';
+			 divs[i].style.left = Math.random()*600 + 'px';
+			 divs[i].onclick = getClosest;
+		}
+
+
+		function getClosest(e){
+			 var x,y;
+			x = this.offsetLeft;
+			y = this.offsetTop;
+			console.log(x);
+			var minDist = 99999,
+				closestElement = {};
+
+			for(var i = 0; i < divs.length; i++){
+				if(divs[i] !== this){
+				   var x2 = divs[i].offsetLeft,
+					   y2 = divs[i].offsetTop;
+
+				   dist = Math.sqrt((x2 - x) *(x2-x) + (y2 - x) * (y2-x));
+
+				   if(dist < minDist){
+						minDist = dist;
+					   closestElement = divs[i];
+					}
+				}
+			}
+
+			closestElement.style.background = 'red';
+		}
+	</script>
+	</body>
+</html>

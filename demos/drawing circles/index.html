@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d"),
+			started = false,
+			startX = 0,
+			startY = 0;
+
+		canvas.width = canvas.height = 256;
+		ctx.fillRect(0,0,256,256);
+		ctx.strokeStyle = "#fff";
+
+		canvas.onclick = function(e){
+			if(started){
+				started = false;
+			}else{
+				started = true;
+
+			   if (e.pageX || e.pageY) {
+					startX = e.pageX;
+					startY = e.pageY;
+			   }else{
+				   startX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+				   startY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+				}
+			}
+
+		}
+
+		canvas.onmousemove = function(e){
+			cX = 0;
+			cY = 0;
+
+			if (e.pageX || e.pageY) {
+				cX = e.pageX;
+				cY = e.pageY;
+			}
+			else {
+				cX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+				cY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+			}
+
+			if(started){
+				cX -= canvas.offsetLeft;
+				cY -= canvas.offsetTop;
+				//get distance
+				var radius= Math.sqrt((cX - startX) *(cX - startX) + (cY - startY) * (cY-startY));
+
+				ctx.beginPath();
+				ctx.arc(startX,startY,radius,Math.PI*2,0);
+				ctx.stroke();
+			}
+		}
+	</script>
+	</body>
+</html>

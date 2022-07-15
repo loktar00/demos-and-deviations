@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			#wrapper{position:relative;}
+			#terCanvas{position:absolute;top:0;left:0}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<canvas id="bgCanvas"></canvas>
+			<canvas id="terCanvas"></canvas>
+		</div>
+	<script>
+		var terrain = document.getElementById("terCanvas"),
+			background = document.getElementById("bgCanvas"),
+			terCtx = terrain.getContext("2d"),
+			bgCtx = background.getContext("2d"),
+			width = 800,
+			height = 400;
+
+		terrain.width = background.width = width;
+		terrain.height= background.height = height;
+
+
+		// Some random points
+			var points = [],
+				displacement = 150,
+				power = Math.pow(2,Math.ceil(Math.log(width)/(Math.log(2))));
+
+			points[0] = (Math.random()*200)+100;
+			points[power] =(Math.random()*200)+100;
+
+			for(var i = 1; i<power; i*=2){
+				for(var j = (power/i)/2; j <power; j+=power/i){
+					points[j] = ((points[j - (power/i)/2] + points[j + (power/i)/2]) / 2) + Math.floor(Math.random()*-displacement+displacement );
+				}
+				displacement *= 0.6;
+			}
+
+		   terCtx.beginPath();
+
+			for(var i = 0; i<=width; i++){
+				if(i === 0){
+				   terCtx.moveTo(0, points[0]);
+				}else if(points[i] !== undefined){
+				   terCtx.lineTo(i, points[i]);
+				}
+			}
+
+		   terCtx.lineTo(width,terrain.height);
+		   terCtx.lineTo(0,terrain.height);
+		   terCtx.lineTo(0,points[0]);
+		   terCtx.fill();
+
+		// Random background
+		bgCtx.fillStyle = '#05004c';
+		bgCtx.fillRect(0,0,width,height);
+
+		var stars = [];
+		for(var i=0; i < 200; i++){
+			var size = Math.random()*2,
+				speed = Math.random()*1.5;
+			stars.push({x:Math.random()*width, y:Math.random()*height, size:size, speed:speed});
+		}
+
+		//animate background
+		function animate(){
+			bgCtx.fillStyle = '#05004c';
+			bgCtx.fillRect(0,0,width,height);
+			bgCtx.fillStyle = '#ffffff';
+
+			for(var i=0; i < stars.length; i++){
+				stars[i].x-=stars[i].speed;
+				if(stars[i].x<0){
+					stars[i].x = width;
+					stars[i].y = Math.random()*height;
+					stars[i].size = Math.random()*2;
+					stars[i].speed = Math.random()*1.5;
+				}else{
+					bgCtx.fillRect(stars[i].x,stars[i].y,stars[i].size,stars[i].size);
+				}
+			}
+			setTimeout(animate,30);
+		}
+		animate();
+
+	</script>
+	</body>
+</html>

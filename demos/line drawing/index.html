@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d"),
+			painting = false,
+			lastX = 0,
+			lastY = 0;
+
+		canvas.width = canvas.height = 600;
+		ctx.fillRect(0, 0, 600, 600);
+
+		canvas.onmousedown = function(e) {
+			if(!painting){
+				painting = true;
+			}else{
+				painting = false;
+			}
+			ctx.strokeStyle = "#ffffff";
+			startX = e.pageX - this.offsetLeft;
+			startY = e.pageY - this.offsetTop;
+			ctx.moveTo(startX, startY);
+		};
+
+		canvas.onmousemove = function(e) {
+			if (painting) {
+				mouseX = e.pageX - this.offsetLeft;
+				mouseY = e.pageY - this.offsetTop;
+
+				ctx.lineTo(mouseX, mouseY);
+				ctx.stroke();
+			}
+		}
+	</script>
+	</body>
+</html>
