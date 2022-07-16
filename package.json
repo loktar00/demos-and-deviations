@@ -1,6 +1,7 @@
 {
   "name": "demos-and-deviations",
   "version": "1.0.0",
+  "type": "module",
   "description": "Jason Brown aka Loktars code demos and ideas",
   "main": "index.js",
   "scripts": {
