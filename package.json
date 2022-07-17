@@ -5,6 +5,8 @@
   "description": "Jason Brown aka Loktars code demos and ideas",
   "main": "index.js",
   "scripts": {
+    "generate": "node ./scripts/generateList.js",
+    "build": "node ./scripts/makeSite.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/loktar00/demos-and-deviations/issues"
   },
-  "homepage": "https://github.com/loktar00/demos-and-deviations#readme"
+  "homepage": "https://github.com/loktar00/demos-and-deviations#readme",
+  "dependencies": {
+    "fs-extra": "^10.1.0"
+  }
 }
