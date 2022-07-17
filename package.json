@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/loktar00/demos-and-deviations#readme",
   "dependencies": {
-    "fs-extra": "^10.1.0"
+    "fs-extra": "^10.1.0",
+    "graceful-fs": "^4.2.10"
   }
 }
