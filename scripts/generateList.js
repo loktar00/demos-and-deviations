@@ -29,7 +29,7 @@ async function generateListOfFiles(basePath) {
         }
     });
 
-    if (!existsSync(destiniationDirectory) {
+    if (!existsSync(destiniationDirectory)) {
         mkdirSync(destiniationDirectory);
     }
 
