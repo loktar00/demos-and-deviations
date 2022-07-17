@@ -1,0 +1,7 @@
+{
+    "description": "a* pathfinding algorithm",
+    "tags": [
+        "pathfinding",
+        "game"
+    ]
+}

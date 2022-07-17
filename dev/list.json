@@ -1,136 +1,99 @@
 [
   {
     "name": "2d raycast light",
-    "tags": [
-      "raycast"
-    ]
+    "tags": []
   },
   {
     "name": "3d doodle",
-    "tags": [
-      "3d"
-    ]
+    "tags": []
+  },
+  {
+    "name": "3d rotating cylinder",
+    "tags": []
   },
   {
     "name": "a star algorithm",
-    "tags": [
-      "pathfinding",
-      "game"
-    ]
+    "tags": []
   },
   {
     "name": "angular rotation",
-    "tags": [
-      "rotate"
-    ]
+    "tags": []
   },
   {
     "name": "bgscroll",
-    "tags": [
-      "scrolling"
-    ]
+    "tags": []
+  },
+  {
+    "name": "c64 print chr dwitter",
+    "tags": []
   },
   {
     "name": "c64demo",
-    "tags": [
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "canvas antialias",
-    "tags": [
-      "canvas methods"
-    ]
+    "tags": []
   },
   {
     "name": "canvas bokeh",
-    "tags": [
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "canvas lightning",
-    "tags": [
-      "lightning"
-    ]
-  },
-  {
-    "name": "canvasshooter",
-    "tags": [
-      "game"
-    ]
-  },
-  {
-    "name": "canvasterrain",
-    "tags": [
-      "terrain",
-      "midpoint displacement",
-      "algorithm"
-    ]
+    "tags": []
   },
   {
     "name": "canvas zom",
-    "tags": [
-      "game"
-    ]
+    "tags": []
+  },
+  {
+    "name": "canvasshooter",
+    "tags": []
+  },
+  {
+    "name": "canvasterrain",
+    "tags": []
   },
   {
     "name": "cell",
-    "tags": [
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "change canvas color",
-    "tags": [
-      "canvas methods"
-    ]
+    "tags": []
   },
   {
     "name": "closest element",
-    "tags": [
-      "dom"
-    ]
+    "tags": []
   },
   {
     "name": "css rotary number dial",
-    "tags": [
-      "css",
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "detect color",
-    "tags": [
-      "canvas methods"
-    ]
+    "tags": []
+  },
+  {
+    "name": "dna strand dwitter",
+    "tags": []
   },
   {
     "name": "draw fans",
-    "tags": [
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "draw straight lines",
-    "tags": [
-      "demo",
-      "drawing",
-      "interactive"
-    ]
+    "tags": []
   },
   {
     "name": "drawing circles",
-    "tags": [
-      "demo",
-      "drawing"
-    ]
+    "tags": []
   },
   {
     "name": "dressup",
-    "tags": [
-      "game"
-    ]
+    "tags": []
   },
   {
     "name": "dual canvas mask parralax",
@@ -138,223 +101,174 @@
   },
   {
     "name": "flood fill",
-    "tags": [
-      "algorithm"
-    ]
+    "tags": []
   },
   {
     "name": "game engine walk example with map",
-    "tags": [
-      "game"
-    ]
+    "tags": []
   },
   {
     "name": "glow",
-    "tags": [
-      "algorithm",
-      "canvas methods"
-    ]
+    "tags": []
   },
   {
     "name": "isometric tiles",
-    "tags": [
-      "isometric",
-      "canvas methods",
-      "tilemap"
-    ]
+    "tags": []
   },
   {
     "name": "js1k christmas tests",
-    "tags": [
-      "js1k",
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "js1k love",
-    "tags": [
-      "js1k",
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "js1k terrain",
-    "tags": [
-      "js1k",
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "jsgrapple",
-    "tags": [
-      "game",
-      "js1k"
-    ]
+    "tags": []
   },
   {
     "name": "jslander",
-    "tags": [
-      "game"
-    ]
+    "tags": []
+  },
+  {
+    "name": "lava texture scroller",
+    "tags": []
   },
   {
     "name": "light displacement",
-    "tags": [
-      "algorithm",
-      "light",
-      "bump map"
-    ]
+    "tags": []
   },
   {
     "name": "line drawing",
-    "tags": [
-      "interactive",
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "mass particles",
-    "tags": [
-      "demo",
-      "particles"
-    ]
+    "tags": []
   },
   {
     "name": "match three game",
-    "tags": [
-      "game"
-    ]
+    "tags": []
   },
   {
     "name": "metaball text",
-    "tags": [
-      "demo",
-      "algorithm"
-    ]
+    "tags": []
   },
   {
     "name": "metaballs",
-    "tags": [
-      "demo",
-      "algorithm"
-    ]
+    "tags": []
   },
   {
     "name": "move target constant rate",
-    "tags": [
-      "game method",
-      "snippet"
-    ]
+    "tags": []
   },
   {
     "name": "nbody orbit with my game framework",
-    "tags": [
-      "algorithm",
-      "physics",
-      "game framework"
-    ]
+    "tags": []
   },
   {
     "name": "nbody orbit with zoom",
-    "tags": [
-      "algorithm",
-      "physics"
-    ]
+    "tags": []
+  },
+  {
+    "name": "paint dripping dwitter",
+    "tags": []
   },
   {
     "name": "parralax demo 1",
-    "tags": [
-      "canvas methods"
-    ]
+    "tags": []
   },
   {
     "name": "particle test with my framework",
-    "tags": [
-      "particles",
-      "game framework"
-    ]
+    "tags": []
+  },
+  {
+    "name": "pile of poop dwitter",
+    "tags": []
+  },
+  {
+    "name": "planet dwitter",
+    "tags": []
   },
   {
     "name": "pre generate sprite rotations",
-    "tags": [
-      "canvas methods",
-      "sprite"
-    ]
+    "tags": []
   },
   {
     "name": "pre generated sprite rotation game test",
-    "tags": [
-      "canvas methods",
-      "sprite",
-      "game method"
-    ]
+    "tags": []
+  },
+  {
+    "name": "rainbow road",
+    "tags": []
   },
   {
     "name": "random sunday night",
-    "tags": [
-      "demo"
-    ]
+    "tags": []
   },
   {
     "name": "react hackathon 2014",
-    "tags": [
-      "demo",
-      "game"
-    ]
+    "tags": []
   },
   {
     "name": "ribbitsmash js13k entry 2015",
-    "tags": [
-      "js13k",
-      "demo",
-      "game"
-    ]
+    "tags": []
   },
   {
     "name": "rotate ellipse",
-    "tags": [
-      "canvas methods"
-    ]
+    "tags": []
   },
   {
     "name": "rotate on canvas",
-    "tags": [
-      "canvas methods"
-    ]
+    "tags": []
   },
   {
     "name": "satellite launching game",
-    "tags": [
-      "game",
-      "game framework"
-    ]
+    "tags": []
+  },
+  {
+    "name": "scrolling waves dwitter no cycle",
+    "tags": []
+  },
+  {
+    "name": "scrolling waves dwitter rainbow cycle",
+    "tags": []
   },
   {
     "name": "section circle",
-    "tags": [
-      "canvas methods"
-    ]
+    "tags": []
+  },
+  {
+    "name": "shared",
+    "tags": []
   },
   {
     "name": "sopa ludum date game entry 2012",
-    "tags": [
-      "game",
-      "game framework"
-    ]
+    "tags": []
+  },
+  {
+    "name": "sweeping circles dwitter",
+    "tags": []
   },
   {
     "name": "tetris full screen",
-    "tags": [
-      "game",
-      "demo",
-      "interactive"
-    ]
+    "tags": []
+  },
+  {
+    "name": "texture scroller",
+    "tags": []
+  },
+  {
+    "name": "thermal texture scroller",
+    "tags": []
   },
   {
     "name": "word find",
-    "tags": [
-      "game",
-      "interactive"
-    ]
+    "tags": []
   }
 ]

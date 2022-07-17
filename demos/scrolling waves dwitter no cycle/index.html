@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+        <style>
+            html,body{
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+	</head>
+	<body>
+		<canvas id="c" width="1920" height="1080"></canvas>
+	    <script>
+            const c = document.getElementById('c');
+            const x = c.getContext('2d');
+            const R = function(r,g,b,a) {
+                return `rgba(${r},${g},${b},${a})`;
+            };
+            const C = Math.cos;
+            const S = Math.sign;
+            const T = Math.tan;
+            const time = Date.now();
+
+            function u(t) {
+                for(x.drawImage(c,0,-1),W=-t*6,i=2e3;i;i--)x.fillStyle=`hsl(${t*20},99%,${90*S(W+=.1)}%)`,x.fillRect(i+10*S(9*t),1080,1,-S(W))
+            }
+
+            function draw() {
+                requestAnimationFrame(draw);
+                u(Date.now() - time);
+            }
+
+            draw();
+        </script>
+	</body>
+</html>
