@@ -1,7 +1,7 @@
 // Get all of the demo directories and build the links.
 import path from 'path';
 import { readdir } from "fs/promises";
-import { writeFileSync } from "fs";
+import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -20,6 +20,8 @@ async function generateListOfFiles(basePath) {
 
 (async () => {
     const files = await generateListOfFiles(baseBath);
+    const destiniationDirectory = path.join(__dirname, '../dist');
+
     const fileList = files.map(file => {
         return {
             name: file,
@@ -27,7 +29,11 @@ async function generateListOfFiles(basePath) {
         }
     });
 
-    writeFileSync(path.join(__dirname, '../dist/list.json'), JSON.stringify(fileList, null, 2));
+    if (!existsSync(destiniationDirectory)) {
+        mkdirSync(destiniationDirectory);
+    }
+
+    writeFileSync(`${destiniationDirectory}/list.json`, JSON.stringify(fileList, null, 2));
 })();
 
 
