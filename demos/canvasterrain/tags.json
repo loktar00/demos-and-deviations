@@ -1,0 +1,11 @@
+{
+    "description": "Canvas terrain generation",
+    "tags": [
+        "midpoint displacement",
+        "diamond square",
+        "terrain",
+        "shadows",
+        "lighting",
+        "texture"
+    ]
+}
