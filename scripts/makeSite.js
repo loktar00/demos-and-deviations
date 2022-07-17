@@ -1,6 +1,7 @@
-import list from './list.json' assert { type: 'json'};
+import list from '../dist/list.json' assert { type: 'json'};
 import path from 'path';
 import { readFile } from "fs/promises";
+import fs from "fs-extra";
 import { writeFileSync } from "fs";
 import { fileURLToPath } from 'url';
 
@@ -24,5 +25,13 @@ async function readIndex() {
 
     const html = fileData.replace('{{main}}', `<ol>${links.join('')}</ol>`);
 
-    writeFileSync(path.join(__dirname, '../index.html'), html);
+    writeFileSync(path.join(__dirname, '../dist/index.html'), html);
+
+    try {
+        fs.copySync(path.join(__dirname, '../demos'), path.join(__dirname,'../dist/demos'));
+        console.log('demo copy succes!')
+      } catch (err) {
+        console.error(err)
+      }
+
 })();
