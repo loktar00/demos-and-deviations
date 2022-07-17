@@ -7,7 +7,7 @@
   "scripts": {
     "generate": "node ./scripts/generateList.js",
     "makeSite": "node ./scripts/makeSite.js",
-    "build": "npm run generate & npm run makeSite",
+    "build": "npm run generate && npm run makeSite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
