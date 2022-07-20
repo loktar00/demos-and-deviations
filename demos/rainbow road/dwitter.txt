@@ -1,0 +1,1 @@
+for(V=2e3,i=0;i<V;i++)x.fillStyle=`hsl(${S(t+i*.03)*100},99%,50%)`,x.fillRect(V*S(6.28*i/96)*4*.1,V+V*C(6.28*i/V),1e3,1e3)

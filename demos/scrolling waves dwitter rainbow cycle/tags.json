@@ -1,5 +1,6 @@
 {
     "description": "Done from scratch instead of following the patterns I had in my original was able to golf it down to an acceptable size.",
+    "type": "dwitter",
     "tags": [
         "dwitter",
         "generation",

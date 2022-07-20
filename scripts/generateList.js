@@ -1,15 +1,16 @@
 // Get all of the demo directories and build the links.
 import path from 'path';
-import { readdir } from "fs/promises";
+import { readdir, readFile } from "fs/promises";
 import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const baseBath = path.join(__dirname, '../demos');
+const basePath = path.join(__dirname, '../demos');
 
-async function generateListOfFiles(basePath) {
-    return readdir(baseBath, (err, files) => {
+// Grabs all the directories in /demos
+async function generateListOfDemos(basePath) {
+    return readdir(basePath, (err, files) => {
         if (err) {
             console.log(err);
         }
@@ -18,22 +19,58 @@ async function generateListOfFiles(basePath) {
     });
 }
 
+// Loads the file in the directory
+async function getFile(file) {
+    return readFile(file, 'utf8')
+        .then(data => {
+            return data;
+        })
+        .catch(err => console.log(err));
+}
+
+
 (async () => {
-    const files = await generateListOfFiles(baseBath);
-    const destiniationDirectory = path.join(__dirname, '../dist');
+    const demos = await generateListOfDemos(basePath);
+    const destiniationDirectory = path.join(__dirname, '../dist/demos');
 
-    const fileList = files.map(file => {
-        return {
-            name: file,
-            tags: []
-        }
-    });
-
+    // Create the dist directory
     if (!existsSync(destiniationDirectory)) {
-        mkdirSync(destiniationDirectory);
+        mkdirSync(destiniationDirectory, { recursive: true });
     }
 
-    writeFileSync(`${destiniationDirectory}/list.json`, JSON.stringify(fileList, null, 2));
+    let fileList = [];
+
+    for (const demo of demos) {
+        const tagData = await getFile(`${basePath}/${demo}/tags.json`);
+        let tagJSON = {};
+
+        try {
+            tagJSON = JSON.parse(tagData);
+        } catch (e) {
+            console.error(e);
+        }
+
+        if (tagJSON?.type === 'dwitter') {
+            const dwitterIndex = await getFile('./templates/dwitter.html');
+            const dwitterCode = await getFile(`${basePath}/${demo}/dwitter.txt`);
+            const generatedIndex = dwitterIndex.replace('{{dwitter_code}}', dwitterCode);
+            const demoDirectory = path.join(__dirname, `../dist/demos/${demo}`);
+
+            if (!existsSync(demoDirectory)) {
+                mkdirSync(demoDirectory, { recursive: true });
+            }
+
+            writeFileSync(`${demoDirectory}/index.html`, generatedIndex);
+        }
+
+        fileList.push({
+            name: demo,
+            tags: tagJSON?.tags || [],
+            description: tagJSON?.description || ''
+        })
+    }
+
+    writeFileSync(path.join(__dirname, '../dist/list.json'), JSON.stringify(fileList, null, 2));
 })();
 
 

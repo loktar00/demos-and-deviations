@@ -1,5 +1,6 @@
 {
     "description": "A bit crappy.",
+    "type": "dwitter",
     "tags": [
         "dwitter",
         "generation",
