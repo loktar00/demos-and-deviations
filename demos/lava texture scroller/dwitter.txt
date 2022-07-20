@@ -1,0 +1,1 @@
+for(i=1,x.drawImage(c,0,-1);i<2e3;)Q=((S(i*.01)/2+.6)*140)+C(t)*80,L=Q,x.fillStyle=`hsl(${L/4},90%,50%)`,x.fillRect(i,1080,1,-Q),i++

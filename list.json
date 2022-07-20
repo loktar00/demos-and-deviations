@@ -1,274 +1,457 @@
 [
   {
     "name": "2d raycast light",
-    "tags": []
+    "tags": [
+      "raycast"
+    ],
+    "description": "Example of raycasting lights"
   },
   {
     "name": "3d doodle",
-    "tags": []
+    "tags": [
+      "3d"
+    ],
+    "description": "Random 3d doodle"
   },
   {
     "name": "3d rotating cylinder",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "3d"
+    ],
+    "description": ""
   },
   {
     "name": "a star algorithm",
-    "tags": []
+    "tags": [
+      "pathfinding",
+      "game"
+    ],
+    "description": "a* pathfinding algorithm"
   },
   {
     "name": "angular rotation",
-    "tags": []
+    "tags": [
+      "angular",
+      "rotation"
+    ],
+    "description": ""
   },
   {
     "name": "bgscroll",
-    "tags": []
+    "tags": [
+      "background",
+      "repeat",
+      "scroll",
+      "game",
+      "scrolling",
+      "example"
+    ],
+    "description": "Example of a repeating background scrolling"
   },
   {
     "name": "c64 print chr dwitter",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "c64",
+      "generative"
+    ],
+    "description": "#c64 10 PRINT CHR$(205.5+RND(1)); : GOTO 10"
   },
   {
     "name": "c64demo",
-    "tags": []
+    "tags": [
+      "c64",
+      "demo",
+      "scroller"
+    ],
+    "description": "Tribute I did to the commodore 64 in the style of the old school crack intros."
   },
   {
     "name": "canvas antialias",
-    "tags": []
+    "tags": [
+      "canvas",
+      "example"
+    ],
+    "description": "Properly anti aliasing with canvas"
   },
   {
     "name": "canvas bokeh",
-    "tags": []
+    "tags": [
+      "bokeh",
+      "generative",
+      "random",
+      "art"
+    ],
+    "description": "Random bokeh"
   },
   {
     "name": "canvas lightning",
-    "tags": []
+    "tags": [
+      "lightning",
+      "generative",
+      "lines"
+    ],
+    "description": "Canvas lightning"
   },
   {
     "name": "canvas zom",
-    "tags": []
+    "tags": [
+      "zombie",
+      "game",
+      "interactive"
+    ],
+    "description": "Canvas Zombie game prototype"
   },
   {
     "name": "canvasshooter",
-    "tags": []
+    "tags": [
+      "aliens",
+      "scrolling",
+      "map",
+      "game",
+      "interactive"
+    ],
+    "description": "Canvas Shooter"
   },
   {
     "name": "canvasterrain",
-    "tags": []
+    "tags": [
+      "midpoint displacement",
+      "diamond square",
+      "terrain",
+      "shadows",
+      "lighting",
+      "texture"
+    ],
+    "description": "Canvas terrain generation"
   },
   {
     "name": "cell",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "change canvas color",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "closest element",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "css rotary number dial",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "detect color",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "dna strand dwitter",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "3d",
+      "rainbow"
+    ],
+    "description": "Boredom, just something to get the mind going for the day."
   },
   {
     "name": "draw fans",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "draw straight lines",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "drawing circles",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "dressup",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "dual canvas mask parralax",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "flood fill",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "game engine walk example with map",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "glow",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "isometric tiles",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "js1k christmas tests",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "js1k love",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "js1k terrain",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "jsgrapple",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "jslander",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "lava texture scroller",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "texture",
+      "generative art"
+    ],
+    "description": "Kind of prefer the orange"
   },
   {
     "name": "light displacement",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "line drawing",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "mass particles",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "match three game",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "metaball text",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "metaballs",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "move target constant rate",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "nbody orbit with my game framework",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "nbody orbit with zoom",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "paint dripping dwitter",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "texture",
+      "paint",
+      "generative art"
+    ],
+    "description": "Pain dripping, original https://codepen.io/loktar00/pen/QbdZWz"
   },
   {
     "name": "parralax demo 1",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "particle test with my framework",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "pile of poop dwitter",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "generative art",
+      "crappy art"
+    ],
+    "description": "A bit crappy."
   },
   {
     "name": "planet dwitter",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "texture",
+      "generative art",
+      "spance",
+      "planet"
+    ],
+    "description": "#Planet thing."
   },
   {
     "name": "pre generate sprite rotations",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "pre generated sprite rotation game test",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "rainbow road",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "texture",
+      "generative art",
+      "rainbow"
+    ],
+    "description": "Rainbow Road"
   },
   {
     "name": "random sunday night",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "react hackathon 2014",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "ribbitsmash js13k entry 2015",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "rotate ellipse",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "rotate on canvas",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "satellite launching game",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "scrolling waves dwitter no cycle",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "texture",
+      "generative art",
+      "scroller",
+      "rainbow"
+    ],
+    "description": "Scrolling waves, original https://codepen.io/loktar00/pen/pJRbOd wish I could have fit color cycling in"
   },
   {
     "name": "scrolling waves dwitter rainbow cycle",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "texture",
+      "generative art",
+      "scroller"
+    ],
+    "description": "Done from scratch instead of following the patterns I had in my original was able to golf it down to an acceptable size."
   },
   {
     "name": "section circle",
-    "tags": []
-  },
-  {
-    "name": "shared",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "sopa ludum date game entry 2012",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "sweeping circles dwitter",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "texture",
+      "generative art",
+      "animation"
+    ],
+    "description": "Rainbow Road"
   },
   {
     "name": "tetris full screen",
-    "tags": []
+    "tags": [],
+    "description": ""
   },
   {
     "name": "texture scroller",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "texture",
+      "generative art",
+      "scroller"
+    ],
+    "description": "Just a random scroller original vs is from 2013, https://codepen.io/loktar00/details/BCEvp"
   },
   {
     "name": "thermal texture scroller",
-    "tags": []
+    "tags": [
+      "dwitter",
+      "generation",
+      "texture",
+      "generative art"
+    ],
+    "description": ""
   },
   {
     "name": "word find",
-    "tags": []
+    "tags": [],
+    "description": ""
   }
 ]

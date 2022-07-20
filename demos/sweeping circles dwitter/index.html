@@ -12,6 +12,7 @@
 	<body>
 		<canvas id="c" width="1920" height="1080"></canvas>
 	    <script>
+            const FPS = 60;
             const c = document.getElementById('c');
             const x = c.getContext('2d');
             const R = function(r,g,b,a) {
@@ -20,15 +21,29 @@
             let C = Math.cos;
             let S = Math.sin;
             let T = Math.tan;
-            let time = Date.now();
+            let frame = 0;
+            let nextFrameMs = 0;
+            let time = 0;
 
             function u(t) {
                 for(r=100,!t&&x.scale(20,20),i=0;i<r*r;i++)X=i%r,Y=i/r,V=X-r,W=Y-r,d=V*V+W*W,x.fillStyle=R(d%(250*C(t)),0,d%(250*S(t))),x.fillRect(X,Y,1,1);
             }
 
-            function draw() {
+            function draw(frame_time) {
                 requestAnimationFrame(draw);
-                u(Date.now() - time);
+                epsilon = 1.5; // Acounts for different timestamp resolution and slight jitter
+                if (frame_time < nextFrameMs - epsilon) {
+                    return;  // Skip this cycle as we are animating too quickly.
+                }
+                nextFrameMs = Math.max(nextFrameMs + 1000 / FPS, frame_time);
+
+                time = frame / FPS;
+                if(time * FPS | 0 == frame - 1){
+                    time += 0.000001;
+                }
+
+                frame++;
+                u(time);
             }
 
             draw();
