@@ -53,7 +53,7 @@ async function getFile(file) {
         if (tagJSON?.type === 'dwitter') {
             const dwitterIndex = await getFile('./templates/dwitter.html');
             const dwitterCode = await getFile(`${basePath}/${demo}/dwitter.txt`);
-            const generatedIndex = dwitterIndex.replace('{{dwitter_code}}', dwitterCode);
+            const generatedIndex = dwitterIndex.replaceAll('{{dwitter_code}}', dwitterCode);
             const demoDirectory = path.join(__dirname, `../dist/demos/${demo}`);
 
             if (!existsSync(demoDirectory)) {
