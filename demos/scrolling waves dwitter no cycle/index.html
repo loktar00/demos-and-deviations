@@ -20,7 +20,7 @@
             const C = Math.cos;
             const S = Math.sign;
             const T = Math.tan;
-            const time = Date.now();
+            let time = Date.now();
 
             function u(t) {
                 for(x.drawImage(c,0,-1),W=-t*6,i=2e3;i;i--)x.fillStyle=`hsl(${t*20},99%,${90*S(W+=.1)}%)`,x.fillRect(i+10*S(9*t),1080,1,-S(W))

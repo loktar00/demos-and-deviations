@@ -20,7 +20,7 @@
             const C = Math.cos;
             const S = Math.sign;
             const T = Math.tan;
-            const time = Date.now();
+            let time = Date.now();
 
             function u(t) {
                 for(S=10,D=750,x.scale(3,3),i=0;i<D*D;i+=S)!t&&x.fillText(~~(2*Math.random())?"╱":"╲",i%D,~~(i/D)*S);
