@@ -1,5 +1,6 @@
 {
     "description": "#Planet thing.",
+    "type": "dwitter",
     "tags": [
         "dwitter",
         "generation",
