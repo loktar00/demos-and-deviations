@@ -17,9 +17,9 @@
             const R = function(r,g,b,a) {
                 return `rgba(${r},${g},${b},${a})`;
             };
-            const C = Math.cos;
-            const S = Math.sign;
-            const T = Math.tan;
+            let C = Math.cos;
+            let S = Math.sin;
+            let T = Math.tan;
             let time = Date.now();
 
             function u(t) {
