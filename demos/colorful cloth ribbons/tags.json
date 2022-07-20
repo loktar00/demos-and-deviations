@@ -1,0 +1,13 @@
+{
+    "description": "Heavily inspired by the amazing work done by Dan Gries of Rectangle World @RectangleWorld. Using midpoint displacement and morphing between points, the sweeping lines make an awesome effect. \nedit thanks to @towc fork which sped up the drawing process.",
+    "type": "codepen",
+    "date": "SEPTEMBER 26, 2014",
+    "tags": [
+        "codepen",
+        "canvas",
+        "pattern",
+        "ribbons",
+        "colorful",
+        "generative"
+    ]
+}

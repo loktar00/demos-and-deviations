@@ -1,0 +1,13 @@
+{
+    "description": "Was playing Doom the other day and was reminded of this effect. I wanted to give it a shot using js and canvas of course. The original .c source can be seen here https://github.com/id-Software/DOOM/blob/master/linuxdoom-1.10/f_wipe.c",
+    "type": "codepen",
+    "date": "JULY 13, 2013",
+    "tags": [
+        "codepen",
+        "canvas",
+        "doom",
+        "transition",
+        "melt",
+        "wipe"
+    ]
+}

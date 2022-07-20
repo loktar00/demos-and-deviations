@@ -50,17 +50,32 @@ async function getFile(file) {
             console.error(e);
         }
 
-        if (tagJSON?.type === 'dwitter') {
-            const dwitterIndex = await getFile('./templates/dwitter.html');
-            const dwitterCode = await getFile(`${basePath}/${demo}/dwitter.txt`);
-            const generatedIndex = dwitterIndex.replaceAll('{{dwitter_code}}', dwitterCode);
-            const demoDirectory = path.join(__dirname, `../dist/demos/${demo}`);
+        let generatedIndex = null;
+        const demoDirectory = path.join(__dirname, `../dist/demos/${demo}`);
 
-            if (!existsSync(demoDirectory)) {
-                mkdirSync(demoDirectory, { recursive: true });
-            }
+        switch(tagJSON?.type) {
+            case 'dwitter':
+                const dwitterIndex = await getFile('./templates/dwitter.html');
+                const dwitterCode = await getFile(`${basePath}/${demo}/dwitter.txt`);
+                generatedIndex = dwitterIndex.replaceAll('{{dwitter_code}}', dwitterCode);
 
-            writeFileSync(`${demoDirectory}/index.html`, generatedIndex);
+                if (!existsSync(demoDirectory)) {
+                    mkdirSync(demoDirectory, { recursive: true });
+                }
+
+                writeFileSync(`${demoDirectory}/index.html`, generatedIndex);
+                break;
+            case 'codepen':
+                const codepenIndex = await getFile('./templates/codepen.html');
+                const codepenHtml = await getFile(`${basePath}/${demo}/markup.html`);
+                generatedIndex = codepenIndex.replaceAll('{{html}}', codepenHtml);
+
+                if (!existsSync(demoDirectory)) {
+                    mkdirSync(demoDirectory, { recursive: true });
+                }
+
+                writeFileSync(`${demoDirectory}/index.html`, generatedIndex);
+                break;
         }
 
         fileList.push({
