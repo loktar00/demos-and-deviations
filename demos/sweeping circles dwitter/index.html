@@ -20,7 +20,7 @@
             const C = Math.cos;
             const S = Math.sign;
             const T = Math.tan;
-            const time = Date.now();
+            let time = Date.now();
 
             function u(t) {
                 for(r=100,!t&&x.scale(20,20),i=0;i<r*r;i++)X=i%r,Y=i/r,V=X-r,W=Y-r,d=V*V+W*W,x.fillStyle=R(d%(250*C(t)),0,d%(250*S(t))),x.fillRect(X,Y,1,1);

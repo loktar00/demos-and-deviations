@@ -20,7 +20,7 @@
             const C = Math.cos;
             const S = Math.sign;
             const T = Math.tan;
-            const time = Date.now();
+            let time = Date.now();
 
             function u(t) {
                 for(c.width|=0,X=10,z=-1e3,i=0,f=C(t)*400+2e3;i<f;i++)v=f/(f+z),x.beginPath(),x.arc(-z+X*C(i+t)*10*v,X*i/12*v,5*v,0,6.28),x.fill()
