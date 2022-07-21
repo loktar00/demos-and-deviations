@@ -28,6 +28,13 @@ async function readIndex() {
     writeFileSync(path.join(__dirname, '../dist/index.html'), html);
 
     try {
+        fs.copySync(path.join(__dirname, '../public/'), path.join(__dirname,'../dist/'));
+        console.log('public files copy succes!')
+      } catch (err) {
+        console.error(err)
+      }
+
+    try {
         fs.copySync(path.join(__dirname, '../demos'), path.join(__dirname,'../dist/demos'));
         console.log('demo copy succes!')
       } catch (err) {

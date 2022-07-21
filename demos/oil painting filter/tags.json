@@ -1,0 +1,11 @@
+{
+    "description": "Answered a question on SO (http://stackoverflow.com/questions/24222556/apply-a-oil-paint-sketch-effect-to-a-photo-using-javascript/24223242#24223242) on how to do an oil painting filter using canvas. Looks pretty good in my opinion. Still looking for ways to improve performance.",
+    "type": "codepen",
+    "date": "JUNE 14, 2014",
+    "tags": [
+        "codepen",
+        "canvas",
+        "particles",
+        "terrain"
+    ]
+}

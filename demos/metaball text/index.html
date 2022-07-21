@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
-	<head>
-			<title>Mass Particles</title>
-			<style>
+<head>
+<title>Metaball Text</title>
+<style>
 body, html {
     background-color: #3c3c3c;
     color: #fff;
@@ -25,7 +25,6 @@ body, html {
 				<canvas id="canvas"></canvas><br/>
 				<input type="text" maxlength="7"/>
 			</div>
-			<script src="http://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
 			<script>
 			"use strict";
 		(function () {
@@ -186,7 +185,7 @@ body, html {
 		        	grad.addColorStop(0, "rgba(" + r + "," + g + "," + b + ",1)");
 			        grad.addColorStop(1, "rgba(" + r + "," + g + "," + b + ",0)");
 			        metaCtx.fillStyle = grad;
-			       
+
 		        	metaCtx.arc(particle.x, particle.y, particle.size, 0, Math.PI*2);
 					metaCtx.fill();
 		    }
@@ -194,11 +193,11 @@ body, html {
 
 			for(var i = 0; i < this.orphans.length; i++){
 				var orphan = this.orphans[i];
-				
+
 				if(orphan.y < canvas.height){
 					orphan.ty += orphan.speed;
 				}
-			}		    
+			}
 
 			if(settings.CycleColors){
 				colorCycle();
@@ -261,7 +260,7 @@ body, html {
 		function metabalize(){
 		    var imageData = metaCtx.getImageData(0,0,width,height),
 		        pix = imageData.data;
-		    
+
 		    for (var i = 0, n = pix.length; i <n; i += 4) {
 		        if(pix[i+3]<threshold){
 		           pix[i+3]/=6;
@@ -270,14 +269,14 @@ body, html {
 		            }
 		        }
 		    }
-		    ctx.putImageData(imageData, 0, 0);    
+		    ctx.putImageData(imageData, 0, 0);
 		}
 
 		function colorCycle(){
 		    cycle+=0.1;
 
 		    if(cycle>100){
-		        cycle = 0;   
+		        cycle = 0;
 		    }
 		    settings.Color.r = ~~(Math.sin(.3*cycle + 0) * 127+ 128);
 		    settings.Color.g =  ~~(Math.sin(.3*cycle + 2) * 127+ 128);
@@ -287,7 +286,7 @@ body, html {
 		function inactiveDemo(){
 			// this whole func is a hack.. just added to do something w/o needing interaction
 			demo.timePassed = new Date().getTime() - demo.lastTime;
-			
+
 			if(demo.timePassed > demo.nextStringWait){
 				var lastTime = demo.lastTime;
 

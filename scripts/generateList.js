@@ -52,10 +52,11 @@ async function getFile(file) {
 
         let generatedIndex = null;
         const demoDirectory = path.join(__dirname, `../dist/demos/${demo}`);
+        const codepenIndex = await getFile('./templates/codepen.html');
+        const dwitterIndex = await getFile('./templates/dwitter.html');
 
         switch(tagJSON?.type) {
             case 'dwitter':
-                const dwitterIndex = await getFile('./templates/dwitter.html');
                 const dwitterCode = await getFile(`${basePath}/${demo}/dwitter.txt`);
                 generatedIndex = dwitterIndex.replaceAll('{{dwitter_code}}', dwitterCode);
 
@@ -66,9 +67,12 @@ async function getFile(file) {
                 writeFileSync(`${demoDirectory}/index.html`, generatedIndex);
                 break;
             case 'codepen':
-                const codepenIndex = await getFile('./templates/codepen.html');
                 const codepenHtml = await getFile(`${basePath}/${demo}/markup.html`);
                 generatedIndex = codepenIndex.replaceAll('{{html}}', codepenHtml);
+
+                // Quite a few of my pens use datgui just include it if we need it.
+                // Idea of this repo is to keep all my work working so self hosting it
+                generatedIndex = generatedIndex.replaceAll('{{datgui}}', `<script src='/js/datgui.min.js'></script>`);
 
                 if (!existsSync(demoDirectory)) {
                     mkdirSync(demoDirectory, { recursive: true });

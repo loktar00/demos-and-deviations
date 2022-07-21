@@ -1,0 +1,14 @@
+{
+    "description": "If you happen to own an oculus rift you can run this in full screen and take a ride through the tunnel\n
+    Note to see the effect in chrome use the link\n
+    chrome://flags/#enable-experimental-web-platform-features",
+    "type": "codepen",
+    "date": "MARCH 18, 2014",
+    "tags": [
+        "codepen",
+        "canvas",
+        "virtual reality",
+        "oculus rift",
+        "tunnel"
+    ]
+}

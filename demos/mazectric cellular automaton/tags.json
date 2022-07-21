@@ -1,0 +1,10 @@
+{
+    "description": "Update to my last pen, changed the rendering a bit. Generates mazes, but spreads out from the seeds.",
+    "type": "codepen",
+    "date": "AUGUST 1, 2013",
+    "tags": [
+        "codepen",
+        "canvas",
+        "automaton"
+    ]
+}

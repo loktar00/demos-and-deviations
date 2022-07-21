@@ -1,0 +1,12 @@
+body {
+    background:#1d1d1d;
+}
+.img-box {
+    width:854px;
+    margin:20px auto;
+    border:10px solid #ececec;
+    height:480px;
+}
+canvas {
+    position:absolute;
+}

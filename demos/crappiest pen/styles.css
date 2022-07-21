@@ -1,0 +1,14 @@
+body {
+  font-family:'Roboto Slab', serif;
+  background:#1a1a1a;
+  text-align:center;
+}
+canvas {
+  width:450px;
+  height:400px;
+}
+h1 {
+  color:#5f1f1f;
+  font-size:4em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
