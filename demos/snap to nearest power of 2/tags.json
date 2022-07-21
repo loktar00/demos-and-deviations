@@ -1,0 +1,10 @@
+{
+    "description": "This is a little tip for those participating in #LOWREZJAM. In this jam you have to make a game based on a 32x32 playing field. However, you are allowed to scale up the display to make things easier to see, as long as the underlying rendering remains at 32x32. With that stipulation, it is in your best interest to scale your game only by powers of 2. The function in this pen will snap to the nearest power of 2 that fits within the window.\nForked from Jack Rugile's Pen Snap to Nearest Fitting Power of 2..",
+    "type": "codepen",
+    "date": "NOVEMBER 21, 2013",
+    "tags": [
+        "codepen",
+        "canvas",
+        "power of 2"
+    ]
+}

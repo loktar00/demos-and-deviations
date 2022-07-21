@@ -1,0 +1,52 @@
+.toggle {
+    --size: 1.125rem;
+    --width: calc(1.125rem * 2);
+    display: inline-grid;
+    align-items: center;
+    width: var(--width);
+    height: var(--size);
+    cursor: pointer;
+  }
+
+  .toggle::before {
+    content: "";
+    grid-area: 1 / -1;
+    width: var(--width);
+    height: var(--size);
+    transition: all 250ms ease;
+    border-radius: var(--width);
+    background-color: #000;
+  }
+
+  .toggle:hover::before {
+    box-shadow: 0 0 0 2px #aef;
+  }
+
+  .toggle::after {
+    content: "";
+    grid-area: 1 / -1;
+    width: calc(var(--size) * 0.8);
+    height: calc(var(--size) * 0.8);
+    transform: translateX(10%);
+    transform-origin: center center;
+    transition: all 250ms ease;
+    border-radius: 100%;
+    background: #fff;
+  }
+
+  .toggle:checked::before {
+    background-color: #2be;
+  }
+
+  .toggle:checked::after {
+     transform: translateX(calc(var(--width) - var(--size) * 0.8 - 10%));
+  }
+
+  .toggle:disabled {
+    pointer-events: none;
+    filter: grayscale(1);
+  }
+
+  .toggle:disabled::before {
+     background: #2be;
+  }

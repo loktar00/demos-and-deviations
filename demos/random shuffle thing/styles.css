@@ -1,0 +1,47 @@
+.card {
+  background: #fff;
+  position: absolute;
+  -webkit-border-radius: 6px;
+  height: 80px;
+  width: 60px;
+  border: 1px solid #000;
+  float:left;
+  -webkit-transform-origin: 50% 100%;
+  -webkit-animation-name:             dostuff;
+  -webkit-animation-duration:         3s;
+  -webkit-animation-iteration-count:  infinite;
+  -webkit-transition-timing-function: linear;
+
+}
+.card:after, .card:before {
+  content: attr(data-number) " " attr(data-suit);
+  position: absolute;
+}
+.card:before {
+  top: 10px;
+  left: 10px;
+}
+.card:after {
+  bottom: 10px;
+  right: 10px;
+  -webkit-transform: rotate(180deg);
+}
+
+@-webkit-keyframes dostuff{
+0%{
+      left:10%;
+  -webkit-transform: rotate(0deg);
+}
+25%{
+  left:90%;
+  -webkit-transform: rotate(360deg);
+}
+50%{
+  left:10%;
+  -webkit-transform: rotate(0deg);
+}
+75%{
+  left:10%;
+  -webkit-transform: rotate(0deg);
+}
+}

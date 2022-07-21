@@ -1,0 +1,13 @@
+{
+    "description": "Made this by accident when messing around with canvas performance. Its done taking the highest difference of the alpha values using putImageData on line 64.",
+    "type": "codepen",
+    "date": "JUNE 6, 2014",
+    "tags": [
+        "codepen",
+        "canvas",
+        "particles",
+        "smoke",
+        "alpha",
+        "difference"
+    ]
+}

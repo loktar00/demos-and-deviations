@@ -1,0 +1,10 @@
+{
+    "description": "Cached the gradient image rather than drawing it each frame, performance is greatly increased.",
+    "type": "codepen",
+    "date": "JUNE 3, 2013",
+    "tags": [
+        "codepen",
+        "canvas",
+        "metaballs"
+    ]
+}

@@ -1,0 +1,34 @@
+body{background:#0b121d;overflow:hidden;}
+
+#moon{
+  position:absolute;
+  left: 50%;
+  top: 5%;
+  margin-left:-250px;
+  width:500px;
+  height:500px;
+  border-radius:500px;
+  background:-webkit-gradient(radial,center center,1,center center,250,from(#fcfadb),color-stop(10%, #cdc66f),color-stop(95%,rgba(11,18,29,0)));
+  -webkit-animation-name:             rise;
+  -webkit-animation-duration:         8s;
+}
+
+#moon:before{
+  position:absolute;
+  left:100px;
+  top:100px;
+  content:"";
+  width:300px;
+  height:300px;
+  border-radius:300px;
+  background:-webkit-gradient(radial,center center,1,center center,200,from(#fcfadb),to(#cdc66f))
+}
+
+@-webkit-keyframes rise{
+  0%{
+    top:100%;
+  }
+  100%{
+    top:5%;
+  }
+}

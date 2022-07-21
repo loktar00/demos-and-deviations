@@ -1,0 +1,80 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/polymer.js"></script>
+<!-- Define your custom element -->
+<polymer-element name="static-img" attributes="width height density animated">
+    <template>
+        <canvas id="static"></canvas>
+    </template>
+    <script>
+        Polymer('static-img', {
+            // Defaults
+            width : 256,
+            height : 256,
+            density : 1,
+            animated : true,
+            created: function() {},
+            domReady: function() {},
+
+            // Fires when the "<polymer-element>" has been fully prepared
+            ready: function() {
+                this.canvas = this.$.static;
+                this.ctx = this.canvas.getContext('2d');
+
+                this.canvas.width = this.width;
+                this.canvas.height = this.height;
+
+                this.render();
+            },
+            render: function(){
+                // In case these were updated
+                this.canvas.width = this.width;
+                this.canvas.height = this.height;
+
+                var density     = this.density,
+                    width       = this.canvas.width,
+                    height      = this.canvas.height,
+                    animated    = this.animated,
+                    imageData   = this.ctx.createImageData(width, height),
+                    pixData     = imageData.data,
+                    pIdx        = 0,
+                    gray        = 0;
+
+                    for (var y = 0; y < height; y += density) {
+                        for (var x = 0; x < width; x += density) {
+                            gray = Math.floor(Math.random() * 255);
+                            for (var w = 0; w < density; w++) {
+                                for (var h = 0; h < density; h++) {
+                                    pIdx = ((x + w) + (y + h) * width) * 4;
+
+                                    pixData[pIdx] = gray;
+                                    pixData[pIdx + 1] = gray;
+                                    pixData[pIdx + 2] = gray;
+                                    pixData[pIdx + 3] = 255;
+                                }
+                            }
+
+                        }
+                    }
+
+                    this.ctx.putImageData(imageData, 0, 0);
+
+                    if(animated){
+                        this.raf = requestAnimationFrame(this.render.bind(this));
+                    }
+            },
+            attached: function() {},
+            detached: function() {
+                cancelAnimationFrame(this.raf);
+            },
+            attributeChanged: function(attr, oldVal, newVal) {}
+        });
+    </script>
+</polymer-element>
+
+<!-- Use the static img
+accepts width, height, density, and animated as attributes.
+Density is the size of the pixels, 1 is the default however the larger the element the more of a performance hit.
+-->
+<static-img density="8"></static-img>
+
+  <a href="https://github.com/loktar00/static-img"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>

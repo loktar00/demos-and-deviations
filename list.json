@@ -22,6 +22,26 @@
     "description": ""
   },
   {
+    "name": "3d sketcher",
+    "tags": [
+      "codepen",
+      "canvas",
+      "3d",
+      "generation"
+    ],
+    "description": "Random idea I had, turns 2d sketches 3d."
+  },
+  {
+    "name": "4th of july fireworks",
+    "tags": [
+      "codepen",
+      "canvas",
+      "fireworks",
+      "particles"
+    ],
+    "description": "Quick pen in celebration of the 4th of July!"
+  },
+  {
     "name": "a star algorithm",
     "tags": [
       "pathfinding",
@@ -38,6 +58,16 @@
     "description": ""
   },
   {
+    "name": "bezier curve art",
+    "tags": [
+      "codepen",
+      "canvas",
+      "bezier-curve",
+      "generative-art"
+    ],
+    "description": "Messing around and this happened, looks purdy."
+  },
+  {
     "name": "bgscroll",
     "tags": [
       "background",
@@ -48,6 +78,26 @@
       "example"
     ],
     "description": "Example of a repeating background scrolling"
+  },
+  {
+    "name": "burn away effect",
+    "tags": [
+      "codepen",
+      "canvas",
+      "burn",
+      "html5"
+    ],
+    "description": "Was inspired by Red Orchestra's loading images, came up with the following effect. Also I love me some Spartacus too bad the series is all over."
+  },
+  {
+    "name": "c64 code art",
+    "tags": [
+      "codepen",
+      "canvas",
+      "text-art",
+      "c64"
+    ],
+    "description": "Furloughed from Gov work decided to come up with a bloated JS/Canvas vs of the famous\n10 PRINT CHR$(205.5+RND(1)); : GOTO 10"
   },
   {
     "name": "c64 print chr dwitter",
@@ -61,6 +111,7 @@
   {
     "name": "c64demo",
     "tags": [
+      "codepen",
       "c64",
       "demo",
       "scroller"
@@ -78,12 +129,22 @@
   {
     "name": "canvas bokeh",
     "tags": [
+      "codepen",
       "bokeh",
       "generative",
       "random",
       "art"
     ],
     "description": "Random bokeh"
+  },
+  {
+    "name": "canvas heat mapping",
+    "tags": [
+      "codepen",
+      "canvas",
+      "heatmap"
+    ],
+    "description": "A friend of mine @Abhishrek asked for a quick demo on creating heatmaps created this to show him. Its something thats pretty simple overall but the way the colors blend make it look so cool."
   },
   {
     "name": "canvas lightning",
@@ -137,9 +198,103 @@
     "description": ""
   },
   {
+    "name": "circle circuit logo",
+    "tags": [
+      "codepen",
+      "canvas",
+      "logo",
+      "circuit"
+    ],
+    "description": "Random Friday pen #2. Making a point to do something every Friday to push myself."
+  },
+  {
+    "name": "circuit board pattern",
+    "tags": [
+      "codepen",
+      "canvas",
+      "circuit-board",
+      "pattern",
+      "procedural"
+    ],
+    "description": "Creates random circuit board traces. The code is meh, but the effect turned out pretty cool.\nEach traces checks the pixels in front of them as they travel if the alpha value is anything other than 0 they change direction by 45 degrees."
+  },
+  {
     "name": "closest element",
     "tags": [],
     "description": ""
+  },
+  {
+    "name": "color cycler",
+    "tags": [
+      "codepen",
+      "canvas",
+      "colorcycle",
+      "gradient"
+    ],
+    "description": "Was messing around on the SO Javascript chat with @rlemon and @Shmiddty came up with some color cycling code.. well really just a modification of the cycling base code I always use."
+  },
+  {
+    "name": "colorful cloth ribbons",
+    "tags": [
+      "codepen",
+      "canvas",
+      "pattern",
+      "ribbons",
+      "colorful",
+      "generative"
+    ],
+    "description": "Heavily inspired by the amazing work done by Dan Gries of Rectangle World @RectangleWorld. Using midpoint displacement and morphing between points, the sweeping lines make an awesome effect. \nedit thanks to @towc fork which sped up the drawing process."
+  },
+  {
+    "name": "crappiest pen",
+    "tags": [
+      "codepen",
+      "canvas",
+      "crap",
+      "swirl"
+    ],
+    "description": "I've discovered the crap algorithm! Messing around with some effects.. and well I couldn't pass this up."
+  },
+  {
+    "name": "creation of the universe",
+    "tags": [
+      "codepen",
+      "canvas",
+      "stars",
+      "glow"
+    ],
+    "description": "A bit resource intensive on the machine I'm testing on. Anyway just a project born out of boredom."
+  },
+  {
+    "name": "css animated waves",
+    "tags": [
+      "codepen",
+      "css",
+      "animation",
+      "waves"
+    ],
+    "description": "messing around with making waves using css3 rather than JS. Its a bit different than you might expect. Pieces of the sky are actually moving."
+  },
+  {
+    "name": "css eyes",
+    "tags": [
+      "codepen",
+      "css",
+      "animation",
+      "eyes",
+      "interactive"
+    ],
+    "description": "Eyes that follow your cursor. He gets mad when you you make him cross eyed! I'm getting in the Halloween spirit a bit early this year."
+  },
+  {
+    "name": "css moon",
+    "tags": [
+      "codepen",
+      "css",
+      "moon",
+      "radial-gradient"
+    ],
+    "description": "Inspired by the night before christmas."
   },
   {
     "name": "css rotary number dial",
@@ -159,6 +314,45 @@
       "rainbow"
     ],
     "description": "Boredom, just something to get the mind going for the day."
+  },
+  {
+    "name": "dna strand stackoverflow",
+    "tags": [
+      "codepen",
+      "canvas",
+      "3d",
+      "html5",
+      "double-helix"
+    ],
+    "description": "This question was asked, and I had to try my hand at it. Heavily inspired by things learned from Foundation HTML5 Animation with JavaScript"
+  },
+  {
+    "name": "doom screen wipe effect",
+    "tags": [
+      "codepen",
+      "canvas",
+      "doom",
+      "transition",
+      "melt",
+      "wipe"
+    ],
+    "description": "Was playing Doom the other day and was reminded of this effect. I wanted to give it a shot using js and canvas of course. The original .c source can be seen here https://github.com/id-Software/DOOM/blob/master/linuxdoom-1.10/f_wipe.c"
+  },
+  {
+    "name": "dot wave",
+    "tags": [
+      "codepen",
+      "canvas"
+    ],
+    "description": "Dot wave"
+  },
+  {
+    "name": "dot wave with colors",
+    "tags": [
+      "codepen",
+      "canvas"
+    ],
+    "description": "Dot wave with colors"
   },
   {
     "name": "draw fans",
@@ -186,9 +380,52 @@
     "description": ""
   },
   {
+    "name": "early hacker",
+    "tags": [
+      "codepen",
+      "canvas",
+      "hacking",
+      "console"
+    ],
+    "description": "Created this as an answer for This code golf question (http://codegolf.stackexchange.com/questions/30322/make-it-look-like-im-working/30335#30335) was definitely going for the late 80's early 90's hacker screens. Even made a super serious domain for it http://guihacker.com and yeah this totally could be done in 100% css but I love my canvas. Definitely looks better fullscreen"
+  },
+  {
+    "name": "exploding 3d clock",
+    "tags": [
+      "codepen",
+      "canvas",
+      "3d",
+      "particles"
+    ],
+    "description": "Messing around with canvas, 3d, and the time."
+  },
+  {
     "name": "flood fill",
     "tags": [],
     "description": ""
+  },
+  {
+    "name": "following snake text",
+    "tags": [
+      "codepen",
+      "transform",
+      "css rotate",
+      "follow",
+      "inverse kinematics"
+    ],
+    "description": "Was a bit bored and put this together, uses elements and transform rotate to change the text... doesn't use canvas :O! Which is blasphemy for me!"
+  },
+  {
+    "name": "forever forward",
+    "tags": [
+      "codepen",
+      "canvas",
+      "rings",
+      "arc",
+      "swim",
+      "rainbow"
+    ],
+    "description": "Evolved from a few simple arcs just kept adding more and settled on this."
   },
   {
     "name": "game engine walk example with map",
@@ -196,14 +433,87 @@
     "description": ""
   },
   {
+    "name": "ghostly explosion",
+    "tags": [
+      "codepen",
+      "canvas",
+      "particles",
+      "smoke",
+      "alpha",
+      "difference"
+    ],
+    "description": "Made this by accident when messing around with canvas performance. Its done taking the highest difference of the alpha values using putImageData on line 64."
+  },
+  {
     "name": "glow",
     "tags": [],
     "description": ""
   },
   {
+    "name": "glowing spheres",
+    "tags": [
+      "codepen",
+      "canvas",
+      "gradient"
+    ],
+    "description": "Playing around with creating manual gradients.. this looked neat."
+  },
+  {
+    "name": "happy halloween 2013",
+    "tags": [
+      "codepen",
+      "canvas",
+      "particles",
+      "smoke",
+      "halloween"
+    ],
+    "description": "Added to my old smoke experiment to create a creepier effect."
+  },
+  {
+    "name": "hexel flames",
+    "tags": [
+      "codepen",
+      "canvas",
+      "particles",
+      "hexel",
+      "FIRE"
+    ],
+    "description": "Got the idea from the following image http://hexraystudios.com/img/TrixelFireplace_1280x800.png they also make a pretty cool painting app http://hexraystudios.com/hexels/"
+  },
+  {
+    "name": "infinite simple terrain generation 2",
+    "tags": [
+      "codepen",
+      "canvas",
+      "terrain",
+      "scroller"
+    ],
+    "description": "The doom melt effect got me thinking about simple terrain, trying to avg the neighbors both in front and behind to make a cool effect. Thanks also to @jackrugile for helping me out on my twitch stream :) Heres Jacks Pen that he worked on as well. Ours are pretty close http://codepen.io/jackrugile/pen/9c8c8606958690378a6044dddc64faaf"
+  },
+  {
     "name": "isometric tiles",
     "tags": [],
     "description": ""
+  },
+  {
+    "name": "its snowing",
+    "tags": [
+      "codepen",
+      "canvas",
+      "snow",
+      "interactive"
+    ],
+    "description": "Super simple snow I threw together for an answer on stack overflow. Added some simple mouse interaction to make flakes move away from the cursor."
+  },
+  {
+    "name": "javascript 2d dynamic lighting",
+    "tags": [
+      "codepen",
+      "canvas",
+      "lighting",
+      "dynamic-lighting"
+    ],
+    "description": "Old demo I did a while back showing a simple 2d dynamic lighting effect."
   },
   {
     "name": "js1k christmas tests",
@@ -261,14 +571,53 @@
     "description": ""
   },
   {
+    "name": "mazectric cellular automaton",
+    "tags": [
+      "codepen",
+      "canvas",
+      "automaton"
+    ],
+    "description": "Update to my last pen, changed the rendering a bit. Generates mazes, but spreads out from the seeds."
+  },
+  {
+    "name": "messing with simple terrain generation",
+    "tags": [
+      "codepen",
+      "canvas",
+      "terrain"
+    ],
+    "description": "The doom melt effect got me thinking about simple terrain, trying to avg the neighbors both in front and behind to make a cool effect. Thanks also to @jackrugile for helping me out on my twitch stream :) Heres Jacks Pen that he worked on as well. Ours are pretty close http://codepen.io/jackrugile/pen/9c8c8606958690378a6044dddc64faaf"
+  },
+  {
     "name": "metaball text",
-    "tags": [],
-    "description": ""
+    "tags": [
+      "metaball",
+      "text",
+      "interactive",
+      "canvas"
+    ],
+    "description": "Metaball text"
   },
   {
     "name": "metaballs",
-    "tags": [],
-    "description": ""
+    "tags": [
+      "codepen",
+      "canvas",
+      "metaballs"
+    ],
+    "description": "Metaballs"
+  },
+  {
+    "name": "meteor shower",
+    "tags": [
+      "codepen",
+      "canvas",
+      "stars",
+      "space",
+      "parralax",
+      "terrain"
+    ],
+    "description": "Just a random starry night and a meteor shower. The terrain is generated using midpoint displacement.."
   },
   {
     "name": "move target constant rate",
@@ -286,6 +635,55 @@
     "description": ""
   },
   {
+    "name": "nbody sim",
+    "tags": [
+      "codepen",
+      "canvas",
+      "solar system",
+      "space",
+      "nbody"
+    ],
+    "description": "Old demo I created of the solar system. Mousewheel zooms, click to create bodies."
+  },
+  {
+    "name": "ocean ring thing",
+    "tags": [
+      "codepen",
+      "canvas",
+      "arc",
+      "wave"
+    ],
+    "description": "Recreational coding on a friday"
+  },
+  {
+    "name": "oil painting filter",
+    "tags": [
+      "codepen",
+      "canvas",
+      "particles",
+      "terrain"
+    ],
+    "description": "Answered a question on SO (http://stackoverflow.com/questions/24222556/apply-a-oil-paint-sketch-effect-to-a-photo-using-javascript/24223242#24223242) on how to do an oil painting filter using canvas. Looks pretty good in my opinion. Still looking for ways to improve performance."
+  },
+  {
+    "name": "optimized metaballs",
+    "tags": [
+      "codepen",
+      "canvas",
+      "metaballs"
+    ],
+    "description": "Cached the gradient image rather than drawing it each frame, performance is greatly increased."
+  },
+  {
+    "name": "paint drip extended canvas web component",
+    "tags": [
+      "codepen",
+      "canvas",
+      "webcomponent"
+    ],
+    "description": "Abusing extending a canvas element just for the heck of it, could have just as easily made and added the canvas to the shadow dom but just wanted to mess around with doing it this way."
+  },
+  {
     "name": "paint dripping dwitter",
     "tags": [
       "dwitter",
@@ -300,6 +698,46 @@
     "name": "parralax demo 1",
     "tags": [],
     "description": ""
+  },
+  {
+    "name": "part 1 platformer tutorial",
+    "tags": [
+      "codepen",
+      "canvas",
+      "platformer",
+      "tutorial"
+    ],
+    "description": "Part 1 for my platform tutorial on http://www.somethinghitme.com"
+  },
+  {
+    "name": "part 2 platformer tutorial",
+    "tags": [
+      "codepen",
+      "canvas",
+      "platformer",
+      "tutorial"
+    ],
+    "description": "Part 2 of my platformer tutorial which explains how to add collisions! http://www.somethinghitme.com/2013/04/16/creating-a-canvas-platformer-tutorial-part-tw/"
+  },
+  {
+    "name": "particle plasma terrain",
+    "tags": [
+      "codepen",
+      "canvas",
+      "particles",
+      "terrain"
+    ],
+    "description": "Messing around with massive amounts of particles to create terrain."
+  },
+  {
+    "name": "particle terrain",
+    "tags": [
+      "codepen",
+      "canvas",
+      "particles",
+      "terrain"
+    ],
+    "description": "Messing around with massive amounts of particles to create terrain. Updated with more natural colors."
   },
   {
     "name": "particle test with my framework",
@@ -329,6 +767,16 @@
     "description": "#Planet thing."
   },
   {
+    "name": "planets with points",
+    "tags": [
+      "codepen",
+      "canvas",
+      "html5",
+      "planets"
+    ],
+    "description": "Modified a random classic example I found from Commodore Step by Step graphics vol 3. \nExplanation of how the effect is created (http://www.somethinghitme.com/2013/08/16/3d-shading-with-points/)"
+  },
+  {
     "name": "pre generate sprite rotations",
     "tags": [],
     "description": ""
@@ -350,6 +798,25 @@
     "description": "Rainbow Road"
   },
   {
+    "name": "random ripple thing",
+    "tags": [
+      "codepen",
+      "ripple",
+      "grid",
+      "canvas"
+    ],
+    "description": "Just wanted to make a pen."
+  },
+  {
+    "name": "random shuffle thing",
+    "tags": [
+      "codepen",
+      "first pen",
+      "css"
+    ],
+    "description": "Just a random thing I did with some spare time. Thanks to rlemon (@TheGreatRupert) for the idea about using data-attributes in the css."
+  },
+  {
     "name": "random sunday night",
     "tags": [],
     "description": ""
@@ -365,6 +832,17 @@
     "description": ""
   },
   {
+    "name": "rift enabled tunnel of doom",
+    "tags": [
+      "codepen",
+      "canvas",
+      "virtual reality",
+      "oculus rift",
+      "tunnel"
+    ],
+    "description": "If you happen to own an oculus rift you can run this in full screen and take a ride through the tunnel\nNote to see the effect in chrome use the link\nchrome://flags/#enable-experimental-web-platform-features"
+  },
+  {
     "name": "rotate ellipse",
     "tags": [],
     "description": ""
@@ -373,6 +851,16 @@
     "name": "rotate on canvas",
     "tags": [],
     "description": ""
+  },
+  {
+    "name": "rough seas recreation for compo",
+    "tags": [
+      "codepen",
+      "canvas",
+      "html5",
+      "3d"
+    ],
+    "description": "My recreation of this gif for the jsbin compo (https://remysharp.com/2013/08/14/jsbin-5th-birthday/). Im really close but its not perfect. haha and the code is TERRIBLE."
   },
   {
     "name": "satellite launching game",
@@ -403,14 +891,117 @@
     "description": "Done from scratch instead of following the patterns I had in my original was able to golf it down to an acceptable size."
   },
   {
+    "name": "scrollng terrain and shooting stars",
+    "tags": [
+      "codepen",
+      "canvas",
+      "terrain",
+      "midpoint-displacement",
+      "parralax"
+    ],
+    "description": "Changed up an old pen I had to make parralax scrolling terrain. Thanks to @yutt for the awesome color choices!"
+  },
+  {
     "name": "section circle",
     "tags": [],
     "description": ""
   },
   {
+    "name": "simple 1 element css toggle",
+    "tags": [
+      "codepen",
+      "toggle",
+      "checkbox",
+      "css"
+    ],
+    "description": "Needed a pretty basic toggle, didn't want any extra elements and wanted to replace some existing checkboxes."
+  },
+  {
+    "name": "single element c64 logo",
+    "tags": [
+      "codepen",
+      "commodore",
+      "c64",
+      "css"
+    ],
+    "description": "Rekindled my love affair with the ol' Commodore after picking up two sx-64's on craigslist. Wanted to try a single element logo."
+  },
+  {
+    "name": "slime text",
+    "tags": [
+      "codepen",
+      "canvas",
+      "metaballs"
+    ],
+    "description": "Uses meta balls to make give the appearance of sliminess."
+  },
+  {
+    "name": "slimy goo lighting",
+    "tags": [
+      "codepen",
+      "canvas",
+      "terrain",
+      "lighting",
+      "bumpmapping"
+    ],
+    "description": "Combined my terrain generation with some awesome lighting/bump mapping effect myself and @incognito worked on way back"
+  },
+  {
+    "name": "smoke particles",
+    "tags": [
+      "codepen",
+      "canvas",
+      "particles",
+      "smoke"
+    ],
+    "description": "just a really quick demo for fun."
+  },
+  {
+    "name": "snap to nearest power of 2",
+    "tags": [
+      "codepen",
+      "canvas",
+      "power of 2"
+    ],
+    "description": "This is a little tip for those participating in #LOWREZJAM. In this jam you have to make a game based on a 32x32 playing field. However, you are allowed to scale up the display to make things easier to see, as long as the underlying rendering remains at 32x32. With that stipulation, it is in your best interest to scale your game only by powers of 2. The function in this pen will snap to the nearest power of 2 that fits within the window.\nForked from Jack Rugile's Pen Snap to Nearest Fitting Power of 2.."
+  },
+  {
+    "name": "snow audio experiment",
+    "tags": [
+      "codepen",
+      "canvas",
+      "particles",
+      "snow",
+      "audio"
+    ],
+    "description": "Combined snow and the audio api."
+  },
+  {
     "name": "sopa ludum date game entry 2012",
     "tags": [],
     "description": ""
+  },
+  {
+    "name": "spingen",
+    "tags": [
+      "codepen",
+      "canvas",
+      "particles",
+      "3d",
+      "space"
+    ],
+    "description": "This is a little tip for those participating in #LOWREZJAM. In this jam you have to make a game based on a 32x32 playing field. However, you are allowed to scale up the display to make things easier to see, as long as the underlying rendering remains at 32x32. With that stipulation, it is in your best interest to scale your game only by powers of 2. The function in this pen will snap to the nearest power of 2 that fits within the window.\n"
+  },
+  {
+    "name": "static-img polymer web component",
+    "tags": [
+      "codepen",
+      "web-component",
+      "static",
+      "noise",
+      "canvas"
+    ],
+    "description": "Been messing with web components lately and loving them, made a toy one that creates static. Exciting potential!"
   },
   {
     "name": "sweeping circles dwitter",
@@ -422,6 +1013,36 @@
       "animation"
     ],
     "description": "Rainbow Road"
+  },
+  {
+    "name": "swimming snakes",
+    "tags": [
+      "codepen",
+      "ik",
+      "snales",
+      "canvas"
+    ],
+    "description": "Havent done a pen in the longest time, decided to put this demo together after playing around with IK, the effect turned out pretty cool! (in my biased opinion of course)."
+  },
+  {
+    "name": "swinging chain text",
+    "tags": [
+      "codepen",
+      "ik",
+      "text",
+      "css"
+    ],
+    "description": "Not really sure on this one.. was just a bit bored."
+  },
+  {
+    "name": "tetris background",
+    "tags": [
+      "codepen",
+      "canvas",
+      "tetris",
+      "game"
+    ],
+    "description": "Working on a background for my portfolio site revamp to match my business cards.\nA bunch of Tetris games going on at once, you can control them all with the arrow keys to move and space or the up arrow to rotate... haha good luck. AI is planned later, but I thought this looked pretty cool as is so far."
   },
   {
     "name": "tetris full screen",
@@ -450,8 +1071,97 @@
     "description": ""
   },
   {
+    "name": "toggle trance",
+    "tags": [
+      "codepen",
+      "toggle",
+      "check"
+    ],
+    "description": "Just a random idea, display a bunch of toggles rotate and check them in patterns."
+  },
+  {
+    "name": "tunnel of doom",
+    "tags": [
+      "codepen",
+      "canvas",
+      "tunnel"
+    ],
+    "description": "An effect I was messing with for the most recent js1k, didn't finish it in time unfortunately."
+  },
+  {
+    "name": "twister effect",
+    "tags": [
+      "codepen",
+      "canvas",
+      "twister"
+    ],
+    "description": "Have seen so many c64 and amiga demos over the last view days, I wanted to try my hand at one of the simpler effects that didn't include a lot of math. Turned out ok, though many have done it much better."
+  },
+  {
+    "name": "using cellular automaton to generate caves",
+    "tags": [
+      "codepen",
+      "canvas",
+      "gaming",
+      "cellular automata"
+    ],
+    "description": "Messing around with cave generation, this is the first method. Going to try out another one later. Also this method is really fast, I just slowed it down to show the progression."
+  },
+  {
+    "name": "verlet shapes demo",
+    "tags": [
+      "codepen",
+      "canvas",
+      "shapes",
+      "gaming",
+      "verlet integration"
+    ],
+    "description": "Resurrected an old bit of code and added a bunch of stuff to it today.. if only I could get the shapes colliding!"
+  },
+  {
+    "name": "voronoi standard animated",
+    "tags": [
+      "codepen",
+      "canvas",
+      "procedural",
+      "generative",
+      "voronoi"
+    ],
+    "description": "Looks like slimey germs :P"
+  },
+  {
+    "name": "voronoi texture",
+    "tags": [
+      "codepen",
+      "canvas",
+      "procedural",
+      "generative",
+      "voronoi"
+    ],
+    "description": "Love playing with these. For more check out http://somethinghitme.com/projects/cell/"
+  },
+  {
+    "name": "wave sim",
+    "tags": [
+      "codepen",
+      "canvas",
+      "waves"
+    ],
+    "description": "Wave sim based off an excellent xna tutorial located below. \nhttp://gamedev.tutsplus.com/tutorials/implementation/make-a-splash-with-2d-water-effects/"
+  },
+  {
     "name": "word find",
     "tags": [],
     "description": ""
+  },
+  {
+    "name": "zombie sim",
+    "tags": [
+      "codepen",
+      "canvas",
+      "zombies",
+      "halloween"
+    ],
+    "description": "I was in the Halloween spirit and decided to make a quick zombie simulator just like the old school ones.\nTry to stop the infection by clicking to drop bombs!\nIf this wets your appetite for zombies check out my site http://zombiegames.net the best zombie game site on the net :P"
   }
 ]

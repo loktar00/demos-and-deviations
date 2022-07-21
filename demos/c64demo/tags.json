@@ -1,6 +1,8 @@
 {
     "description": "Tribute I did to the commodore 64 in the style of the old school crack intros.",
+    "date": "JULY 10, 2013",
     "tags": [
+        "codepen",
         "c64",
         "demo",
         "scroller"
