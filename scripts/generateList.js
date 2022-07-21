@@ -50,17 +50,36 @@ async function getFile(file) {
             console.error(e);
         }
 
-        if (tagJSON?.type === 'dwitter') {
-            const dwitterIndex = await getFile('./templates/dwitter.html');
-            const dwitterCode = await getFile(`${basePath}/${demo}/dwitter.txt`);
-            const generatedIndex = dwitterIndex.replaceAll('{{dwitter_code}}', dwitterCode);
-            const demoDirectory = path.join(__dirname, `../dist/demos/${demo}`);
+        let generatedIndex = null;
+        const demoDirectory = path.join(__dirname, `../dist/demos/${demo}`);
+        const codepenIndex = await getFile('./templates/codepen.html');
+        const dwitterIndex = await getFile('./templates/dwitter.html');
 
-            if (!existsSync(demoDirectory)) {
-                mkdirSync(demoDirectory, { recursive: true });
-            }
+        switch(tagJSON?.type) {
+            case 'dwitter':
+                const dwitterCode = await getFile(`${basePath}/${demo}/dwitter.txt`);
+                generatedIndex = dwitterIndex.replaceAll('{{dwitter_code}}', dwitterCode);
 
-            writeFileSync(`${demoDirectory}/index.html`, generatedIndex);
+                if (!existsSync(demoDirectory)) {
+                    mkdirSync(demoDirectory, { recursive: true });
+                }
+
+                writeFileSync(`${demoDirectory}/index.html`, generatedIndex);
+                break;
+            case 'codepen':
+                const codepenHtml = await getFile(`${basePath}/${demo}/markup.html`);
+                generatedIndex = codepenIndex.replaceAll('{{html}}', codepenHtml);
+
+                // Quite a few of my pens use datgui just include it if we need it.
+                // Idea of this repo is to keep all my work working so self hosting it
+                generatedIndex = generatedIndex.replaceAll('{{datgui}}', `<script src='/js/datgui.min.js'></script>`);
+
+                if (!existsSync(demoDirectory)) {
+                    mkdirSync(demoDirectory, { recursive: true });
+                }
+
+                writeFileSync(`${demoDirectory}/index.html`, generatedIndex);
+                break;
         }
 
         fileList.push({

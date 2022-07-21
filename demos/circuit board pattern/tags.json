@@ -1,0 +1,12 @@
+{
+    "description": "Creates random circuit board traces. The code is meh, but the effect turned out pretty cool.\nEach traces checks the pixels in front of them as they travel if the alpha value is anything other than 0 they change direction by 45 degrees.",
+    "type": "codepen",
+    "date": "MAY 5, 2014",
+    "tags": [
+        "codepen",
+        "canvas",
+        "circuit-board",
+        "pattern",
+        "procedural"
+    ]
+}

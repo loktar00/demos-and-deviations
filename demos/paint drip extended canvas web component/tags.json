@@ -1,0 +1,10 @@
+{
+    "description": "Abusing extending a canvas element just for the heck of it, could have just as easily made and added the canvas to the shadow dom but just wanted to mess around with doing it this way.",
+    "type": "codepen",
+    "date": "AUGUST 6, 2020",
+    "tags": [
+        "codepen",
+        "canvas",
+        "webcomponent"
+    ]
+}

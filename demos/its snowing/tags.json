@@ -1,0 +1,11 @@
+{
+    "description": "Super simple snow I threw together for an answer on stack overflow. Added some simple mouse interaction to make flakes move away from the cursor.",
+    "type": "codepen",
+    "date": "DECEMBER 21, 2012",
+    "tags": [
+        "codepen",
+        "canvas",
+        "snow",
+        "interactive"
+    ]
+}

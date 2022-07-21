@@ -1,0 +1,6 @@
+body {
+  background:#000;
+  overflow:hidden;
+}
+
+canvas{position:absolute;}

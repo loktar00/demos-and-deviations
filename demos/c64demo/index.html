@@ -1,7 +1,8 @@
 <!doctype html/>
 <html>
 <head>
-    <title></title>
+    <title>C64 Tribute</title>
+    <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
     <style>
         body {
             margin : 0;
@@ -16,19 +17,16 @@
     </style>
 </head>
 <body>
-<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
 <div>
     <canvas id="canvas"></canvas>
 </div>
-<script>
+<script defer>
   (function () {
       var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
               window.setTimeout(callback, 1000 / 60);
           };
       window.requestAnimationFrame = requestAnimationFrame;
   })();
-
-
 
     var canvas = document.getElementById("canvas"),
         ctx = canvas.getContext("2d"),
@@ -263,8 +261,8 @@
             blood : [],
             addBlood : function(){
                 this.blood.push({
-                    x : 550+Math.random()*50, 
-                    y : 50 + Math.random()*10, 
+                    x : 550+Math.random()*50,
+                    y : 50 + Math.random()*10,
                     speed : 6+Math.random(),
                     drip : false,
                     ang : 0
@@ -276,7 +274,7 @@
 
                     if(this.blood[b].drip){
                         this.blood[b].y += this.blood[b].speed;
-                        
+
                         if(this.blood[b].y > canvas.height){
                             this.blood[b].y = 50 + Math.random()*10;
                             this.blood[b].x = 550+Math.random()*50;
@@ -392,7 +390,7 @@
             canvas.width = width;
             canvas.height = height;
 
-            audio.src = "http://www.somethinghitme.com/projects/aud/the_wrong_funky.ogg";
+            audio.src = "./the_wrong_funky.ogg";
             audio.preload = true;
 
             ctx.fillStyle = c64p[14];
