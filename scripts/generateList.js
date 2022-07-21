@@ -72,7 +72,7 @@ async function getFile(file) {
 
                 // Quite a few of my pens use datgui just include it if we need it.
                 // Idea of this repo is to keep all my work working so self hosting it
-                generatedIndex = generatedIndex.replaceAll('{{datgui}}', `<script src='/js/datgui.min.js'></script>`);
+                generatedIndex = generatedIndex.replaceAll('{{datgui}}', `<script src='../js/datgui.min.js'></script>`);
 
                 if (!existsSync(demoDirectory)) {
                     mkdirSync(demoDirectory, { recursive: true });
