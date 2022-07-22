@@ -14,6 +14,15 @@
     "description": "Random 3d doodle"
   },
   {
+    "name": "3d dot grid bounce",
+    "tags": [
+      "jsbin",
+      "gif copy",
+      "math"
+    ],
+    "description": "I don't remember doing this."
+  },
+  {
     "name": "3d rotating cylinder",
     "tags": [
       "dwitter",
@@ -787,6 +796,16 @@
     "description": ""
   },
   {
+    "name": "pushing dots",
+    "tags": [
+      "jsbin",
+      "gif copy",
+      "math",
+      "contest"
+    ],
+    "description": "Pushing dots"
+  },
+  {
     "name": "rainbow road",
     "tags": [
       "dwitter",
@@ -993,6 +1012,25 @@
     "description": "This is a little tip for those participating in #LOWREZJAM. In this jam you have to make a game based on a 32x32 playing field. However, you are allowed to scale up the display to make things easier to see, as long as the underlying rendering remains at 32x32. With that stipulation, it is in your best interest to scale your game only by powers of 2. The function in this pen will snap to the nearest power of 2 that fits within the window.\n"
   },
   {
+    "name": "spinning arcs",
+    "tags": [
+      "jsbin",
+      "gif copy",
+      "math"
+    ],
+    "description": "I don't remember doing this."
+  },
+  {
+    "name": "spongey dots",
+    "tags": [
+      "jsbin",
+      "gif copy",
+      "math",
+      "contest"
+    ],
+    "description": "Spongey dots"
+  },
+  {
     "name": "static-img polymer web component",
     "tags": [
       "codepen",
@@ -1080,6 +1118,16 @@
     "description": "Just a random idea, display a bunch of toggles rotate and check them in patterns."
   },
   {
+    "name": "trippy grid",
+    "tags": [
+      "jsbin",
+      "gif copy",
+      "math",
+      "contest"
+    ],
+    "description": "trippy grid one of the contest entries for JSBin"
+  },
+  {
     "name": "tunnel of doom",
     "tags": [
       "codepen",
@@ -1148,6 +1196,16 @@
       "waves"
     ],
     "description": "Wave sim based off an excellent xna tutorial located below. \nhttp://gamedev.tutsplus.com/tutorials/implementation/make-a-splash-with-2d-water-effects/"
+  },
+  {
+    "name": "wavy lines",
+    "tags": [
+      "jsbin",
+      "gif copy",
+      "math",
+      "contest"
+    ],
+    "description": "wavy lines one of the contest entries for JSBin"
   },
   {
     "name": "word find",
