@@ -1,0 +1,9 @@
+{
+    "description": "10,000 particles fast drawing on canvas for stackoverflow answer",
+    "tags": [
+        "jsfiddle",
+        "particles",
+        "canvas",
+        "performance"
+    ]
+}
