@@ -1,10 +1,30 @@
 [
   {
+    "name": "10000 particles for SO answer",
+    "tags": [
+      "jsfiddle",
+      "particles",
+      "canvas",
+      "performance"
+    ],
+    "description": "10,000 particles fast drawing on canvas for stackoverflow answer"
+  },
+  {
     "name": "2d raycast light",
     "tags": [
       "raycast"
     ],
     "description": "Example of raycasting lights"
+  },
+  {
+    "name": "3d colorful tunnel",
+    "tags": [
+      "jsfiddle",
+      "tunnel",
+      "3d",
+      "grid"
+    ],
+    "description": ""
   },
   {
     "name": "3d doodle",
@@ -23,12 +43,30 @@
     "description": "I don't remember doing this."
   },
   {
+    "name": "3d headstone",
+    "tags": [
+      "jsfiddle",
+      "3d",
+      "canvas"
+    ],
+    "description": "headstone and grass"
+  },
+  {
     "name": "3d rotating cylinder",
     "tags": [
       "dwitter",
       "3d"
     ],
     "description": ""
+  },
+  {
+    "name": "3d scribble ball",
+    "tags": [
+      "jsfiddle",
+      "3d",
+      "canvas"
+    ],
+    "description": "3d scribble, precursor to my 3d sketcher pen"
   },
   {
     "name": "3d sketcher",
@@ -39,6 +77,18 @@
       "generation"
     ],
     "description": "Random idea I had, turns 2d sketches 3d."
+  },
+  {
+    "name": "3d texture test on 2d canvas",
+    "tags": [
+      "jsfiddle",
+      "3d",
+      "canvas",
+      "texture",
+      "incomplete",
+      "test"
+    ],
+    "description": "voxel temple"
   },
   {
     "name": "4th of july fireworks",
@@ -59,11 +109,28 @@
     "description": "a* pathfinding algorithm"
   },
   {
+    "name": "angle between 2 points",
+    "tags": [
+      "jsfiddle",
+      "angle",
+      "canvas",
+      "game",
+      "snippet",
+      "gamedev"
+    ],
+    "description": ""
+  },
+  {
     "name": "angular rotation",
     "tags": [
       "angular",
       "rotation"
     ],
+    "description": ""
+  },
+  {
+    "name": "animated tree scene",
+    "tags": [],
     "description": ""
   },
   {
@@ -87,6 +154,16 @@
       "example"
     ],
     "description": "Example of a repeating background scrolling"
+  },
+  {
+    "name": "bouncing dots",
+    "tags": [
+      "jsfiddle",
+      "balls",
+      "canvas",
+      "bounce"
+    ],
+    "description": "animated tree scene live wallpaper"
   },
   {
     "name": "burn away effect",
@@ -128,6 +205,15 @@
     "description": "Tribute I did to the commodore 64 in the style of the old school crack intros."
   },
   {
+    "name": "calculate points around circle",
+    "tags": [
+      "jsfiddle",
+      "points",
+      "arc"
+    ],
+    "description": ""
+  },
+  {
     "name": "canvas antialias",
     "tags": [
       "canvas",
@@ -145,6 +231,14 @@
       "art"
     ],
     "description": "Random bokeh"
+  },
+  {
+    "name": "canvas captcha",
+    "tags": [
+      "jsfiddle",
+      "captcha"
+    ],
+    "description": ""
   },
   {
     "name": "canvas heat mapping",
@@ -255,6 +349,16 @@
     "description": "Heavily inspired by the amazing work done by Dan Gries of Rectangle World @RectangleWorld. Using midpoint displacement and morphing between points, the sweeping lines make an awesome effect. \nedit thanks to @towc fork which sped up the drawing process."
   },
   {
+    "name": "colorful weaving art",
+    "tags": [
+      "jsfiddle",
+      "generative art",
+      "color",
+      "color cycle"
+    ],
+    "description": ""
+  },
+  {
     "name": "crappiest pen",
     "tags": [
       "codepen",
@@ -348,6 +452,16 @@
     "description": "Was playing Doom the other day and was reminded of this effect. I wanted to give it a shot using js and canvas of course. The original .c source can be seen here https://github.com/id-Software/DOOM/blob/master/linuxdoom-1.10/f_wipe.c"
   },
   {
+    "name": "dot sizing animation",
+    "tags": [
+      "jsfiddle",
+      "animation",
+      "generative",
+      "art"
+    ],
+    "description": ""
+  },
+  {
     "name": "dot wave",
     "tags": [
       "codepen",
@@ -362,6 +476,15 @@
       "canvas"
     ],
     "description": "Dot wave with colors"
+  },
+  {
+    "name": "dots bouncing inside circle",
+    "tags": [
+      "jsfiddle",
+      "collision",
+      "dots"
+    ],
+    "description": ""
   },
   {
     "name": "draw fans",
@@ -386,6 +509,14 @@
   {
     "name": "dual canvas mask parralax",
     "tags": [],
+    "description": ""
+  },
+  {
+    "name": "dungeon generator",
+    "tags": [
+      "jsfiddle",
+      "dungeon"
+    ],
     "description": ""
   },
   {
@@ -442,6 +573,15 @@
     "description": ""
   },
   {
+    "name": "generating islands",
+    "tags": [
+      "jsfiddle",
+      "generating",
+      "islands"
+    ],
+    "description": ""
+  },
+  {
     "name": "ghostly explosion",
     "tags": [
       "codepen",
@@ -477,6 +617,16 @@
       "halloween"
     ],
     "description": "Added to my old smoke experiment to create a creepier effect."
+  },
+  {
+    "name": "heatmap looking swirls",
+    "tags": [
+      "jsfiddle",
+      "swirls",
+      "color cycle",
+      "generative"
+    ],
+    "description": ""
   },
   {
     "name": "hexel flames",
@@ -525,6 +675,15 @@
     "description": "Old demo I did a while back showing a simple 2d dynamic lighting effect."
   },
   {
+    "name": "jigsaw colorful art thing",
+    "tags": [
+      "jsfiddle",
+      "generative art",
+      "color"
+    ],
+    "description": ""
+  },
+  {
     "name": "js1k christmas tests",
     "tags": [],
     "description": ""
@@ -567,6 +726,14 @@
   {
     "name": "line drawing",
     "tags": [],
+    "description": ""
+  },
+  {
+    "name": "lots of particles",
+    "tags": [
+      "jsfiddle",
+      "partcles"
+    ],
     "description": ""
   },
   {
@@ -629,8 +796,64 @@
     "description": "Just a random starry night and a meteor shower. The terrain is generated using midpoint displacement.."
   },
   {
+    "name": "move object based on heading",
+    "tags": [
+      "jsfiddle",
+      "movement",
+      "canvas",
+      "game",
+      "snippet",
+      "gamedev"
+    ],
+    "description": ""
+  },
+  {
     "name": "move target constant rate",
     "tags": [],
+    "description": ""
+  },
+  {
+    "name": "move to clicked point",
+    "tags": [
+      "jsfiddle",
+      "target"
+    ],
+    "description": ""
+  },
+  {
+    "name": "move toward an object at a constant speed with heading",
+    "tags": [
+      "jsfiddle",
+      "movement",
+      "canvas",
+      "game",
+      "snippet",
+      "gamedev"
+    ],
+    "description": ""
+  },
+  {
+    "name": "move towards object constant speed",
+    "tags": [
+      "jsfiddle",
+      "angle",
+      "canvas",
+      "game",
+      "snippet",
+      "gamedev"
+    ],
+    "description": ""
+  },
+  {
+    "name": "move towards object with easing",
+    "tags": [
+      "jsfiddle",
+      "angle",
+      "canvas",
+      "game",
+      "snippet",
+      "gamedev"
+    ],
     "description": ""
   },
   {
@@ -796,6 +1019,18 @@
     "description": ""
   },
   {
+    "name": "project a point in front of an object",
+    "tags": [
+      "jsfiddle",
+      "angle",
+      "canvas",
+      "game",
+      "snippet",
+      "gamedev"
+    ],
+    "description": ""
+  },
+  {
     "name": "pushing dots",
     "tags": [
       "jsbin",
@@ -936,6 +1171,18 @@
     "description": "Needed a pretty basic toggle, didn't want any extra elements and wanted to replace some existing checkboxes."
   },
   {
+    "name": "simple distance check",
+    "tags": [
+      "jsfiddle",
+      "angle",
+      "canvas",
+      "game",
+      "snippet",
+      "gamedev"
+    ],
+    "description": ""
+  },
+  {
     "name": "single element c64 logo",
     "tags": [
       "codepen",
@@ -976,6 +1223,26 @@
     "description": "just a really quick demo for fun."
   },
   {
+    "name": "snake",
+    "tags": [
+      "jsfiddle",
+      "snake",
+      "canvas",
+      "game"
+    ],
+    "description": "snake game"
+  },
+  {
+    "name": "snake in 30 mins",
+    "tags": [
+      "jsfiddle",
+      "snake",
+      "canvas",
+      "game"
+    ],
+    "description": "snake game I did in 30 minutes"
+  },
+  {
     "name": "snap to nearest power of 2",
     "tags": [
       "codepen",
@@ -998,6 +1265,16 @@
   {
     "name": "sopa ludum date game entry 2012",
     "tags": [],
+    "description": ""
+  },
+  {
+    "name": "sort pixels based on luminocity",
+    "tags": [
+      "jsfiddle",
+      "pixels",
+      "image editing",
+      "generative"
+    ],
     "description": ""
   },
   {
@@ -1029,6 +1306,16 @@
       "contest"
     ],
     "description": "Spongey dots"
+  },
+  {
+    "name": "stained glass voronoi art",
+    "tags": [
+      "jsfiddle",
+      "voronoi",
+      "generative art",
+      "color"
+    ],
+    "description": ""
   },
   {
     "name": "static-img polymer web component",
@@ -1073,6 +1360,16 @@
     "description": "Not really sure on this one.. was just a bit bored."
   },
   {
+    "name": "test vision cone",
+    "tags": [
+      "jsfiddle",
+      "lighting",
+      "vision",
+      "test"
+    ],
+    "description": ""
+  },
+  {
     "name": "tetris background",
     "tags": [
       "codepen",
@@ -1109,6 +1406,15 @@
     "description": ""
   },
   {
+    "name": "tiny swirl",
+    "tags": [
+      "jsfiddle",
+      "swirl",
+      "minimal"
+    ],
+    "description": ""
+  },
+  {
     "name": "toggle trance",
     "tags": [
       "codepen",
@@ -1116,6 +1422,19 @@
       "check"
     ],
     "description": "Just a random idea, display a bunch of toggles rotate and check them in patterns."
+  },
+  {
+    "name": "tower defense enemy movement",
+    "tags": [
+      "jsfiddle",
+      "tower",
+      "defense",
+      "canvas",
+      "game",
+      "snippet",
+      "gamedev"
+    ],
+    "description": ""
   },
   {
     "name": "trippy grid",
@@ -1156,6 +1475,15 @@
     "description": "Messing around with cave generation, this is the first method. Going to try out another one later. Also this method is really fast, I just slowed it down to show the progression."
   },
   {
+    "name": "vectrex minestorm test",
+    "tags": [
+      "jsfiddle",
+      "vectrex",
+      "minestorm"
+    ],
+    "description": ""
+  },
+  {
     "name": "verlet shapes demo",
     "tags": [
       "codepen",
@@ -1165,6 +1493,15 @@
       "verlet integration"
     ],
     "description": "Resurrected an old bit of code and added a bunch of stuff to it today.. if only I could get the shapes colliding!"
+  },
+  {
+    "name": "verlet tests",
+    "tags": [
+      "jsfiddle",
+      "verlet",
+      "canvas"
+    ],
+    "description": ""
   },
   {
     "name": "voronoi standard animated",
@@ -1189,6 +1526,18 @@
     "description": "Love playing with these. For more check out http://somethinghitme.com/projects/cell/"
   },
   {
+    "name": "voxel temple",
+    "tags": [
+      "jsfiddle",
+      "3d",
+      "canvas",
+      "interactive",
+      "shading",
+      "lighting"
+    ],
+    "description": "voxel temple"
+  },
+  {
     "name": "wave sim",
     "tags": [
       "codepen",
@@ -1196,6 +1545,16 @@
       "waves"
     ],
     "description": "Wave sim based off an excellent xna tutorial located below. \nhttp://gamedev.tutsplus.com/tutorials/implementation/make-a-splash-with-2d-water-effects/"
+  },
+  {
+    "name": "wavy 3d grid",
+    "tags": [
+      "jsfiddle",
+      "wavy",
+      "3d",
+      "grid"
+    ],
+    "description": ""
   },
   {
     "name": "wavy lines",
@@ -1206,6 +1565,15 @@
       "contest"
     ],
     "description": "wavy lines one of the contest entries for JSBin"
+  },
+  {
+    "name": "webgl fractal",
+    "tags": [
+      "jsfiddle",
+      "webgl",
+      "fractal"
+    ],
+    "description": ""
   },
   {
     "name": "word find",
