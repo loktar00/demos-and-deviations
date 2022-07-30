@@ -53,14 +53,14 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
     });
 
     const firstDemoWithNoVideo = list.filter(demo => {
-        const file = existsSync(`${demoPath}/${demo.name}/vid.mp4`) || existsSync(`${demoPath}/${demo.name}/demo.png`);
+        const file = existsSync(`${demoPath}/${demo.name}/vid.mp4`) || existsSync(`${demoPath}/${demo.name}/demo.png`) || existsSync(`${demoPath}/${demo.name}/demo.gif`);
         return !file;
     })[0];
 
     console.log(firstDemoWithNoVideo.name);
 
     await page.goto(`http://localhost:8080/demos/${firstDemoWithNoVideo.name}`);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2);
     await page.evaluate(async (demoName, args) => {
         console.log('Running demo:', demoName);
         // This runs the current demo and records each frame.
