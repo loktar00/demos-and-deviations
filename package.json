@@ -26,7 +26,10 @@
   },
   "homepage": "https://github.com/loktar00/demos-and-deviations#readme",
   "dependencies": {
+    "connect": "^3.7.0",
     "fs-extra": "^10.1.0",
-    "graceful-fs": "^4.2.10"
+    "graceful-fs": "^4.2.10",
+    "puppeteer": "^15.5.0",
+    "serve-static": "^1.15.0"
   }
 }
