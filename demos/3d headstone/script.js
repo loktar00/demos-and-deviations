@@ -39,10 +39,6 @@ for (i=0; i <400; i+=2) {
     points[i+1] = new setPoint([x,x,x],[50,30-y+1,50],[z-y,z-20,z-y+2]);
 }
 
-10,-100
--10,-100
-
-
 //right
 points[401] = new setPoint([10,-10,10],[-100,50,50],[-100,-100,-100],1);
 points[402] = new setPoint([-10,10,-10],[-100,-100,50],[-100,-100,-100],1);
@@ -65,7 +61,8 @@ for(p in a){
 }
 
 // render loop
-setInterval(function () {
+function render () {
+    requestAnimationFrame(render);
      with(a) {
         fillStyle = "#b5ebf1"
         fc(0, 0, perspective, 256)
@@ -75,26 +72,29 @@ setInterval(function () {
         for (i = 0; i < 409; i++) {
 
             var point = points[i],
-                px = point.xp,
-                py = point.yp,
-                pz = point.zp,
+                px = point?.xp,
+                py = point?.yp,
+                pz = point?.zp,
                 cosY = co(.003),
                 sinY = si(.003);
+            if (point) {
+                for(ve = 0; ve < 3; ve++){
+                    point.xp[ve] = px[ve] * cosY - pz[ve] * sinY;
+                    point.zp[ve] = pz[ve] * cosY + px[ve] * sinY;
 
-            for(ve = 0; ve < 3; ve++){
-                point.xp[ve] = px[ve] * cosY - pz[ve] * sinY;
-                point.zp[ve] = pz[ve] * cosY + px[ve] * sinY;
+                    scl = perspective / (perspective + pz[ve]);
+                    point.x[ve] = 256 + px[ve] * scl;
+                    point.y[ve] = 256 + py[ve] * scl;
 
-                scl = perspective / (perspective + pz[ve]);
-                point.x[ve] = 256 + px[ve] * scl;
-                point.y[ve] = 256 + py[ve] * scl;
-
-                l(~~point.x[ve],~~point.y[ve]); //lineTo
-                (point.h)?fillStyle = 'rgb(100,100,100)':fillStyle = 'rgb(0, ' + ~~(100+i/4) + ', 0)';
-                f();
+                    l(~~point.x[ve],~~point.y[ve]); //lineTo
+                    (point.h)?fillStyle = 'rgb(100,100,100)':fillStyle = 'rgb(0, ' + ~~(100+i/4) + ', 0)';
+                    f();
+                }
+                ba();
             }
-            ba();
 
         }
      }
-}, 10);
+};
+
+render();

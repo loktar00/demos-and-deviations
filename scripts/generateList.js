@@ -1,8 +1,9 @@
 // Get all of the demo directories and build the links.
 import path from 'path';
-import { readdir, readFile } from "fs/promises";
+import { readdir } from "fs/promises";
 import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { fileURLToPath } from 'url';
+import { getFile } from './utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,16 +19,6 @@ async function generateListOfDemos(basePath) {
         return files;
     });
 }
-
-// Loads the file in the directory
-async function getFile(file) {
-    return readFile(file, 'utf8')
-        .then(data => {
-            return data;
-        })
-        .catch(err => console.log(err));
-}
-
 
 (async () => {
     const demos = await generateListOfDemos(basePath);

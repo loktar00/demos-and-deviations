@@ -28,7 +28,6 @@ var addRing = function (xx, yy) {
 // Set width/height
 perspective = 256;
 
-
 // render loop
 function render() {
     ctx.fillStyle = "rgba(0,0,0,.1)";
@@ -82,11 +81,10 @@ function render() {
     }
 
     requestAnimationFrame(render);
-
 }
 
 // smart trick from @TimoHausmann for full screen pens
-setTimeout(function () {
+function init() {
     width = canvas.width = window.innerWidth,
     height = canvas.height = document.body.offsetHeight;
 
@@ -96,4 +94,6 @@ setTimeout(function () {
         }
     }
     render();
-}, 500);
+}
+
+init();

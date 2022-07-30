@@ -1,7 +1,7 @@
-(function(){
-    var canvas = document.getElementById("canvas"),
-    ctx = canvas.getContext("2d"),
-    balls = [];
+
+var canvas = document.getElementById("canvas"),
+ctx = canvas.getContext("2d"),
+balls = [];
 
 canvas.width = 600;
 canvas.height = 400;
@@ -34,23 +34,21 @@ function init(){
     for(var i = 0; i < 10; i++){
         balls.push(new ball());
     }
-    tick();
+    render();
 };
 
 
-function tick(){
+function render(){
+    requestAnimationFrame(render);
     ctx.clearRect(0,0,600,400);
     var i = 10;
     while(i--){
        balls[i].update();
        balls[i].render();
     }
-
-    setTimeout(tick, 10);
 };
 
 init();
-})();
 
 
 

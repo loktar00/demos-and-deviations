@@ -1,8 +1,3 @@
-(function () {
-  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-  window.requestAnimationFrame = requestAnimationFrame;
-})();
-
 var canvas = document.getElementById("canvas"),
   ctx = canvas.getContext("2d"),
   imgBox = document.getElementsByClassName('img-box')[0];
@@ -33,7 +28,7 @@ function init() {
       mapData[~~ (Math.random() * canvas.width)][~~ (Math.random() * canvas.height)].val = 0;
   }
 
-  burn();
+  render();
 }
 
 function burnEdges(x, y, data) {
@@ -60,7 +55,7 @@ function burnEdges(x, y, data) {
   }
 }
 
-function burn() {
+function render() {
   var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height),
       data = imgData.data,
       pix = null,
@@ -69,7 +64,7 @@ function burn() {
   for (var x = 0; x <= canvas.width; x++) {
       for (var y = 0; y < canvas.height; y++) {
           pix = (x + y * canvas.width) * 4;
-          if (mapData[x][y].val <= 0) {
+          if (mapData[x][y]?.val <= 0) {
               if (mapData[x][y].neighbors) {
                   burnEdges(x, y, data);
               }
@@ -81,7 +76,7 @@ function burn() {
   }
   ctx.putImageData(imgData, 0, 0);
   if (!flag) {
-      requestAnimationFrame(burn);
+      requestAnimationFrame(render);
   } else {
       swap();
   }
@@ -95,9 +90,9 @@ function swap() {
 
 img1.onload = function () {
   ctx.drawImage(img1, 0, 0);
-  //imgBox.appendChild(img2);
   init();
 }
+
 img1.crossOrigin = "Anonymous";
 img1.src = "./Z6YcTrI.png";
 
