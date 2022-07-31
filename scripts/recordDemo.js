@@ -60,7 +60,7 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
     console.log(firstDemoWithNoVideo.name);
 
     await page.goto(`http://localhost:8080/demos/${firstDemoWithNoVideo.name}`);
-    await page.waitForTimeout(2);
+    await page.waitForTimeout(200);
     await page.evaluate(async (demoName, args) => {
         console.log('Running demo:', demoName);
         // This runs the current demo and records each frame.
@@ -77,7 +77,7 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
         function recordCanvas(canvas) {
             const options = {
                 fps: 50,
-                duration: 2500,
+                duration: 5000,
                 canvas: canvas,
             };
 
@@ -90,28 +90,15 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
                 const timestamp = i * frameDuration;
 
                 // This is the function to render to canvas.. this is different for most demos
-                if (typeof draw === 'function') {
-                    draw(timestamp);
-                } else if (typeof render === 'function') {
-                    render(timestamp);
-                } else if (typeof demo === 'function') {
-                    demo(timestamp);
+                for (let j = 0; j < 1; j++) {
+                    if (typeof draw === 'function') {
+                        draw(timestamp);
+                    } else if (typeof render === 'function') {
+                        render(timestamp);
+                    } else if (typeof demo === 'function') {
+                        demo(timestamp);
+                    }
                 }
-                if (typeof draw === 'function') {
-                    draw(timestamp);
-                } else if (typeof render === 'function') {
-                    render(timestamp);
-                } else if (typeof demo === 'function') {
-                    demo(timestamp);
-                }
-                if (typeof draw === 'function') {
-                    draw(timestamp);
-                } else if (typeof render === 'function') {
-                    render(timestamp);
-                } else if (typeof demo === 'function') {
-                    demo(timestamp);
-                }
-
 
                 const frameName = i.toString().padStart(framesNameLength, '0');
 
