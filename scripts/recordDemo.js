@@ -70,14 +70,14 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
         const oCtx = opaqueCanvas.getContext('2d');
         opaqueCanvas.width = canvas.width;
         opaqueCanvas.height = canvas.height;
-        oCtx.fillStyle = '#fff';
+        oCtx.fillStyle = '#000';
 
         window.requestAnimationFrame = () => {};
 
         function recordCanvas(canvas) {
             const options = {
                 fps: 50,
-                duration: 5000,
+                duration: 2500,
                 canvas: canvas,
             };
 
@@ -97,6 +97,21 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
                 } else if (typeof demo === 'function') {
                     demo(timestamp);
                 }
+                if (typeof draw === 'function') {
+                    draw(timestamp);
+                } else if (typeof render === 'function') {
+                    render(timestamp);
+                } else if (typeof demo === 'function') {
+                    demo(timestamp);
+                }
+                if (typeof draw === 'function') {
+                    draw(timestamp);
+                } else if (typeof render === 'function') {
+                    render(timestamp);
+                } else if (typeof demo === 'function') {
+                    demo(timestamp);
+                }
+
 
                 const frameName = i.toString().padStart(framesNameLength, '0');
 
