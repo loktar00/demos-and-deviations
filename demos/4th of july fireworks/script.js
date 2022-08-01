@@ -1,9 +1,3 @@
-(function () {
-  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-  window.requestAnimationFrame = requestAnimationFrame;
-})();
-
-
 var canvas = document.getElementById("canvas"),
   ctx = canvas.getContext("2d"),
   width = 0,
@@ -198,11 +192,8 @@ for (var e = 0; e < 30; e++) {
 //render();
 
 
-// smart trick from @TimoHausmann for full screen pens
-setTimeout(function () {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = document.body.offsetHeight;
-  vanishPointY = height / 2;
-  vanishPointX = width / 2;
-  render();
-}, 500);
+width = canvas.width = window.innerWidth;
+height = canvas.height = document.body.offsetHeight;
+vanishPointY = height / 2;
+vanishPointX = width / 2;
+render();

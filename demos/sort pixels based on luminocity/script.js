@@ -13,13 +13,13 @@ var image = new Image(),
     sortedData = [];
 
 image.crossOrigin = "anonymous";
-image.src = "http://i.imgur.com/gM9s6N0.jpg";
+image.src = "gM9s6N0.jpg";
 
 image.addEventListener("load", function () {
     ctx.drawImage(this, 0, 0, width, height);
     canvasData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     cData = canvasData.data;
-    pixelSort();
+    setTimeout(pixelSort, 1000);
 });
 
 function pixelSort() {

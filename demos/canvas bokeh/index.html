@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
     <head>
-        <style>
-html,body{
- padding:0;
- margin:0;
-}
-canvas{position:absolute;top:0;left:0}
-        </style>
+    <style>
+        html,body{
+            padding:0;
+            margin:0;
+        }
+        canvas{position:absolute;top:0;left:0}
+    </style>
     </head>
     <body>
         <canvas id="canvas"></canvas>
@@ -51,6 +51,7 @@ canvas{position:absolute;top:0;left:0}
                 tick();
             },
             tick = function(){
+                requestAnimationFrame(tick);
                 ctx.globalCompositeOperation = "source-over";
                 ctx.fillStyle = "rgba(0,0,0,1)";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -80,14 +81,15 @@ canvas{position:absolute;top:0;left:0}
                 }
                 this.blurCtx.drawImage(canvas,0,0,width, height,0,0,width,height);
                 ctx.drawImage(this.blurCanvas,0,0,width,height);
-                setTimeout(tick,10);
-
             };
 
-            return{
-                init : function(){
+                return{
+                    init : function(){
                         init();
-                }
+                    },
+                    tick : function(){
+                        tick();
+                    }
                 }
              }
 
