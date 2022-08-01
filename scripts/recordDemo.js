@@ -90,15 +90,14 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
                 const timestamp = i * frameDuration;
 
                 // This is the function to render to canvas.. this is different for most demos
-                for (let j = 0; j < 4; j++) {
-                    // if (typeof draw === 'function') {
-                    //     draw(timestamp);
-                    // } else if (typeof render === 'function') {
-                    //     render(timestamp);
-                    // } else if (typeof update === 'function') {
-                    //     update(timestamp);
-                    // }
-                    zSim.update();
+                for (let j = 0; j < 1; j++) {
+                    if (typeof draw === 'function') {
+                        draw(timestamp);
+                    } else if (typeof render === 'function') {
+                        render(timestamp);
+                    } else if (typeof update === 'function') {
+                        update(timestamp);
+                    }
                 }
 
                 const frameName = i.toString().padStart(framesNameLength, '0');
