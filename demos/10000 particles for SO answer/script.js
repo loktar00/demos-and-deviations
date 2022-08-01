@@ -1,9 +1,3 @@
-window.requestAnimFrame = (function () {
-    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
-        window.setTimeout(callback, 1000 / 60);
-    };
-})();
-
 var numberOfObjects = 10000,
     canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
@@ -78,7 +72,7 @@ function draw() {
     }
         // now put all of that image data we just wrote onto the actual canvas.
         ctx.putImageData(canvasData, 0, 0);
-        window.requestAnimFrame(draw);
+        requestAnimationFrame(draw);
 }
 
 imgToDraw = new Image();
