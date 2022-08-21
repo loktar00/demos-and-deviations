@@ -97,5 +97,5 @@ async function generateListOfDemos(demoPath) {
         });
     }
 
-    writeFileSync(path.join(__dirname, '../dist/list.json'), JSON.stringify(fileList, null, 2));
+    writeFileSync(path.join(__dirname, '../dist/list.json'), JSON.stringify(fileList));
 })();
