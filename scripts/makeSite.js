@@ -21,10 +21,10 @@ async function readIndex() {
 (async () => {
     const fileData = await readIndex();
     // Replace the first script tag with the list of demos
-  //  const html = fileData.replace(/<script>((.|\n)*)<\/script>/, `<script>var demoData=${JSON.stringify(list)};</script>`);
+    const html = fileData.replace(/demoData=((.|\n)*)/, `demoData=${JSON.stringify(list)};`);
 
     // Overwrite the index.html file with the new data.
-   // writeFileSync(path.join(__dirname, '../dist/index.html'), html);
+    writeFileSync(path.join(__dirname, '../dist/index.html'), html);
 
     // Copy the rest of the files
     try {
