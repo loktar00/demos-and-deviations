@@ -33,8 +33,8 @@ async function generateListOfDemos(demoPath) {
     }
 
     const fileList = [];
-    const codepenIndex = await getFile('./templates/codepen.html');
-    const dwitterIndex = await getFile('./templates/dwitter.html');
+    const codepenIndex = await getFile('./scripts/templates/codepen.html');
+    const dwitterIndex = await getFile('./scripts/templates/dwitter.html');
 
     for (const demo of demos) {
         const tagData = await getFile(`${basePath}/${demo}/tags.json`);
