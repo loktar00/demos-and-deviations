@@ -32,6 +32,7 @@
     "connect": "^3.7.0",
     "fs-extra": "^10.1.0",
     "graceful-fs": "^4.2.10",
+    "merge-files": "^0.1.2",
     "puppeteer": "^15.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
