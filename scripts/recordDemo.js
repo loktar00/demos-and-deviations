@@ -1,7 +1,15 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable import/extensions */
+/* eslint-disable no-underscore-dangle */
 import path from 'path';
 import child_process from 'child_process';
 import { fileURLToPath } from 'url';
-import { writeFileSync, existsSync, mkdirSync, rmdirSync } from "fs";
+import {
+    writeFileSync,
+    existsSync,
+    mkdirSync,
+    rmdirSync
+} from 'fs';
 import puppeteer from 'puppeteer';
 import connect from 'connect';
 import serveStatic from 'serve-static';
@@ -10,21 +18,21 @@ import list from '../dist/list.json' assert { type: 'json'};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const staticServePath = path.join(__dirname,'../dist');
-const demoPath = path.join(__dirname,'../demos');
+const staticServePath = path.join(__dirname, '../dist');
+const demoPath = path.join(__dirname, '../src/demos');
 const args = process.argv;
 
 // start up a server to serve the static files from our dist directory
 connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Server running'));
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
-  const page = await browser.newPage();
+    const browser = await puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
 
-  // generates a bunch of pngs that are sticked together to make a gif/video
+    // generates a bunch of pngs that are sticked together to make a gif/video
     await page.exposeFunction('saveImages', (demoName, imageList) => {
         const destiniationDirectory = path.join(__dirname, `../dist/demos/${demoName}`);
-        const destiniationVideoDirectory = path.join(__dirname, `../demos/${demoName}`);
+        const destiniationVideoDirectory = path.join(__dirname, `../src/demos/${demoName}`);
 
         // Create the destination directory to save our images
         if (!existsSync(`${destiniationDirectory}/frames`)) {
@@ -40,7 +48,7 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
         }
 
         // Create Video
-        child_process.execSync(`${__dirname}/../bin/ffmpeg -framerate 50 -i "${destiniationDirectory}/frames/%03d.png" -pix_fmt yuv420p "${destiniationVideoDirectory}/vid.mp4"`);
+        child_process.execSync(`${__dirname}/../bin/ffmpeg -framerate 50 -i "${destiniationDirectory}/frames/%03d.png" -pix_fmt yuv420p "${destiniationVideoDirectory}/demo.mp4"`);
         // Create Gif
         // child_process.execSync(`${__dirname}/../bin/ffmpeg -f image2 -framerate 50 -i "${destiniationDirectory}/frames/%03d.png" "${destiniationVideoDirectory}/vid.gif"`);
         // additional options for possible later use -f image2 -vf scale=iw*.75:ih*.75
@@ -53,7 +61,7 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
     });
 
     const firstDemoWithNoVideo = list.filter(demo => {
-        const file = existsSync(`${demoPath}/${demo.name}/vid.mp4`) || existsSync(`${demoPath}/${demo.name}/demo.png`) || existsSync(`${demoPath}/${demo.name}/demo.gif`);
+        const file = existsSync(`${demoPath}/${demo.name}/demo.mp4`) || existsSync(`${demoPath}/${demo.name}/demo.png`) || existsSync(`${demoPath}/${demo.name}/demo.gif`);
         return !file;
     })[0];
 
@@ -78,7 +86,7 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
             const options = {
                 fps: 50,
                 duration: 3000,
-                canvas: canvas,
+                canvas
             };
 
             const framesData = {};
@@ -109,15 +117,11 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
                 } else {
                     framesData[frameName] = options.canvas.toDataURL('image/png');
                 }
-
             }
-
             window.saveImages(demoName, framesData);
         }
         recordCanvas(canvas);
-
     }, firstDemoWithNoVideo.name, args);
 
-   await browser.close();
+    await browser.close();
 })();
-
