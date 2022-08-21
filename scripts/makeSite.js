@@ -11,9 +11,9 @@ const __dirname = path.dirname(__filename);
 // Load the index.html file
 async function readIndex() {
     return readFile(path.join(__dirname, './index.html'), 'utf8')
-        .then(data => {
-            return data;
-        });
+      .then(data => {
+          return data;
+      });
 }
 
 (async () => {
