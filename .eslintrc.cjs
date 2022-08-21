@@ -39,7 +39,9 @@ module.exports = {
         'arrow-parens': ['error', 'as-needed'],
         'react/function-component-definition': [1, { namedComponents: 'arrow-function' }],
         'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
+        'react/jsx-indent-props': [2, 4],
         indent: ['error', 4],
-        'react/jsx-indent': [2, 4]
+        'react/jsx-indent': [2, 4],
+        'jsx-a11y/media-has-caption': 0
     }
 };

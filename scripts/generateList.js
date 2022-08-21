@@ -10,7 +10,7 @@ import { getFile } from './utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const basePath = path.join(__dirname, '../demos');
+const basePath = path.join(__dirname, '../src/demos');
 
 // Grabs all the directories in /demos
 async function generateListOfDemos(demoPath) {
@@ -80,10 +80,20 @@ async function generateListOfDemos(demoPath) {
             break;
         }
 
+        // Get tyhe demo display file.
+        let demoFile = 'demo.mp4';
+
+        if (existsSync(`${basePath}/${demo}/demo.png`)) {
+            demoFile = 'demo.png';
+        } else if (existsSync(`${basePath}/${demo}/demo.gif`)) {
+            demoFile = 'demo.gif';
+        }
+
         fileList.push({
             name: demo,
             tags: tagJSON?.tags || [],
-            description: tagJSON?.description || ''
+            description: tagJSON?.description || '',
+            demoFile
         });
     }
 

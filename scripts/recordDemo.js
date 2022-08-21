@@ -18,8 +18,8 @@ import list from '../dist/list.json' assert { type: 'json'};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const staticServePath = path.join(__dirname,'../dist');
-const demoPath = path.join(__dirname,'../demos');
+const staticServePath = path.join(__dirname, '../dist');
+const demoPath = path.join(__dirname, '../src/demos');
 const args = process.argv;
 
 // start up a server to serve the static files from our dist directory
@@ -32,7 +32,7 @@ connect().use(serveStatic(staticServePath)).listen(8080, () => console.log('Serv
     // generates a bunch of pngs that are sticked together to make a gif/video
     await page.exposeFunction('saveImages', (demoName, imageList) => {
         const destiniationDirectory = path.join(__dirname, `../dist/demos/${demoName}`);
-        const destiniationVideoDirectory = path.join(__dirname, `../demos/${demoName}`);
+        const destiniationVideoDirectory = path.join(__dirname, `../src/demos/${demoName}`);
 
         // Create the destination directory to save our images
         if (!existsSync(`${destiniationDirectory}/frames`)) {

@@ -7,7 +7,7 @@
   "scripts": {
     "generate": "node ./scripts/generateList.js",
     "makeSite": "node ./scripts/makeSite.js",
-    "build": "tsc && vite build && npm run generate",
+    "build": "tsc && vite build && npm run generate && npm run makeSite",
     "dev": "vite",
     "preview": "vite preview",
     "lint": "eslint src/**",
