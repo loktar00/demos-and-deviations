@@ -7,14 +7,16 @@
       "canvas",
       "performance"
     ],
-    "description": "10,000 particles fast drawing on canvas for stackoverflow answer"
+    "description": "10,000 particles fast drawing on canvas for stackoverflow answer",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "2d raycast light",
     "tags": [
       "raycast"
     ],
-    "description": "Example of raycasting lights"
+    "description": "Example of raycasting lights",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "3d colorful tunnel",
@@ -24,14 +26,16 @@
       "3d",
       "grid"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "3d doodle",
     "tags": [
       "3d"
     ],
-    "description": "Random 3d doodle"
+    "description": "Random 3d doodle",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "3d dot grid bounce",
@@ -40,7 +44,8 @@
       "gif copy",
       "math"
     ],
-    "description": "I don't remember doing this."
+    "description": "I don't remember doing this.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "3d headstone",
@@ -49,7 +54,8 @@
       "3d",
       "canvas"
     ],
-    "description": "headstone and grass"
+    "description": "headstone and grass",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "3d rotating cylinder",
@@ -57,7 +63,8 @@
       "dwitter",
       "3d"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "3d scribble ball",
@@ -66,7 +73,8 @@
       "3d",
       "canvas"
     ],
-    "description": "3d scribble, precursor to my 3d sketcher pen"
+    "description": "3d scribble, precursor to my 3d sketcher pen",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "3d sketcher",
@@ -76,7 +84,8 @@
       "3d",
       "generation"
     ],
-    "description": "Random idea I had, turns 2d sketches 3d."
+    "description": "Random idea I had, turns 2d sketches 3d.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "3d texture test on 2d canvas",
@@ -88,7 +97,8 @@
       "incomplete",
       "test"
     ],
-    "description": "voxel temple"
+    "description": "voxel temple",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "4th of july fireworks",
@@ -98,7 +108,8 @@
       "fireworks",
       "particles"
     ],
-    "description": "Quick pen in celebration of the 4th of July!"
+    "description": "Quick pen in celebration of the 4th of July!",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "a star algorithm",
@@ -106,7 +117,8 @@
       "pathfinding",
       "game"
     ],
-    "description": "a* pathfinding algorithm"
+    "description": "a* pathfinding algorithm",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "angle between 2 points",
@@ -118,7 +130,8 @@
       "snippet",
       "gamedev"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "angular rotation",
@@ -126,7 +139,8 @@
       "angular",
       "rotation"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "animated tree scene",
@@ -137,7 +151,8 @@
       "trees",
       "animation"
     ],
-    "description": "animated tree scene live wallpaper"
+    "description": "animated tree scene live wallpaper",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "bezier curve art",
@@ -147,7 +162,8 @@
       "bezier-curve",
       "generative-art"
     ],
-    "description": "Messing around and this happened, looks purdy."
+    "description": "Messing around and this happened, looks purdy.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "bgscroll",
@@ -159,7 +175,8 @@
       "scrolling",
       "example"
     ],
-    "description": "Example of a repeating background scrolling"
+    "description": "Example of a repeating background scrolling",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "bouncing dots",
@@ -169,7 +186,8 @@
       "canvas",
       "bounce"
     ],
-    "description": "animated tree scene live wallpaper"
+    "description": "animated tree scene live wallpaper",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "burn away effect",
@@ -179,7 +197,8 @@
       "burn",
       "html5"
     ],
-    "description": "Was inspired by Red Orchestra's loading images, came up with the following effect. Also I love me some Spartacus too bad the series is all over."
+    "description": "Was inspired by Red Orchestra's loading images, came up with the following effect. Also I love me some Spartacus too bad the series is all over.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "c64 code art",
@@ -189,7 +208,8 @@
       "text-art",
       "c64"
     ],
-    "description": "Furloughed from Gov work decided to come up with a bloated JS/Canvas vs of the famous\n10 PRINT CHR$(205.5+RND(1)); : GOTO 10"
+    "description": "Furloughed from Gov work decided to come up with a bloated JS/Canvas vs of the famous\n10 PRINT CHR$(205.5+RND(1)); : GOTO 10",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "c64 print chr dwitter",
@@ -198,7 +218,8 @@
       "c64",
       "generative"
     ],
-    "description": "#c64 10 PRINT CHR$(205.5+RND(1)); : GOTO 10"
+    "description": "#c64 10 PRINT CHR$(205.5+RND(1)); : GOTO 10",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "c64demo",
@@ -208,7 +229,8 @@
       "demo",
       "scroller"
     ],
-    "description": "Tribute I did to the commodore 64 in the style of the old school crack intros."
+    "description": "Tribute I did to the commodore 64 in the style of the old school crack intros.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "calculate points around circle",
@@ -217,7 +239,8 @@
       "points",
       "arc"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "canvas antialias",
@@ -225,7 +248,8 @@
       "canvas",
       "example"
     ],
-    "description": "Properly anti aliasing with canvas"
+    "description": "Properly anti aliasing with canvas",
+    "demoFile": "demo.png"
   },
   {
     "name": "canvas bokeh",
@@ -236,7 +260,8 @@
       "random",
       "art"
     ],
-    "description": "Random bokeh"
+    "description": "Random bokeh",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "canvas captcha",
@@ -244,7 +269,8 @@
       "jsfiddle",
       "captcha"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "canvas heat mapping",
@@ -253,7 +279,8 @@
       "canvas",
       "heatmap"
     ],
-    "description": "A friend of mine @Abhishrek asked for a quick demo on creating heatmaps created this to show him. Its something thats pretty simple overall but the way the colors blend make it look so cool."
+    "description": "A friend of mine @Abhishrek asked for a quick demo on creating heatmaps created this to show him. Its something thats pretty simple overall but the way the colors blend make it look so cool.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "canvas lightning",
@@ -262,7 +289,8 @@
       "generative",
       "lines"
     ],
-    "description": "Canvas lightning"
+    "description": "Canvas lightning",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "canvas zom",
@@ -271,7 +299,8 @@
       "game",
       "interactive"
     ],
-    "description": "Canvas Zombie game prototype"
+    "description": "Canvas Zombie game prototype",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "canvasshooter",
@@ -282,7 +311,8 @@
       "game",
       "interactive"
     ],
-    "description": "Canvas Shooter"
+    "description": "Canvas Shooter",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "canvasterrain",
@@ -294,17 +324,20 @@
       "lighting",
       "texture"
     ],
-    "description": "Canvas terrain generation"
+    "description": "Canvas terrain generation",
+    "demoFile": "demo.png"
   },
   {
     "name": "cell",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "change canvas color",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "circle circuit logo",
@@ -314,7 +347,8 @@
       "logo",
       "circuit"
     ],
-    "description": "Random Friday pen #2. Making a point to do something every Friday to push myself."
+    "description": "Random Friday pen #2. Making a point to do something every Friday to push myself.",
+    "demoFile": "demo.png"
   },
   {
     "name": "circuit board pattern",
@@ -325,12 +359,14 @@
       "pattern",
       "procedural"
     ],
-    "description": "Creates random circuit board traces. The code is meh, but the effect turned out pretty cool.\nEach traces checks the pixels in front of them as they travel if the alpha value is anything other than 0 they change direction by 45 degrees."
+    "description": "Creates random circuit board traces. The code is meh, but the effect turned out pretty cool.\nEach traces checks the pixels in front of them as they travel if the alpha value is anything other than 0 they change direction by 45 degrees.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "closest element",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "color cycler",
@@ -340,7 +376,8 @@
       "colorcycle",
       "gradient"
     ],
-    "description": "Was messing around on the SO Javascript chat with @rlemon and @Shmiddty came up with some color cycling code.. well really just a modification of the cycling base code I always use."
+    "description": "Was messing around on the SO Javascript chat with @rlemon and @Shmiddty came up with some color cycling code.. well really just a modification of the cycling base code I always use.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "colorful cloth ribbons",
@@ -352,7 +389,8 @@
       "colorful",
       "generative"
     ],
-    "description": "Heavily inspired by the amazing work done by Dan Gries of Rectangle World @RectangleWorld. Using midpoint displacement and morphing between points, the sweeping lines make an awesome effect. \nedit thanks to @towc fork which sped up the drawing process."
+    "description": "Heavily inspired by the amazing work done by Dan Gries of Rectangle World @RectangleWorld. Using midpoint displacement and morphing between points, the sweeping lines make an awesome effect. \nedit thanks to @towc fork which sped up the drawing process.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "colorful weaving art",
@@ -362,7 +400,8 @@
       "color",
       "color cycle"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "crappiest pen",
@@ -372,7 +411,8 @@
       "crap",
       "swirl"
     ],
-    "description": "I've discovered the crap algorithm! Messing around with some effects.. and well I couldn't pass this up."
+    "description": "I've discovered the crap algorithm! Messing around with some effects.. and well I couldn't pass this up.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "creation of the universe",
@@ -382,7 +422,8 @@
       "stars",
       "glow"
     ],
-    "description": "A bit resource intensive on the machine I'm testing on. Anyway just a project born out of boredom."
+    "description": "A bit resource intensive on the machine I'm testing on. Anyway just a project born out of boredom.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "css animated waves",
@@ -392,7 +433,8 @@
       "animation",
       "waves"
     ],
-    "description": "messing around with making waves using css3 rather than JS. Its a bit different than you might expect. Pieces of the sky are actually moving."
+    "description": "messing around with making waves using css3 rather than JS. Its a bit different than you might expect. Pieces of the sky are actually moving.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "css eyes",
@@ -403,7 +445,8 @@
       "eyes",
       "interactive"
     ],
-    "description": "Eyes that follow your cursor. He gets mad when you you make him cross eyed! I'm getting in the Halloween spirit a bit early this year."
+    "description": "Eyes that follow your cursor. He gets mad when you you make him cross eyed! I'm getting in the Halloween spirit a bit early this year.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "css moon",
@@ -413,17 +456,20 @@
       "moon",
       "radial-gradient"
     ],
-    "description": "Inspired by the night before christmas."
+    "description": "Inspired by the night before christmas.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "css rotary number dial",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "detect color",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "dna strand dwitter",
@@ -432,7 +478,8 @@
       "3d",
       "rainbow"
     ],
-    "description": "Boredom, just something to get the mind going for the day."
+    "description": "Boredom, just something to get the mind going for the day.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "dna strand stackoverflow",
@@ -443,7 +490,8 @@
       "html5",
       "double-helix"
     ],
-    "description": "This question was asked, and I had to try my hand at it. Heavily inspired by things learned from Foundation HTML5 Animation with JavaScript"
+    "description": "This question was asked, and I had to try my hand at it. Heavily inspired by things learned from Foundation HTML5 Animation with JavaScript",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "doom screen wipe effect",
@@ -455,7 +503,8 @@
       "melt",
       "wipe"
     ],
-    "description": "Was playing Doom the other day and was reminded of this effect. I wanted to give it a shot using js and canvas of course. The original .c source can be seen here https://github.com/id-Software/DOOM/blob/master/linuxdoom-1.10/f_wipe.c"
+    "description": "Was playing Doom the other day and was reminded of this effect. I wanted to give it a shot using js and canvas of course. The original .c source can be seen here https://github.com/id-Software/DOOM/blob/master/linuxdoom-1.10/f_wipe.c",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "dot sizing animation",
@@ -465,7 +514,8 @@
       "generative",
       "art"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "dot wave",
@@ -473,7 +523,8 @@
       "codepen",
       "canvas"
     ],
-    "description": "Dot wave"
+    "description": "Dot wave",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "dot wave with colors",
@@ -481,7 +532,8 @@
       "codepen",
       "canvas"
     ],
-    "description": "Dot wave with colors"
+    "description": "Dot wave with colors",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "dots bouncing inside circle",
@@ -490,32 +542,38 @@
       "collision",
       "dots"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "draw fans",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "draw straight lines",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "drawing circles",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "dressup",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "dual canvas mask parralax",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "dungeon generator",
@@ -523,7 +581,8 @@
       "jsfiddle",
       "dungeon"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "early hacker",
@@ -533,7 +592,8 @@
       "hacking",
       "console"
     ],
-    "description": "Created this as an answer for This code golf question (http://codegolf.stackexchange.com/questions/30322/make-it-look-like-im-working/30335#30335) was definitely going for the late 80's early 90's hacker screens. Even made a super serious domain for it http://guihacker.com and yeah this totally could be done in 100% css but I love my canvas. Definitely looks better fullscreen"
+    "description": "Created this as an answer for This code golf question (http://codegolf.stackexchange.com/questions/30322/make-it-look-like-im-working/30335#30335) was definitely going for the late 80's early 90's hacker screens. Even made a super serious domain for it http://guihacker.com and yeah this totally could be done in 100% css but I love my canvas. Definitely looks better fullscreen",
+    "demoFile": "demo.gif"
   },
   {
     "name": "exploding 3d clock",
@@ -543,12 +603,14 @@
       "3d",
       "particles"
     ],
-    "description": "Messing around with canvas, 3d, and the time."
+    "description": "Messing around with canvas, 3d, and the time.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "flood fill",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "following snake text",
@@ -559,7 +621,8 @@
       "follow",
       "inverse kinematics"
     ],
-    "description": "Was a bit bored and put this together, uses elements and transform rotate to change the text... doesn't use canvas :O! Which is blasphemy for me!"
+    "description": "Was a bit bored and put this together, uses elements and transform rotate to change the text... doesn't use canvas :O! Which is blasphemy for me!",
+    "demoFile": "demo.gif"
   },
   {
     "name": "forever forward",
@@ -571,12 +634,14 @@
       "swim",
       "rainbow"
     ],
-    "description": "Evolved from a few simple arcs just kept adding more and settled on this."
+    "description": "Evolved from a few simple arcs just kept adding more and settled on this.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "game engine walk example with map",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "generating islands",
@@ -585,7 +650,8 @@
       "generating",
       "islands"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "ghostly explosion",
@@ -597,12 +663,14 @@
       "alpha",
       "difference"
     ],
-    "description": "Made this by accident when messing around with canvas performance. Its done taking the highest difference of the alpha values using putImageData on line 64."
+    "description": "Made this by accident when messing around with canvas performance. Its done taking the highest difference of the alpha values using putImageData on line 64.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "glow",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "glowing spheres",
@@ -611,7 +679,8 @@
       "canvas",
       "gradient"
     ],
-    "description": "Playing around with creating manual gradients.. this looked neat."
+    "description": "Playing around with creating manual gradients.. this looked neat.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "happy halloween 2013",
@@ -622,7 +691,8 @@
       "smoke",
       "halloween"
     ],
-    "description": "Added to my old smoke experiment to create a creepier effect."
+    "description": "Added to my old smoke experiment to create a creepier effect.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "heatmap looking swirls",
@@ -632,7 +702,8 @@
       "color cycle",
       "generative"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "hexel flames",
@@ -643,7 +714,8 @@
       "hexel",
       "FIRE"
     ],
-    "description": "Got the idea from the following image http://hexraystudios.com/img/TrixelFireplace_1280x800.png they also make a pretty cool painting app http://hexraystudios.com/hexels/"
+    "description": "Got the idea from the following image http://hexraystudios.com/img/TrixelFireplace_1280x800.png they also make a pretty cool painting app http://hexraystudios.com/hexels/",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "infinite simple terrain generation 2",
@@ -653,12 +725,14 @@
       "terrain",
       "scroller"
     ],
-    "description": "The doom melt effect got me thinking about simple terrain, trying to avg the neighbors both in front and behind to make a cool effect. Thanks also to @jackrugile for helping me out on my twitch stream :) Heres Jacks Pen that he worked on as well. Ours are pretty close http://codepen.io/jackrugile/pen/9c8c8606958690378a6044dddc64faaf"
+    "description": "The doom melt effect got me thinking about simple terrain, trying to avg the neighbors both in front and behind to make a cool effect. Thanks also to @jackrugile for helping me out on my twitch stream :) Heres Jacks Pen that he worked on as well. Ours are pretty close http://codepen.io/jackrugile/pen/9c8c8606958690378a6044dddc64faaf",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "isometric tiles",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "its snowing",
@@ -668,7 +742,8 @@
       "snow",
       "interactive"
     ],
-    "description": "Super simple snow I threw together for an answer on stack overflow. Added some simple mouse interaction to make flakes move away from the cursor."
+    "description": "Super simple snow I threw together for an answer on stack overflow. Added some simple mouse interaction to make flakes move away from the cursor.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "javascript 2d dynamic lighting",
@@ -678,7 +753,8 @@
       "lighting",
       "dynamic-lighting"
     ],
-    "description": "Old demo I did a while back showing a simple 2d dynamic lighting effect."
+    "description": "Old demo I did a while back showing a simple 2d dynamic lighting effect.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "jigsaw colorful art thing",
@@ -687,32 +763,38 @@
       "generative art",
       "color"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "js1k christmas tests",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "js1k love",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "js1k terrain",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "jsgrapple",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "jslander",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "lava texture scroller",
@@ -722,17 +804,20 @@
       "texture",
       "generative art"
     ],
-    "description": "Kind of prefer the orange"
+    "description": "Kind of prefer the orange",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "light displacement",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "line drawing",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "lots of particles",
@@ -740,17 +825,20 @@
       "jsfiddle",
       "partcles"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "mass particles",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "match three game",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "mazectric cellular automaton",
@@ -759,7 +847,8 @@
       "canvas",
       "automaton"
     ],
-    "description": "Update to my last pen, changed the rendering a bit. Generates mazes, but spreads out from the seeds."
+    "description": "Update to my last pen, changed the rendering a bit. Generates mazes, but spreads out from the seeds.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "messing with simple terrain generation",
@@ -768,7 +857,8 @@
       "canvas",
       "terrain"
     ],
-    "description": "The doom melt effect got me thinking about simple terrain, trying to avg the neighbors both in front and behind to make a cool effect. Thanks also to @jackrugile for helping me out on my twitch stream :) Heres Jacks Pen that he worked on as well. Ours are pretty close http://codepen.io/jackrugile/pen/9c8c8606958690378a6044dddc64faaf"
+    "description": "The doom melt effect got me thinking about simple terrain, trying to avg the neighbors both in front and behind to make a cool effect. Thanks also to @jackrugile for helping me out on my twitch stream :) Heres Jacks Pen that he worked on as well. Ours are pretty close http://codepen.io/jackrugile/pen/9c8c8606958690378a6044dddc64faaf",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "metaballs",
@@ -777,7 +867,8 @@
       "canvas",
       "metaballs"
     ],
-    "description": "Metaballs"
+    "description": "Metaballs",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "meteor shower",
@@ -789,7 +880,8 @@
       "parralax",
       "terrain"
     ],
-    "description": "Just a random starry night and a meteor shower. The terrain is generated using midpoint displacement.."
+    "description": "Just a random starry night and a meteor shower. The terrain is generated using midpoint displacement..",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "move object based on heading",
@@ -801,12 +893,14 @@
       "snippet",
       "gamedev"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "move target constant rate",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "move to clicked point",
@@ -814,7 +908,8 @@
       "jsfiddle",
       "target"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "move toward an object at a constant speed with heading",
@@ -826,7 +921,8 @@
       "snippet",
       "gamedev"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "move towards object constant speed",
@@ -838,7 +934,8 @@
       "snippet",
       "gamedev"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "move towards object with easing",
@@ -850,17 +947,20 @@
       "snippet",
       "gamedev"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "nbody orbit with my game framework",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "nbody orbit with zoom",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "nbody sim",
@@ -871,7 +971,8 @@
       "space",
       "nbody"
     ],
-    "description": "Old demo I created of the solar system. Mousewheel zooms, click to create bodies."
+    "description": "Old demo I created of the solar system. Mousewheel zooms, click to create bodies.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "ocean ring thing",
@@ -881,7 +982,8 @@
       "arc",
       "wave"
     ],
-    "description": "Recreational coding on a friday"
+    "description": "Recreational coding on a friday",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "oil painting filter",
@@ -891,7 +993,8 @@
       "particles",
       "terrain"
     ],
-    "description": "Answered a question on SO (http://stackoverflow.com/questions/24222556/apply-a-oil-paint-sketch-effect-to-a-photo-using-javascript/24223242#24223242) on how to do an oil painting filter using canvas. Looks pretty good in my opinion. Still looking for ways to improve performance."
+    "description": "Answered a question on SO (http://stackoverflow.com/questions/24222556/apply-a-oil-paint-sketch-effect-to-a-photo-using-javascript/24223242#24223242) on how to do an oil painting filter using canvas. Looks pretty good in my opinion. Still looking for ways to improve performance.",
+    "demoFile": "demo.png"
   },
   {
     "name": "optimized metaballs",
@@ -900,7 +1003,8 @@
       "canvas",
       "metaballs"
     ],
-    "description": "Cached the gradient image rather than drawing it each frame, performance is greatly increased."
+    "description": "Cached the gradient image rather than drawing it each frame, performance is greatly increased.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "paint drip extended canvas web component",
@@ -909,7 +1013,8 @@
       "canvas",
       "webcomponent"
     ],
-    "description": "Abusing extending a canvas element just for the heck of it, could have just as easily made and added the canvas to the shadow dom but just wanted to mess around with doing it this way."
+    "description": "Abusing extending a canvas element just for the heck of it, could have just as easily made and added the canvas to the shadow dom but just wanted to mess around with doing it this way.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "paint dripping dwitter",
@@ -920,12 +1025,14 @@
       "paint",
       "generative art"
     ],
-    "description": "Pain dripping, original https://codepen.io/loktar00/pen/QbdZWz"
+    "description": "Pain dripping, original https://codepen.io/loktar00/pen/QbdZWz",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "parralax demo 1",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "part 1 platformer tutorial",
@@ -935,7 +1042,8 @@
       "platformer",
       "tutorial"
     ],
-    "description": "Part 1 for my platform tutorial on http://www.somethinghitme.com"
+    "description": "Part 1 for my platform tutorial on http://www.somethinghitme.com",
+    "demoFile": "demo.png"
   },
   {
     "name": "part 2 platformer tutorial",
@@ -945,7 +1053,8 @@
       "platformer",
       "tutorial"
     ],
-    "description": "Part 2 of my platformer tutorial which explains how to add collisions! http://www.somethinghitme.com/2013/04/16/creating-a-canvas-platformer-tutorial-part-tw/"
+    "description": "Part 2 of my platformer tutorial which explains how to add collisions! http://www.somethinghitme.com/2013/04/16/creating-a-canvas-platformer-tutorial-part-tw/",
+    "demoFile": "demo.png"
   },
   {
     "name": "particle plasma terrain",
@@ -955,7 +1064,8 @@
       "particles",
       "terrain"
     ],
-    "description": "Messing around with massive amounts of particles to create terrain."
+    "description": "Messing around with massive amounts of particles to create terrain.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "particle terrain",
@@ -965,12 +1075,14 @@
       "particles",
       "terrain"
     ],
-    "description": "Messing around with massive amounts of particles to create terrain. Updated with more natural colors."
+    "description": "Messing around with massive amounts of particles to create terrain. Updated with more natural colors.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "particle test with my framework",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "pile of poop dwitter",
@@ -980,7 +1092,8 @@
       "generative art",
       "crappy art"
     ],
-    "description": "A bit crappy."
+    "description": "A bit crappy.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "planet dwitter",
@@ -992,7 +1105,8 @@
       "spance",
       "planet"
     ],
-    "description": "#Planet thing."
+    "description": "#Planet thing.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "planets with points",
@@ -1002,17 +1116,20 @@
       "html5",
       "planets"
     ],
-    "description": "Modified a random classic example I found from Commodore Step by Step graphics vol 3. \nExplanation of how the effect is created (http://www.somethinghitme.com/2013/08/16/3d-shading-with-points/)"
+    "description": "Modified a random classic example I found from Commodore Step by Step graphics vol 3. \nExplanation of how the effect is created (http://www.somethinghitme.com/2013/08/16/3d-shading-with-points/)",
+    "demoFile": "demo.gif"
   },
   {
     "name": "pre generate sprite rotations",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "pre generated sprite rotation game test",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "project a point in front of an object",
@@ -1024,7 +1141,8 @@
       "snippet",
       "gamedev"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "pushing dots",
@@ -1034,7 +1152,8 @@
       "math",
       "contest"
     ],
-    "description": "Pushing dots"
+    "description": "Pushing dots",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "rainbow road",
@@ -1045,7 +1164,8 @@
       "generative art",
       "rainbow"
     ],
-    "description": "Rainbow Road"
+    "description": "Rainbow Road",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "random ripple thing",
@@ -1055,7 +1175,8 @@
       "grid",
       "canvas"
     ],
-    "description": "Just wanted to make a pen."
+    "description": "Just wanted to make a pen.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "random shuffle thing",
@@ -1064,22 +1185,26 @@
       "first pen",
       "css"
     ],
-    "description": "Just a random thing I did with some spare time. Thanks to rlemon (@TheGreatRupert) for the idea about using data-attributes in the css."
+    "description": "Just a random thing I did with some spare time. Thanks to rlemon (@TheGreatRupert) for the idea about using data-attributes in the css.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "random sunday night",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "react hackathon 2014",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "ribbitsmash js13k entry 2015",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "rift enabled tunnel of doom",
@@ -1090,17 +1215,20 @@
       "oculus rift",
       "tunnel"
     ],
-    "description": "If you happen to own an oculus rift you can run this in full screen and take a ride through the tunnel\nNote to see the effect in chrome use the link\nchrome://flags/#enable-experimental-web-platform-features"
+    "description": "If you happen to own an oculus rift you can run this in full screen and take a ride through the tunnel\nNote to see the effect in chrome use the link\nchrome://flags/#enable-experimental-web-platform-features",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "rotate ellipse",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "rotate on canvas",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "rough seas recreation for compo",
@@ -1110,12 +1238,14 @@
       "html5",
       "3d"
     ],
-    "description": "My recreation of this gif for the jsbin compo (https://remysharp.com/2013/08/14/jsbin-5th-birthday/). Im really close but its not perfect. haha and the code is TERRIBLE."
+    "description": "My recreation of this gif for the jsbin compo (https://remysharp.com/2013/08/14/jsbin-5th-birthday/). Im really close but its not perfect. haha and the code is TERRIBLE.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "satellite launching game",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "scrolling waves dwitter no cycle",
@@ -1127,7 +1257,8 @@
       "scroller",
       "rainbow"
     ],
-    "description": "Scrolling waves, original https://codepen.io/loktar00/pen/pJRbOd wish I could have fit color cycling in"
+    "description": "Scrolling waves, original https://codepen.io/loktar00/pen/pJRbOd wish I could have fit color cycling in",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "scrolling waves dwitter rainbow cycle",
@@ -1138,7 +1269,8 @@
       "generative art",
       "scroller"
     ],
-    "description": "Done from scratch instead of following the patterns I had in my original was able to golf it down to an acceptable size."
+    "description": "Done from scratch instead of following the patterns I had in my original was able to golf it down to an acceptable size.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "scrollng terrain and shooting stars",
@@ -1149,12 +1281,14 @@
       "midpoint-displacement",
       "parralax"
     ],
-    "description": "Changed up an old pen I had to make parralax scrolling terrain. Thanks to @yutt for the awesome color choices!"
+    "description": "Changed up an old pen I had to make parralax scrolling terrain. Thanks to @yutt for the awesome color choices!",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "section circle",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "simple 1 element css toggle",
@@ -1164,7 +1298,8 @@
       "checkbox",
       "css"
     ],
-    "description": "Needed a pretty basic toggle, didn't want any extra elements and wanted to replace some existing checkboxes."
+    "description": "Needed a pretty basic toggle, didn't want any extra elements and wanted to replace some existing checkboxes.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "simple distance check",
@@ -1176,7 +1311,8 @@
       "snippet",
       "gamedev"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "single element c64 logo",
@@ -1186,7 +1322,8 @@
       "c64",
       "css"
     ],
-    "description": "Rekindled my love affair with the ol' Commodore after picking up two sx-64's on craigslist. Wanted to try a single element logo."
+    "description": "Rekindled my love affair with the ol' Commodore after picking up two sx-64's on craigslist. Wanted to try a single element logo.",
+    "demoFile": "demo.png"
   },
   {
     "name": "slime text",
@@ -1195,7 +1332,8 @@
       "canvas",
       "metaballs"
     ],
-    "description": "Uses meta balls to make give the appearance of sliminess."
+    "description": "Uses meta balls to make give the appearance of sliminess.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "slimy goo lighting",
@@ -1206,7 +1344,8 @@
       "lighting",
       "bumpmapping"
     ],
-    "description": "Combined my terrain generation with some awesome lighting/bump mapping effect myself and @incognito worked on way back"
+    "description": "Combined my terrain generation with some awesome lighting/bump mapping effect myself and @incognito worked on way back",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "smoke particles",
@@ -1216,7 +1355,8 @@
       "particles",
       "smoke"
     ],
-    "description": "just a really quick demo for fun."
+    "description": "just a really quick demo for fun.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "snake",
@@ -1226,7 +1366,8 @@
       "canvas",
       "game"
     ],
-    "description": "snake game"
+    "description": "snake game",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "snake in 30 mins",
@@ -1236,7 +1377,8 @@
       "canvas",
       "game"
     ],
-    "description": "snake game I did in 30 minutes"
+    "description": "snake game I did in 30 minutes",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "snap to nearest power of 2",
@@ -1245,7 +1387,8 @@
       "canvas",
       "power of 2"
     ],
-    "description": "This is a little tip for those participating in #LOWREZJAM. In this jam you have to make a game based on a 32x32 playing field. However, you are allowed to scale up the display to make things easier to see, as long as the underlying rendering remains at 32x32. With that stipulation, it is in your best interest to scale your game only by powers of 2. The function in this pen will snap to the nearest power of 2 that fits within the window.\nForked from Jack Rugile's Pen Snap to Nearest Fitting Power of 2.."
+    "description": "This is a little tip for those participating in #LOWREZJAM. In this jam you have to make a game based on a 32x32 playing field. However, you are allowed to scale up the display to make things easier to see, as long as the underlying rendering remains at 32x32. With that stipulation, it is in your best interest to scale your game only by powers of 2. The function in this pen will snap to the nearest power of 2 that fits within the window.\nForked from Jack Rugile's Pen Snap to Nearest Fitting Power of 2..",
+    "demoFile": "demo.png"
   },
   {
     "name": "snow audio experiment",
@@ -1256,12 +1399,14 @@
       "snow",
       "audio"
     ],
-    "description": "Combined snow and the audio api."
+    "description": "Combined snow and the audio api.",
+    "demoFile": "demo.png"
   },
   {
     "name": "sopa ludum date game entry 2012",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "sort pixels based on luminocity",
@@ -1271,7 +1416,8 @@
       "image editing",
       "generative"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "spingen",
@@ -1282,7 +1428,8 @@
       "3d",
       "space"
     ],
-    "description": "This is a little tip for those participating in #LOWREZJAM. In this jam you have to make a game based on a 32x32 playing field. However, you are allowed to scale up the display to make things easier to see, as long as the underlying rendering remains at 32x32. With that stipulation, it is in your best interest to scale your game only by powers of 2. The function in this pen will snap to the nearest power of 2 that fits within the window.\n"
+    "description": "This is a little tip for those participating in #LOWREZJAM. In this jam you have to make a game based on a 32x32 playing field. However, you are allowed to scale up the display to make things easier to see, as long as the underlying rendering remains at 32x32. With that stipulation, it is in your best interest to scale your game only by powers of 2. The function in this pen will snap to the nearest power of 2 that fits within the window.\n",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "spinning arcs",
@@ -1291,7 +1438,8 @@
       "gif copy",
       "math"
     ],
-    "description": "I don't remember doing this."
+    "description": "I don't remember doing this.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "spongey dots",
@@ -1301,7 +1449,8 @@
       "math",
       "contest"
     ],
-    "description": "Spongey dots"
+    "description": "Spongey dots",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "stained glass voronoi art",
@@ -1311,7 +1460,8 @@
       "generative art",
       "color"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "static-img polymer web component",
@@ -1322,7 +1472,8 @@
       "noise",
       "canvas"
     ],
-    "description": "Been messing with web components lately and loving them, made a toy one that creates static. Exciting potential!"
+    "description": "Been messing with web components lately and loving them, made a toy one that creates static. Exciting potential!",
+    "demoFile": "demo.gif"
   },
   {
     "name": "sweeping circles dwitter",
@@ -1333,7 +1484,8 @@
       "generative art",
       "animation"
     ],
-    "description": "Rainbow Road"
+    "description": "Rainbow Road",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "swimming snakes",
@@ -1343,7 +1495,8 @@
       "snales",
       "canvas"
     ],
-    "description": "Havent done a pen in the longest time, decided to put this demo together after playing around with IK, the effect turned out pretty cool! (in my biased opinion of course)."
+    "description": "Havent done a pen in the longest time, decided to put this demo together after playing around with IK, the effect turned out pretty cool! (in my biased opinion of course).",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "swinging chain text",
@@ -1353,7 +1506,8 @@
       "text",
       "css"
     ],
-    "description": "Not really sure on this one.. was just a bit bored."
+    "description": "Not really sure on this one.. was just a bit bored.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "test vision cone",
@@ -1363,7 +1517,8 @@
       "vision",
       "test"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "tetris background",
@@ -1373,12 +1528,14 @@
       "tetris",
       "game"
     ],
-    "description": "Working on a background for my portfolio site revamp to match my business cards.\nA bunch of Tetris games going on at once, you can control them all with the arrow keys to move and space or the up arrow to rotate... haha good luck. AI is planned later, but I thought this looked pretty cool as is so far."
+    "description": "Working on a background for my portfolio site revamp to match my business cards.\nA bunch of Tetris games going on at once, you can control them all with the arrow keys to move and space or the up arrow to rotate... haha good luck. AI is planned later, but I thought this looked pretty cool as is so far.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "tetris full screen",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.gif"
   },
   {
     "name": "texture scroller",
@@ -1389,7 +1546,8 @@
       "generative art",
       "scroller"
     ],
-    "description": "Just a random scroller original vs is from 2013, https://codepen.io/loktar00/details/BCEvp"
+    "description": "Just a random scroller original vs is from 2013, https://codepen.io/loktar00/details/BCEvp",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "thermal texture scroller",
@@ -1399,7 +1557,8 @@
       "texture",
       "generative art"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "tiny swirl",
@@ -1408,7 +1567,8 @@
       "swirl",
       "minimal"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "toggle trance",
@@ -1417,7 +1577,8 @@
       "toggle",
       "check"
     ],
-    "description": "Just a random idea, display a bunch of toggles rotate and check them in patterns."
+    "description": "Just a random idea, display a bunch of toggles rotate and check them in patterns.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "tower defense enemy movement",
@@ -1430,7 +1591,8 @@
       "snippet",
       "gamedev"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "trippy grid",
@@ -1440,7 +1602,8 @@
       "math",
       "contest"
     ],
-    "description": "trippy grid one of the contest entries for JSBin"
+    "description": "trippy grid one of the contest entries for JSBin",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "tunnel of doom",
@@ -1449,7 +1612,8 @@
       "canvas",
       "tunnel"
     ],
-    "description": "An effect I was messing with for the most recent js1k, didn't finish it in time unfortunately."
+    "description": "An effect I was messing with for the most recent js1k, didn't finish it in time unfortunately.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "twister effect",
@@ -1458,7 +1622,8 @@
       "canvas",
       "twister"
     ],
-    "description": "Have seen so many c64 and amiga demos over the last view days, I wanted to try my hand at one of the simpler effects that didn't include a lot of math. Turned out ok, though many have done it much better."
+    "description": "Have seen so many c64 and amiga demos over the last view days, I wanted to try my hand at one of the simpler effects that didn't include a lot of math. Turned out ok, though many have done it much better.",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "using cellular automaton to generate caves",
@@ -1468,7 +1633,8 @@
       "gaming",
       "cellular automata"
     ],
-    "description": "Messing around with cave generation, this is the first method. Going to try out another one later. Also this method is really fast, I just slowed it down to show the progression."
+    "description": "Messing around with cave generation, this is the first method. Going to try out another one later. Also this method is really fast, I just slowed it down to show the progression.",
+    "demoFile": "demo.gif"
   },
   {
     "name": "vectrex minestorm test",
@@ -1477,7 +1643,8 @@
       "vectrex",
       "minestorm"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "verlet shapes demo",
@@ -1488,7 +1655,8 @@
       "gaming",
       "verlet integration"
     ],
-    "description": "Resurrected an old bit of code and added a bunch of stuff to it today.. if only I could get the shapes colliding!"
+    "description": "Resurrected an old bit of code and added a bunch of stuff to it today.. if only I could get the shapes colliding!",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "verlet tests",
@@ -1497,7 +1665,8 @@
       "verlet",
       "canvas"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "voronoi standard animated",
@@ -1508,7 +1677,8 @@
       "generative",
       "voronoi"
     ],
-    "description": "Looks like slimey germs :P"
+    "description": "Looks like slimey germs :P",
+    "demoFile": "demo.gif"
   },
   {
     "name": "voronoi texture",
@@ -1519,7 +1689,8 @@
       "generative",
       "voronoi"
     ],
-    "description": "Love playing with these. For more check out http://somethinghitme.com/projects/cell/"
+    "description": "Love playing with these. For more check out http://somethinghitme.com/projects/cell/",
+    "demoFile": "demo.gif"
   },
   {
     "name": "voxel temple",
@@ -1531,7 +1702,8 @@
       "shading",
       "lighting"
     ],
-    "description": "voxel temple"
+    "description": "voxel temple",
+    "demoFile": "demo.gif"
   },
   {
     "name": "wave sim",
@@ -1540,7 +1712,8 @@
       "canvas",
       "waves"
     ],
-    "description": "Wave sim based off an excellent xna tutorial located below. \nhttp://gamedev.tutsplus.com/tutorials/implementation/make-a-splash-with-2d-water-effects/"
+    "description": "Wave sim based off an excellent xna tutorial located below. \nhttp://gamedev.tutsplus.com/tutorials/implementation/make-a-splash-with-2d-water-effects/",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "wavy 3d grid",
@@ -1550,7 +1723,8 @@
       "3d",
       "grid"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "wavy lines",
@@ -1560,7 +1734,8 @@
       "math",
       "contest"
     ],
-    "description": "wavy lines one of the contest entries for JSBin"
+    "description": "wavy lines one of the contest entries for JSBin",
+    "demoFile": "demo.mp4"
   },
   {
     "name": "webgl fractal",
@@ -1569,12 +1744,14 @@
       "webgl",
       "fractal"
     ],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "word find",
     "tags": [],
-    "description": ""
+    "description": "",
+    "demoFile": "demo.png"
   },
   {
     "name": "zombie sim",
@@ -1584,6 +1761,7 @@
       "zombies",
       "halloween"
     ],
-    "description": "I was in the Halloween spirit and decided to make a quick zombie simulator just like the old school ones.\nTry to stop the infection by clicking to drop bombs!\nIf this wets your appetite for zombies check out my site http://zombiegames.net the best zombie game site on the net :P"
+    "description": "I was in the Halloween spirit and decided to make a quick zombie simulator just like the old school ones.\nTry to stop the infection by clicking to drop bombs!\nIf this wets your appetite for zombies check out my site http://zombiegames.net the best zombie game site on the net :P",
+    "demoFile": "demo.gif"
   }
 ]
