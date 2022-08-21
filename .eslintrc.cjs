@@ -35,6 +35,7 @@ module.exports = {
                 tsx: 'never'
             }
         ],
+        'max-len': ['error', { code: 500 }],
         'arrow-parens': ['error', 'as-needed'],
         'react/function-component-definition': [1, { namedComponents: 'arrow-function' }],
         'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
