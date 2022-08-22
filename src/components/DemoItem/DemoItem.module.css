@@ -1,0 +1,42 @@
+.container {
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+    margin: 10px;
+    width: clamp(250px, 20vw, 500px);
+}
+
+.title {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.tag_container {
+    font-size: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    border-radius: 2px;
+    padding: 5px;
+    margin: 2px;
+    background-color: var(--tag-color);
+    cursor: pointer;
+}
+
+.tag:first-child {
+    margin-left: 0;
+}
+
+video, img {
+    object-fit: cover;
+    height: clamp(260px, 20vw, 480px);
+}
