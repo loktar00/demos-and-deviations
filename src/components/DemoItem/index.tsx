@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './DemoItem.module.css';
+
 type Props = {
     name: string;
     description: string;
@@ -13,22 +15,22 @@ const DemoItem = ({
     tags,
     demoFile
 }: Props) => {
-    let demoDisplay = <img width="300px" src={`demos/${name}/${demoFile}`} alt={name} />;
+    let demoDisplay = <img src={`demos/${name}/${demoFile}`} alt={name} />;
 
     const fileType = demoFile.split('.').pop();
     if (fileType === 'mp4') {
-        demoDisplay = <video width="300px" src={`demos/${name}/${demoFile}`} muted autoPlay loop />;
+        demoDisplay = <video src={`demos/${name}/${demoFile}`} muted autoPlay loop />;
     }
 
     return (
-        <a href={`demos/${name}/`}>
-            <div>
-                <h3>{name}</h3>
+        <li>
+            <div className={styles.container}>
                 {demoDisplay}
+                <a className={styles.title} href={`demos/${name}/`}>{name}</a>
                 <p>{description}</p>
-                <p>{tags.join(', ')}</p>
+                <ol className={styles.tag_container}>{tags.map(tag => <li className={styles.tag} key={tag}>{tag}</li>)}</ol>
             </div>
-        </a>
+        </li>
     );
 };
 

@@ -83,7 +83,9 @@ async function generateListOfDemos(demoPath) {
         // Get tyhe demo display file.
         let demoFile = 'demo.mp4';
 
-        if (existsSync(`${basePath}/${demo}/demo.png`)) {
+        if (existsSync(`${basePath}/${demo}/demo.mp4`)) {
+            demoFile = 'demo.mp4';
+        } else if (existsSync(`${basePath}/${demo}/demo.png`)) {
             demoFile = 'demo.png';
         } else if (existsSync(`${basePath}/${demo}/demo.gif`)) {
             demoFile = 'demo.gif';
