@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazy-load'
 
 import styles from './DemoItem.module.css';
 
@@ -25,7 +26,9 @@ const DemoItem = ({
     return (
         <li>
             <div className={styles.container}>
-                {demoDisplay}
+                <LazyLoad className={styles.media_container} threshold={0.95}>
+                    {demoDisplay}
+                </LazyLoad>
                 <a className={styles.title} href={`demos/${name}/`}>{name}</a>
                 <p>{description}</p>
                 <ol className={styles.tag_container}>{tags.map(tag => <li className={styles.tag} key={tag}>{tag}</li>)}</ol>
