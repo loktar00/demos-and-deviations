@@ -26,7 +26,7 @@ const DemoItem = ({
     return (
         <li>
             <div className={styles.container}>
-                <LazyLoad className={styles.media_container} threshold={0.95}>
+                <LazyLoad className={styles.media_container}>
                     {demoDisplay}
                 </LazyLoad>
                 <a className={styles.title} href={`demos/${name}/`}>{name}</a>
